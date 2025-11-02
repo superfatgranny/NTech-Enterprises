@@ -1,0 +1,24 @@
+{
+	"Camso_differential_front_48289": {
+		"information":{
+			"name":"Trim 1 Viscous Front Differential",
+			"value":500
+		},
+		"slotType" : "Camso_differential_front",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_halfshafts_front","Camso_halfshafts_front","Front Halfshafts"],
+			["Camso_finaldrive_front","Camso_finaldrive_front_3.30","Front Final Drive", {"coreSlot":true}]
+		],
+		"controller": [
+			["fileName"],
+			
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+		//https://wiki.beamng.com/Differential
+		["differential", "frontDiff", "frontDriveShaft", 1, {"diffType": "viscous", "uiName": "Front Differential", "viscousCoef": 144.13, "viscousTorque": 1441.31, "defaultVirtualInertia": 0.25, "friction": 54.964404284075}],
+
+		]
+	}
+}

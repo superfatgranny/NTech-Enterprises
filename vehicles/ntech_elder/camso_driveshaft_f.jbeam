@@ -1,0 +1,13 @@
+{
+	"Camso_driveshaft_front": {
+		"information":{
+			"name":"Front Driveshaft",
+			"value":150
+		},
+		"slotType" : "Camso_driveshaft_front",
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["shaft", "frontDriveShaft", "transferCase", 2, {"friction": 1}] // 1
+		]
+	}
+}

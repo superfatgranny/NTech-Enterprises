@@ -1,0 +1,143 @@
+{
+	"Name": "NTech Elder",
+	"Author": "superfatgranny",
+	"Type": "Car",
+	"ExporterVersion": 37238,
+	"AutomationVersion": 0,
+	"default_pc": "34a91",
+	"paints": {
+		"Default1": {
+			"baseColor": [ 0.156863, 0.211765, 0.388235, 1 ],
+			"clearcoat": 1,
+			"clearcoatRoughness": 0,
+			"metallic": 1,
+			"roughness": 0.5645
+		},
+		"Default2": {
+			"baseColor": [ 0.847059, 0.0941176, 0, 1 ],
+			"clearcoat": 1,
+			"clearcoatRoughness": 0,
+			"metallic": 0.752381,
+			"roughness": 0.263333
+		},
+		"Black": {
+			"baseColor": [ 0.01, 0.01, 0.01, 2 ],
+			"clearcoat": 1,
+			"clearcoatRoughness": 0,
+			"metallic": 0.7,
+			"roughness": 0.2
+		},
+		"White": {
+			"baseColor": [ 1, 1, 1, 2 ],
+			"clearcoat": 1,
+			"clearcoatRoughness": 0,
+			"metallic": 0.75,
+			"roughness": 0.3
+		},
+		"Red": {
+			"baseColor": [ 0.7, 0.1, 0.1, 2 ],
+			"clearcoat": 1,
+			"clearcoatRoughness": 0,
+			"metallic": 0.5,
+			"roughness": 0.3
+		},
+		"Blue": {
+			"baseColor": [ 0.1, 0.2, 0.4, 2 ],
+			"clearcoat": 1,
+			"clearcoatRoughness": 0,
+			"metallic": 0.75,
+			"roughness": 0.3
+		},
+		"Black": {
+			"baseColor": [ 0.01, 0.01, 0.01, 2 ],
+			"clearcoat": 1,
+			"clearcoatRoughness": 0,
+			"metallic": 0.5,
+			"roughness": 0.3
+		},
+		"White": {
+			"baseColor": [ 1, 1, 1, 2 ],
+			"clearcoat": 1,
+			"clearcoatRoughness": 0,
+			"metallic": 0.5,
+			"roughness": 0.3
+		},
+		"Red": {
+			"baseColor": [ 0.7, 0.1, 0.1, 2 ],
+			"clearcoat": 1,
+			"clearcoatRoughness": 0,
+			"metallic": 0.6,
+			"roughness": 0.26
+		},
+		"Blue": {
+			"baseColor": [ 0.1, 0.2, 0.4, 2 ],
+			"clearcoat": 1,
+			"clearcoatRoughness": 0,
+			"metallic": 0.5,
+			"roughness": 0.3
+		},
+		"Gray": {
+			"baseColor": [ 0.307, 0.307, 0.307, 2 ],
+			"clearcoat": 1,
+			"clearcoatRoughness": 0,
+			"metallic": 0.42,
+			"roughness": 0.3
+		},
+		"Burgundy": {
+			"baseColor": [ 0.42, 0.06, 0.06, 2 ],
+			"clearcoat": 1,
+			"clearcoatRoughness": 0,
+			"metallic": 0.5,
+			"roughness": 0.3
+		},
+		"Light Blue": {
+			"baseColor": [ 0.185, 0.369, 0.739, 2 ],
+			"clearcoat": 0.6,
+			"clearcoatRoughness": 0,
+			"metallic": 0.6,
+			"roughness": 0.25
+		},
+		"Dark Blue": {
+			"baseColor": [ 0.153, 0.182, 0.302, 2 ],
+			"clearcoat": 0.8,
+			"clearcoatRoughness": 0,
+			"metallic": 0.7,
+			"roughness": 0.2
+		},
+		"Violet": {
+			"baseColor": [ 0.176, 0.152, 0.304, 2 ],
+			"clearcoat": 0.7,
+			"clearcoatRoughness": 0,
+			"metallic": 0.3,
+			"roughness": 0.4
+		},
+		"Yellow": {
+			"baseColor": [ 0.712, 0.693, 0.014, 2 ],
+			"clearcoat": 1,
+			"clearcoatRoughness": 0,
+			"metallic": 0.5,
+			"roughness": 0.2
+		},
+		"Green": {
+			"baseColor": [ 0.048, 0.388, 0, 2 ],
+			"clearcoat": 1,
+			"clearcoatRoughness": 0,
+			"metallic": 0.5,
+			"roughness": 0.3
+		},
+		"Brown": {
+			"baseColor": [ 0.313, 0.215, 0.143, 2 ],
+			"clearcoat": 0.5,
+			"clearcoatRoughness": 0,
+			"metallic": 0.35,
+			"roughness": 0.4
+		},
+		"Army Green": {
+			"baseColor": [ 0.13, 0.212, 0.023, 2 ],
+			"clearcoat": 0.16,
+			"clearcoatRoughness": 0,
+			"metallic": 0.21,
+			"roughness": 0.62
+		}
+	}
+}

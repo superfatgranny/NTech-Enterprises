@@ -1,0 +1,141 @@
+{
+	"Camso_Transmission_Race": {
+		"information":{
+			"authors": "Camshaft Software",
+			"name": "Race 6-Speed Sequential Transmission",
+			"value": 4800
+		},
+		"slotType": "Camso_Transmission",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_TransferCase", "Camso_TransferCase_AWD_48289", "Transfer Case"],
+			
+		],
+		
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+			["$whineMult", "range", "", "Gearing", 1, 0, 5, "Whine Volume", "Gearbox whine volume multiplier",{"subCategory": "Transmission", "stepDis": 1, "minDis": 0, "maxDis": 500}],
+			["$gear_R_race", "range", ":1", "Gearing", 2.95, 0.5, 5, "Gear R", "Gear ratio",{"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_1_race", "range", ":1", "Gearing", 3.65, 0.5, 5, "Gear 1", "Gear ratio",{"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_2_race", "range", ":1", "Gearing", 2.37, 0.5, 5, "Gear 2", "Gear ratio",{"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_3_race", "range", ":1", "Gearing", 1.67, 0.5, 5, "Gear 3", "Gear ratio",{"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_4_race", "range", ":1", "Gearing", 1.28, 0.5, 5, "Gear 4", "Gear ratio",{"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_5_race", "range", ":1", "Gearing", 1.02, 0.5, 5, "Gear 5", "Gear ratio",{"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_6_race", "range", ":1", "Gearing", 0.82, 0.5, 5, "Gear 6", "Gear ratio",{"subCategory": "Transmission", "stepDis": 0.01}]
+		],
+
+		"controller": [
+			["fileName"],
+			
+		],
+
+		"gearbox": {
+			"uiName": "Gearbox",
+			"gearRatios": ["$=-$gear_R_race", 0, "$gear_1_race", "$gear_2_race", "$gear_3_race", "$gear_4_race", "$gear_5_race", "$gear_6_race"],
+			"friction": 1.39,
+			"dynamicFriction": 0.0014,
+			"torqueLossCoef": 0.013,
+			"gearboxNode:": ["engine0"],
+
+			"gearWhineCoefsInput":  ["$=$whineMult * 0.32", 0.00, "$=$whineMult * 0.32", "$=$whineMult * 0.32", "$=$whineMult * 0.32", "$=$whineMult * 0.32", "$=$whineMult * 0.32", "$=$whineMult * 0.32"],
+			"gearWhineCoefsOutput": [0.00, 0.00, "$=$whineMult * 0.60", "$=$whineMult * 0.60", "$=$whineMult * 0.60", "$=$whineMult * 0.60", "$=$whineMult * 0.60", "$=$whineMult * 0.60"],
+			"gearWhineInputEvent": "event:>Vehicle>Transmission>straight_01>twine_in_race",
+			"gearWhineOutputEvent": "event:>Vehicle>Transmission>straight_01>twine_out_race"
+		},
+
+		"clutch": {
+			"clutchFreePlay": 0.75,
+			"lockSpringCoef": 0.3
+		},
+
+		"vehicleController": {
+			"calculateOptimalLoadShiftPoints": true,
+			"shiftDownRPMOffsetCoef": 1.17,
+			//"aggressionSmoothingDown": 0.05
+			"aggressionHoldOffThrottleDelay": 3,
+			//"lowShiftDownRPM": [0,0,0,1600,1900,1800,1600,1500],
+			//"lowShiftUpRPM": [0,0,3500,3300,3150,3000,2900],
+			"lowShiftDownRPM": 800,
+			"lowShiftUpRPM": 1400,
+			//"wheelSlipUpThreshold": 100,
+			"clutchLaunchStartRPM": 1400, //RPM where launching behavior starts
+			"clutchLaunchTargetRPM": 1900 //RPM it tries to maintain while launching
+		},
+
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["frictionClutch", "clutch", "mainEngine", 1],
+			["sequentialGearbox", "gearbox", "clutch", 1]
+		]
+	},
+
+	"Camso_Transmission_Race_Manual": {
+		"information":{
+			"authors": "Camshaft Software",
+			"name": "Race 6-Speed Manual Transmission",
+			"value": 3500
+		},
+		"slotType": "Camso_Transmission",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_TransferCase", "Camso_TransferCase_AWD_48289", "Transfer Case"],
+			
+		],
+		
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+			["$whineMult", "range", "", "Gearing", 1, 0, 5, "Whine Volume", "Gearbox whine volume multiplier",{"subCategory": "Transmission", "stepDis": 1, "minDis": 0, "maxDis": 500}],
+			["$gear_R_race", "range", ":1", "Gearing", 2.95, 0.5, 5, "Gear R", "Gear ratio",{"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_1_race", "range", ":1", "Gearing", 3.65, 0.5, 5, "Gear 1", "Gear ratio",{"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_2_race", "range", ":1", "Gearing", 2.37, 0.5, 5, "Gear 2", "Gear ratio",{"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_3_race", "range", ":1", "Gearing", 1.67, 0.5, 5, "Gear 3", "Gear ratio",{"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_4_race", "range", ":1", "Gearing", 1.28, 0.5, 5, "Gear 4", "Gear ratio",{"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_5_race", "range", ":1", "Gearing", 1.02, 0.5, 5, "Gear 5", "Gear ratio",{"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_6_race", "range", ":1", "Gearing", 0.82, 0.5, 5, "Gear 6", "Gear ratio",{"subCategory": "Transmission", "stepDis": 0.01}]
+		],
+
+		"controller": [
+			["fileName"],
+			
+		],
+
+		"gearbox": {
+			"uiName": "Gearbox",
+			"gearRatios": ["$=-$gear_R_race", 0, "$gear_1_race", "$gear_2_race", "$gear_3_race", "$gear_4_race", "$gear_5_race", "$gear_6_race"],
+			"friction": 1.39,
+			"dynamicFriction": 0.0014,
+			"torqueLossCoef": 0.013,
+			"gearboxNode:": ["engine0"],
+
+			"gearWhineCoefsInput":  ["$=$whineMult * 0.32", 0.00, "$=$whineMult * 0.32", "$=$whineMult * 0.32", "$=$whineMult * 0.32", "$=$whineMult * 0.32", "$=$whineMult * 0.32", "$=$whineMult * 0.32"],
+			"gearWhineCoefsOutput": [0.00, 0.00, "$=$whineMult * 0.60", "$=$whineMult * 0.60", "$=$whineMult * 0.60", "$=$whineMult * 0.60", "$=$whineMult * 0.60", "$=$whineMult * 0.60"],
+			"gearWhineInputEvent": "event:>Vehicle>Transmission>straight_01>twine_in_race",
+			"gearWhineOutputEvent": "event:>Vehicle>Transmission>straight_01>twine_out_race"
+		},
+
+		"clutch": {
+			"clutchFreePlay": 0.75,
+			"lockSpringCoef": 0.3
+		},
+
+		"vehicleController": {
+			"calculateOptimalLoadShiftPoints": true,
+			"shiftDownRPMOffsetCoef": 1.17,
+			//"aggressionSmoothingDown": 0.05
+			"aggressionHoldOffThrottleDelay": 3,
+			//"lowShiftDownRPM": [0,0,0,1600,1900,1800,1600,1500],
+			//"lowShiftUpRPM": [0,0,3500,3300,3150,3000,2900],
+			"lowShiftDownRPM": 800,
+			"lowShiftUpRPM": 1400,
+			//"wheelSlipUpThreshold": 100,
+			"clutchLaunchStartRPM": 1400, //RPM where launching behavior starts
+			"clutchLaunchTargetRPM": 1900 //RPM it tries to maintain while launching
+		},
+
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["frictionClutch", "clutch", "mainEngine", 1],
+			["manualGearbox", "gearbox", "clutch", 1]
+		]
+	}
+}

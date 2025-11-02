@@ -1,0 +1,24 @@
+{
+"vars":{
+  "$torquesplit": 0.57000002264977,
+  "$finaldrive_f": 7.16,
+  "$finaldrive_r": 7.16
+},
+"format":2,
+"parts":{
+	"Camso_differential_front": "Camso_differential_front_34a91",
+	"Camso_differential_rear": "Camso_differential_rear_34a91",
+	"Camso_DSE": "Camso_DSE_34a91",
+	"Camso_finaldrive_front": "Camso_finaldrive_front_7.16",
+	"Camso_finaldrive_rear": "Camso_finaldrive_rear_7.16",
+	"Camso_Trim": "Camso_Trim_34a91",
+	"Camso_wheels_front": "Camso_wheels_front_34a91",
+	"Camso_wheels_rear": "Camso_wheels_rear_34a91",
+	"Camso_ElectricMotor_F": "Camso_ElectricMotor_F_34a91",
+	"Camso_ElectricMotor_R": "Camso_ElectricMotor_R_34a91",
+	"Camso_Engine": "Camso_Engine_034e2",
+	"Camso_Transmission": "Camso_Transmission_34a91",
+	"Camso_SpeedLimiter": "Camso_SpeedLimiter_off",
+	"Camso_engine_structure": "Camso_engine_structure_34a91"
+}
+}

@@ -1,0 +1,674 @@
+{
+"Camso_doublewishbone_F_c49eb": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Lux Double Wishbone Front Suspension",
+        "value":150
+    },
+    "variables": [
+		["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+		["$RideHeightOffsetFront", "range", "+m", "Suspension", 0, -0.5, 0.5, "Front Ride Height Offset", "Front suspension ride height offset", {"stepDis":0.001,"subCategory":"Springs"}],
+        ["$CamberFront", "range", "", "Suspension", 0.996, 0.9, 1.092, "Front Camber", "Front wheel camber", {"stepDis":0.001,"subCategory":"Alignment","minDis":90,"maxDis":109.2}],
+	    ["$trackOffset_F", "range", "+m", "Suspension", 0, -0.5, 0.5, "Front Wheel Offset", "Spacing of rear wheels", {"stepDis":0.001,"subCategory":"Spacing"}],
+        ["$brakeOffset_F", "range", "+m", "Suspension", 0, -0.5, 0.5, "Front Brake Offset", "Visual front brake offset", {"stepDis":0.001,"subCategory":"Spacing"}],
+        ["$hubStiffnessMult_F", "range", "", "Vehicle Advanced Settings", 1, 0.1, 3, "Front Hub Stiffness", "Lower this value if wheels break off. Raise it if there is unwanted flex in the hubs", {"subCategory":"Wheel Hubs","stepDis":1,"minDis":10,"maxDis":300}]
+    ],
+    "slotType" : "Camso_suspension_F",
+    "slots": [
+        ["type", "default", "description"]
+        //["wheels_front","wheels_front","Front Wheels", {"nodeOffset":{"x":"$frontSuspensionOffsetX", "y":"$frontSuspensionOffsetY", "z":"$frontSuspensionOffsetZ"}}],
+        ["camso_hubs_front_c49eb","camso_hubs_front_c49eb","Front Hubs"],
+        ["Camso_suspensionmesh_F","Camso_suspensionmesh_F_c49eb","Suspension Mesh", {"nodeOffset": {"x":"$=$frontSuspensionOffsetX or 0", "y":"$=$frontSuspensionOffsetY or 0", "z":"$=$frontSuspensionOffsetZ or 0"}}],
+        ["Camso_brake_F","Camso_brake_F_c49eb", "Front Brakes", {"nodeOffset": {"x":"$=($frontSuspensionOffsetX or 0)+($brakeOffset_F or 0)", "y":"$=$frontSuspensionOffsetY or 0", "z":"$=$frontSuspensionOffsetZ or 0"}}],
+        ["Camso_wheeldata_F_doublewishbone","Camso_wheeldata_F_doublewishbone_c49eb", "Front Spindles", {"coreSlot":true}],
+        ["Camso_coilover_F_doublewishbone","Camso_coilover_F_doublewishbone_c49eb", "Front Coilovers"],
+        ["Camso_swaybar_F_doublewishbone","Camso_swaybar_F_doublewishbone_c49eb", "Front Sway Bar"],
+        ["Camso_steering_doublewishbone","Camso_steering_doublewishbone_c49eb", "Steering", {"nodeOffset": {"x":0.08, "y":"$=-1.660007+($frontSuspensionOffsetY or 0)", "z":"$=0.799998+($frontSuspensionOffsetZ or 0)"}}],
+        ["Camso_differential_front", "", "Front Differential"]
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"collision":true},
+        {"selfCollision":true},
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.5},
+
+        {"nodeWeight":8.509990},
+        //hub mounting points for lower wishbone
+        {"group":["hub_F","susp_F"]},
+        ["fh1r", -0.554060, -0.013170, -0.113537],
+        ["fh1l",  0.554060, -0.013170, -0.113537],
+
+        {"nodeWeight":5.105994},
+        //hub mounting points for upper wishbone
+        ["fh2r", -0.499562, 0.013170, 0.113537],
+        ["fh2l",  0.499562, 0.013170, 0.113537],
+		
+		
+
+        //tie rod end
+        ["fh3r", -0.515003, 0.145327, -0.079930],
+        ["fh3l",  0.515003, 0.145327, -0.079930],
+
+        //brake caliper
+        //{"nodeWeight":6.807992},
+        ["fh5r", -0.572226, -0.136244, 0.000000],
+        ["fh5l",  0.572226, -0.136244, 0.000000],
+
+        //subframe
+        {"selfCollision":true},
+        {"nodeWeight":10.211530},
+        {"chemEnergy":2381.156494,"burnRate":0.851478,"flashPoint":"$=($ignitionTemperatureMod or 1)*423.768707",
+            "specHeat":0.8,"smokePoint":"$=($ignitionTemperatureMod or 1)*242.826538",/*"selfIgnitionCoef":"$=($ignitionChanceMod or 1)*0.188116"*/},
+        //body mounting points for lower wishbone
+        {"group":["subframe_F", "susp_F"]},
+        ["fx1r", -0.236157, -0.181659, -0.099912],
+        ["fx1l",  0.236157, -0.181659, -0.099912],
+        ["fx2r", -0.236157,  0.181659, -0.099912],
+        ["fx2l",  0.236157,  0.181659, -0.099912],
+
+        //body mounting points for upper wishbone
+        {"group":["subframe_F", "susp_F"]},
+        ["fx3r", -0.326986, -0.181659, 0.090830],
+        ["fx3l",  0.326986, -0.181659, 0.090830],
+        ["fx4r", -0.326986,  0.181659, 0.090830],
+        ["fx4l",  0.326986,  0.181659, 0.090830],
+
+        {"nodeWeight":11.487971},
+        //body mounting points for spring and shock
+        {"group":["subframe_F", "susp_F"]},
+        ["fs1r", -0.544977, 0.000000, 0.277030],
+        ["fs1l",  0.544977, 0.000000, 0.277030],
+        {"chemEnergy":false,"burnRate":false,"flashPoint":false,"specHeat":false,"smokePoint":false,"selfIgnitionCoef":false},
+        {"group":""}
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        //double wishbone suspension
+        {"beamPrecompression":1, "beamType":"|NORMAL"},
+        //hub
+		{"highlight":{"radius":0.0075, "col":"#ff0137d9"}},
+        {"beamSpring":"$=8170724.500000*($hubStiffnessMult_F or 1)","beamDamp":"$=204.239746*($hubStiffnessMult_F or 1)"},
+        {"beamDeform":69214.578125,"beamStrength":432307.468750},
+        ["fh1r","fh2r"],
+        ["fh1l","fh2l"],
+        ["fh1r","fh3r"],
+        ["fh1l","fh3l"],
+        ["fh2r","fh3r"],
+        ["fh2l","fh3l"],
+        ["fh1r","fh5r"],
+        ["fh1l","fh5l"],
+        ["fh2r","fh5r"],
+        ["fh2l","fh5l"],
+        ["fh3r","fh5r"],
+        ["fh3l","fh5l"],
+		{"highlight":{"radius":0.0, "col":"#ff0137d9"}},
+
+        //hub to wheel axle nodes
+        //{"beamSpring":"$=8397658.000000*($hubStiffnessMult_F or 1)","beamDamp":"$=170.199783*($hubStiffnessMult_F or 1)"},
+        //{"beamDeform":69214.578125,"beamStrength":432307.468750},
+        //breakGroup: when one beam breaks, all beams in the group are forced to break
+		{"highlight":{"radius":0.0075, "col":"#ff2264d9"}},
+        {"breakGroup":"wheel_FR"},
+        //optional: tells the physics engine not to worry if it can't find the nodes (ex, user chose to remove the wheels that these beams should connect to)
+        {"optional":true},
+        ["fh1r","fw1r"],
+        ["fh2r","fw1r"{"name":"axle_FR"}],
+        ["fh3r","fw1r"],
+        ["fh5r","fw1r"],
+        ["fh1r","fw1rr"],
+        ["fh2r","fw1rr"],
+        ["fh3r","fw1rr"],
+        ["fh5r","fw1rr"],
+
+        {"breakGroup":"wheel_FL"},
+        ["fh1l","fw1l"{"name":"axle_FL"}],
+        ["fh2l","fw1l"],
+        ["fh3l","fw1l"],
+        ["fh5l","fw1l"],
+        ["fh1l","fw1ll"],
+        ["fh2l","fw1ll"],
+        ["fh3l","fw1ll"],
+        ["fh5l","fw1ll"],
+        {"optional":false},
+        {"breakGroup":""},
+		
+		{"highlight":{"radius":0.0, "col":"#ff2264d9"}},
+
+        //upper wishbone
+		
+		{"highlight":{"radius":0.0075, "col":"#FFFF005f"}},		
+        {"beamSpring":8062561.500000,"beamDamp":1896.850098},
+        //{"beamDeform":69214.578125,"beamStrength":432307.468750},
+        //precompression creates slight alignment tweak for 0 camber at base ride height
+        {"beamPrecompression":"$CamberFront"},
+        //dampCutoffHz raises the damping stability by filtering out high frequencies
+        ["fh2r","fx3r",{"dampCutoffHz":500}],
+        ["fh2r","fx4r",{"dampCutoffHz":500}],
+        ["fh2l","fx3l",{"dampCutoffHz":500}],
+        ["fh2l","fx4l",{"dampCutoffHz":500}],
+        {"beamPrecompression":1},
+			
+		
+	
+
+        //lower wishbone
+		{"highlight":{"radius":0.0075, "col":"#FFFF005f"}},
+        ["fx2r","fh1r",{"dampCutoffHz":500}],
+        ["fx1r","fh1r",{"dampCutoffHz":500}],
+        ["fx2l","fh1l",{"dampCutoffHz":500}],
+        ["fx1l","fh1l",{"dampCutoffHz":500}],
+		
+		{"highlight":{"radius":0.0, "col":"#FFFF005f"}},
+
+        //subframe
+        {"beamSpring":7659923.500000,"beamDamp":319.110291},
+        ["fx3l", "fx1l"],
+        ["fx4l", "fx2l"],
+        ["fx3r", "fx1r"],
+        ["fx4r", "fx2r"],
+        ["fx1l", "fx2l"],
+        ["fx3l", "fx4l"],
+        ["fx1r", "fx2r"],
+        ["fx3r", "fx4r"],
+        ["fx1l", "fx1r"],
+        ["fx3l", "fx3r"],
+        ["fx2l", "fx2r"],
+        ["fx4l", "fx4r"],
+        ["fx1l", "fx4l"],
+        ["fx3l", "fx2l"],
+        ["fx1r", "fx4r"],
+        ["fx3r", "fx2r"],
+        ["fx1l", "fx3r"],
+        ["fx3l", "fx1r"],
+        ["fx4l", "fx2r"],
+        ["fx2l", "fx4r"],
+        ["fx1l", "fx2r"],
+        ["fx2l", "fx1r"],
+        ["fx3l", "fx4r"],
+        ["fx4l", "fx3r"],
+
+        //subframe to body
+        //{"highlight":{"radius":0.0075, "col":"#FFFF005f"}}
+        //Primary Beams
+        {"beamSpring":6383482.500000,"beamDamp":319.110291},
+        ["fx2l", "a22"],
+        ["fx2r", "a21"],
+        ["fx2l", "a21"],
+        ["fx2r", "a22"],
+
+        ["fx4l", "a54"],
+        ["fx4r", "a53"],
+        ["fx4l", "a53"],
+        ["fx4r", "a54"],
+
+        ["fx4l", "a22"],
+        ["fx2l", "a54"],
+
+        ["fx4r", "a21"],
+        ["fx2r", "a53"],
+
+        ["fx2l", "a18"],
+        ["fx2r", "a17"],
+        ["fx2l", "a17"],
+        ["fx2r", "a18"],
+
+        //Secondary Beams
+        {"beamSpring":5107041.500000,"beamDamp":319.110291},
+        //{"highlight":{"radius":0.0075, "col":"#FF00FF5f"}}
+        ["fx1l", "a26"],
+        ["fx1r", "a25"],
+        ["fx1l", "a25"],
+        ["fx1r", "a26"],
+
+        ["fx3l", "a58"],
+        ["fx3r", "a57"],
+        ["fx3l", "a57"],
+        ["fx3r", "a58"],
+
+        ["fx3l", "a26"],
+        ["fx1l", "a58"],
+
+        ["fx3r", "a25"],
+        ["fx1r", "a57"],
+        //{"highlight":{"radius":0, "col":"#00000000"}}
+
+        //shock tower
+        //{"highlight":{"radius":0.0075, "col":"#FF00005f"}}
+        {"beamSpring":8936365.000000,"beamDamp":319.110291},
+        ["fs1l", "fx1l"],
+        ["fs1l", "fx2l"],
+        ["fs1r", "fx1r"],
+        ["fs1r", "fx2r"],
+
+        ["fs1l", "a54"],
+        ["fs1l", "a58"],
+        ["fs1r", "a53"],
+        ["fs1r", "a57"],
+
+        {"beamSpring":8936365.000000,"beamDamp":319.110291},
+        ["fs1r", "fs1l"],
+
+        //{"highlight":{"radius":0, "col":"#00000000"}}
+
+        //front wheel intrusion limiter
+        //limiters prevent suspension inverting in crashes
+        {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.5, "beamShortBound":0.2},
+        {"beamSpring":0,"beamDamp":0,"beamDeform":210612.796875,"beamStrength":1148797.125000},
+        {"beamLimitSpring":3192379.500000,"beamLimitDamp":319.110291},
+        {"optional":true},
+        {"breakGroupType":1},
+        {"breakGroup":"wheel_FR"},
+        //["fw1rr","a17"],
+        //["fw1rr","a16"],
+        //["fw1rr","a48"],
+        //["fw1r","a17"],
+        //["fw1r","a16"],
+        {"breakGroup":"wheel_FL"},
+        //["fw1ll","a18"],
+        //["fw1ll","a19"],
+        //["fw1ll","a51"],
+        //["fw1l","a18"],
+        //["fw1l","a19"],
+        {"breakGroup":""},
+        {"breakGroupType":0},
+        {"optional":false},
+
+        //wheel intrusion limiter
+        {"beamPrecompression":1, "beamType":"|SUPPORT", "beamLongBound":1},
+        {"beamSpring":1277717.625000,"beamDamp":319.110291,"beamDeform":210612.796875,"beamStrength":1148797.125000},
+        {"beamPrecompression":0.6},
+        ["fw1ll","fx1r"],
+        ["fw1ll","fx2r"],
+        ["fw1ll","fx3r"],
+        ["fw1ll","fx4r"],
+        ["fw1rr","fx1l"],
+        ["fw1rr","fx2l"],
+        ["fw1rr","fx3l"],
+        ["fw1rr","fx4l"],
+        {"beamPrecompression":1},
+
+        //wishbone inversion limiter
+        {"beamPrecompression":1, "beamType":"|SUPPORT", "beamLongBound":3},
+        {"beamSpring":1277717.625000,"beamDamp":319.110291,"beamDeform":210612.796875,"beamStrength":1148797.125000},
+        {"beamPrecompression":0.75},
+        ["fx2l","fh2l"],
+        ["fx1l","fh2l"],
+        ["fx2r","fh2r"],
+        ["fx1r","fh2r"],
+        ["fx4r","fh1r"],
+        ["fx3r","fh1r"],
+        ["fx4l","fh1l"],
+        ["fx3l","fh1l"],
+        {"beamSpring":false,"beamDamp":false,"beamDeform":false,"beamStrength":false},
+        {"beamLimitSpring":false,"beamLimitDamp":false},
+        {"beamPrecompression":1},
+        //{"highlight":{"radius":0.0, "col":"#00000000"}}
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0}
+    ],
+    "triangles": [
+        ["id1:", "id2:", "id3:"],
+        {"groundModel":"metal"},
+        {"dragCoef":0},
+        ["fx2l", "fx1l", "fx1r"],
+        ["fx1r", "fx2r", "fx2l"],
+        ["fx1r", "fh1r", "fx2r"],
+        ["fx1l", "fx2l", "fh1l"],
+        ["fx4l", "fx2l", "fx2r"],
+        ["fx2r", "fx4r", "fx4l"],
+        ["fx3r", "fx1r", "fx1l"],
+        ["fx1l", "fx3l", "fx3r"],
+        ["fx4r", "fx2r", "fx1r"],
+        ["fx1r", "fx3r", "fx4r"],
+        ["fx3l", "fx1l", "fx2l"],
+        ["fx2l", "fx4l", "fx3l"],
+        ["fh2r", "fx3r", "fx4r"],
+        ["fx3l", "fh2l", "fx4l"],
+        {"triangleType":"NONCOLLIDABLE"},
+        ["fh2r", "fh3r", "fh1r"],
+        ["fh1r", "fh5r", "fh2r"],
+        ["fh3l", "fh2l", "fh1l"],
+        ["fh5l", "fh1l", "fh2l"],
+        {"triangleType":"NORMALTYPE"}
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //cancel out brake properties before future wheel parts are loaded
+        {"brakeTorque":0},
+        {"parkingTorque":0},
+        {"enableBrakeThermals":false},
+        {"brakeDiameter":false},
+        {"brakeMass":false},
+        {"brakeType":false},
+        {"rotorMaterial":false},
+        {"brakeVentingCoef":false}
+    ]
+},
+
+"Camso_wheeldata_F_doublewishbone_c49eb": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Lux Front Spindles",
+        "value":0
+    },
+    "slotType" : "Camso_wheeldata_F_doublewishbone",
+    "pressureWheels":[
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //some wheel properties
+        {"selfCollision":false},
+        {"collision":true},
+        {"hubcapBreakGroup":"hubcap_FR"},
+        {"hubcapGroup":"hubcap_FR"},
+        {"axleBeams":["axle_FR"]},
+        //wheels are created from here, but using properties from previously loaded wheel parts
+        ["FR", "wheel_FR", "tire_FR", "fw1rr", "fw1r", 9999, "fh5r", 1, {"torqueCoupling:":"fh3r","torqueArm:":"fh5r", "torqueArm2:":"fw1rr","steerAxisUp:":"fh2r","steerAxisDown:":"fh1r"}],
+        {"hubcapBreakGroup":"hubcap_FL"},
+        {"hubcapGroup":"hubcap_FL"},
+        {"axleBeams":["axle_FL"]},
+        ["FL", "wheel_FL", "tire_FL", "fw1ll", "fw1l", 9999, "fh5l", -1,{"torqueCoupling:":"fh3l","torqueArm:":"fh5l", "torqueArm2:":"fw1ll","steerAxisUp:":"fh2l","steerAxisDown:":"fh1l"}],
+        //cancel out a bunch of properties before future wheel parts are loaded
+        {"selfCollision":true},
+        {"axleBeams":[]},
+        {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+        {"hubcapBreakGroup":""},
+        {"hubcapGroup":""},
+        {"enableHubcaps":false}
+    ]
+},
+"Camso_brake_F_c49eb": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Lux Front Brakes",
+        "value":200
+    },
+    "slotType" : "Camso_brake_F",
+    "variables": [
+		["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$BrakePowerFront", "range", "", "Suspension", 1, 0.5, 1.5, "Front Brake Power", "", {"stepDis":1,"subCategory":"Brakes","minDis":50,"maxDis":150}]
+    ],
+    "slots": [
+        ["type", "default", "description"],
+        ["Camso_brakemeshes_front", "Camso_brakemeshes_front_c49eb", "Front Brake Meshes"]
+    ],
+    "pressureWheels":[
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        {"brakeTorque":"$=684.866028*$BrakePowerFront"}, //Rate of brake torque (Nm) increase per input (input is 0 to 1). If there is no knee point, it also indicates the maximum brake torque.
+        {"brakeInputSplit":1}, //Creates a knee point in brake torque rate (value of 0.5 means knee occurs at half brake input)
+        {"brakeSplitCoef":1}, //Reduces or increases the brake torque rate after the knee point. Value of 0.5 means brake torque will rise at half the rate defined by brakeTorque.
+        {"parkingTorque":0}, //Maximum parking brake torque
+        {"brakeSpring":56.733261}, //Stiffness of the brake system. Too high will make brake unstable, too low will cause wheel hop or rubber band effect.
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.330000}, //Diameter (m)
+        {"brakeMass":9.450547}, //Rotor mass (ignoring hub/bearing area) (kg)
+        {"brakeType":"drum"}, //Type ("drum", "disc", "vented-disc")
+        {"rotorMaterial":"steel"}, //Rotor material ("steel", "aluminum", "aluminium", "ceramic")
+        {"padMaterial":"basic"}, //Pad material ("basic","premium","sport","semi-race","full-race","godmode")
+        {"brakeVentingCoef":1.000000}, //Cooling multiplier (1 for typical unducted brakes)
+        //abs
+        {"absSlipRatioTarget":0.2}
+    ]
+},
+"Camso_swaybar_F_doublewishbone_c49eb": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Lux Front Sway Bar",
+        "value":250
+    },
+    "slotType" : "Camso_swaybar_F_doublewishbone",
+    
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        {"spring":5380.588379, "damp":0, "deform":11346.652344, "strength":567332.625000},
+        ["fh1r", "fx1r", "fx1l", "fh1l", {"name": "torsionBarFront"}]
+    ]
+},
+"Camso_swaybar_F_doublewishbone_race_c49eb": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Lux Race Front Sway Bar",
+        "value":250
+    },
+    "variables": [
+		["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+		["$swayBarStiffness_F", "range", "N/m", "Suspension", 5380.588379, 0, 150000, "Front Sway Bar Stiffness", "Stiffness of the anti-roll bar", {"stepDis":5,"subCategory":"Sway Bars"}]
+    ],
+    "slotType" : "Camso_swaybar_F_doublewishbone",
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        {"spring":"$swayBarStiffness_F", "damp":0, "deform":11346.652344, "strength":567332.625000},
+        ["fh1r", "fx1r", "fx1l", "fh1l", {"name": "torsionBarFront"}]
+    ]
+},
+"Camso_coilover_F_doublewishbone_c49eb": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Lux Front Coilovers",
+        "value":200
+    },
+    "slotType" : "Camso_coilover_F_doublewishbone",
+    
+    "beams": [
+        ["id1:", "id2:"],
+        //springs
+        //beamPrecompression here changes the ride height
+        {"beamPrecompression":1.0, "beamType":"|NORMAL"},
+        {"beamLongBound":0.0, "beamShortBound":0.0},
+		{"beamLimitSpring":32000.000000, "beamLimitDamp":0},
+        //beamSpring here controls spring rate (N/m)
+        {"beamSpring":32000.000000,"beamDamp":0},
+        {"beamDeform":57867.929688,"beamStrength":284800.968750},
+        ["fh1r","fs1r"{"precompressionRange":"$=0.117127+$RideHeightOffsetFront", "name":"spring_FR",
+            "soundFile":"event:>Vehicle>Suspension>car_modn_med_01>spring_compress_01","colorFactor":0.4,"attackFactor":15,"volumeFactor":1.1,"decayFactor":5,"pitchFactor":0.2,"maxStress":2800}],
+        ["fh1l","fs1l"{"precompressionRange":"$=0.117127+$RideHeightOffsetFront", "name":"spring_FL",
+            "soundFile":"event:>Vehicle>Suspension>car_modn_med_01>spring_compress_01","colorFactor":0.4,"attackFactor":15,"volumeFactor":1.1,"decayFactor":5,"pitchFactor":0.2,"maxStress":2800}],
+
+        //dampers
+        {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamLimitSpring":0,"beamLimitDamp":0},
+        //damper values set here (N/m/s)
+        {"beamSpring":0,"beamDamp":4320.000000},
+        ["fh1r","fs1r",{"name":"damper_FR", "beamDampRebound":7344.000000,"beamDampVelocitySplit":0.15,"beamDampFast":1512.000000,"beamDampReboundFast":2937.600098,"dampCutoffHz":500}],
+        ["fh1l","fs1l",{"name":"damper_FL", "beamDampRebound":7344.000000,"beamDampVelocitySplit":0.15,"beamDampFast":1512.000000,"beamDampReboundFast":2937.600098,"dampCutoffHz":500}],
+
+        //suspension travel limits
+        {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":0,"beamDamp":0},
+        {"beamLimitSpring":284800.968750,"beamLimitDamp":4538.661133},
+        //the Range values determine the start of the limit in meters from spawn length (not the precompressed length)
+        //basically this is where the bumpstops are first contacted
+        //the boundZone value determines the transition distance where spring and damp values approach limit values after reaching the Range
+        //the spring and damp move towards limit values after passing the Range distance. At Range + boundZone, the spring and damp arrive at limit values.
+        //basically this is how long/progressive the bumpstop is
+        //these special values supersede over shortBound and longBound, make sure to only use this value inline with beams
+        ["fh1r","fs1r",{"longBoundRange":0.071051,"shortBoundRange":0.071051,"boundZone":0.006459,"dampCutoffHz":250}],
+        ["fh1l","fs1l",{"longBoundRange":0.071051,"shortBoundRange":0.071051,"boundZone":0.006459,"dampCutoffHz":250}],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":false,"beamDamp":false},
+		{"beamLimitSpring":false,"beamLimitDamp":false}
+    ]
+},
+"Camso_coilover_F_doublewishbone_race_c49eb": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Lux Race Front Coilovers",
+        "value":200
+    },
+    "slotType" : "Camso_coilover_F_doublewishbone",
+    "variables": [
+		["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+		["$springRate_F", "range", "N/m", "Suspension", 32000.000000, 1000, 300000, "Front Spring Rate", "Front suspension spring rate", {"stepDis":10,"subCategory":"Springs"}],
+		["$dampRate_bump_F", "range", "N/m/s", "Suspension", 4320.000000, 500, 60000, "Front Damper Bump Rate", "Front suspension bump rate", {"stepDis":10,"subCategory":"Dampers"}],
+		["$dampRate_bump_Fast_F", "range", "N/m/s", "Suspension", 1512.000000, 500, 60000, "Front Damper Fast Bump Rate", "Front suspension fast bump rate", {"stepDis":10,"subCategory":"Dampers"}],
+		["$dampRate_rebound_F", "range", "N/m/s", "Suspension", 7344.000000, 500, 60000, "Front Damper Rebound Rate", "Front suspension rebound rate", {"stepDis":10,"subCategory":"Dampers"}]
+		["$dampRate_rebound_Fast_F", "range", "N/m/s", "Suspension", 2937.600098, 500, 60000, "Front Damper Fast Rebound Rate", "Front suspension fast rebound rate", {"stepDis":10,"subCategory":"Dampers"}]
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        //springs
+        //beamPrecompression here changes the ride height
+        {"beamPrecompression":1.0, "beamType":"|NORMAL"},
+        //beamSpring here controls spring rate (N/m)
+        {"beamSpring":"$springRate_F","beamDamp":0},
+        {"beamDeform":57867.929688,"beamStrength":284800.968750},
+        ["fh1r","fs1r"{"precompressionRange":"$=0.117127+$RideHeightOffsetFront", "name":"spring_FR",
+            "soundFile":"event:>Vehicle>Suspension>car_modn_med_01>spring_compress_01","colorFactor":0.4,"attackFactor":15,"volumeFactor":1.1,"decayFactor":5,"pitchFactor":0.2,"maxStress":2800}],
+        ["fh1l","fs1l"{"precompressionRange":"$=0.117127+$RideHeightOffsetFront", "name":"spring_FL",
+            "soundFile":"event:>Vehicle>Suspension>car_modn_med_01>spring_compress_01","colorFactor":0.4,"attackFactor":15,"volumeFactor":1.1,"decayFactor":5,"pitchFactor":0.2,"maxStress":2800}],
+
+        //dampers
+        {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamLimitSpring":0,"beamLimitDamp":0},
+        //damper values set here (N/m/s)
+        {"beamSpring":0,"beamDamp":"$dampRate_bump_F"},
+        ["fh1l","fs1l", {"name":"damper_FL", "beamDampRebound":"$dampRate_rebound_F","beamDampVelocitySplit":0.15,"beamDampFast":"$dampRate_bump_Fast_F","beamDampReboundFast":"$dampRate_rebound_Fast_F","dampCutoffHz":500}],
+        ["fh1r","fs1r", {"name":"damper_FR", "beamDampRebound":"$dampRate_rebound_F","beamDampVelocitySplit":0.15,"beamDampFast":"$dampRate_bump_Fast_F","beamDampReboundFast":"$dampRate_rebound_Fast_F","dampCutoffHz":500}],
+
+        //suspension travel limits
+        {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":0,"beamDamp":0},
+        {"beamLimitSpring":284800.968750,"beamLimitDamp":4538.661133},
+        //the Range values determine the start of the limit in meters from spawn length (not the precompressed length)
+        //basically this is where the bumpstops are first contacted
+        //the boundZone value determines the transition distance where spring and damp values approach limit values after reaching the Range
+        //the spring and damp move towards limit values after passing the Range distance. At Range + boundZone, the spring and damp arrive at limit values.
+        //basically this is how long/progressive the bumpstop is
+        //these special values supersede over shortBound and longBound, make sure to only use this value inline with beams
+        ["fh1r","fs1r",{"longBoundRange":0.071051,"shortBoundRange":0.071051,"boundZone":0.006459,"dampCutoffHz":250}],
+        ["fh1l","fs1l",{"longBoundRange":0.071051,"shortBoundRange":0.071051,"boundZone":0.006459,"dampCutoffHz":250}],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":false,"beamDamp":false},
+		{"beamLimitSpring":false,"beamLimitDamp":false}
+    ]
+},
+"Camso_steering_doublewishbone_c49eb": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Lux Recirculating Ball Steering",
+        "value":110
+    },
+    "slotType" : "Camso_steering_doublewishbone",
+    "slots": [
+        ["type", "default", "description"],
+        ["Camso_power_steering", "", "Power Steering"]
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$toe_F", "range", "", "Suspension", 1, 0.995, 1.005, "Front Toe Adjust", "Adjusts the wheel toe-in angle",{"subCategory":"Alignment"}],
+        ["$ffbTune", "range", "", "Force Feedback", 1, 0, 2, "Strength Multiplier", "Fine tune the force feedback strength for this vehicle", {"minDis":0,"maxDis":200}],
+   		["$maxSteeringMult", "range", "", "Suspension", 1, 0.5, 1.5, "Maximum steering angle multiplier", "Adjusts the max steering angle", {"subCategory":"Alignment","minDis":50,"maxDis":150,"stepDis":0.01}]
+        ["$steer_center_F", "range", "", "Suspension", 0, -0.002, 0.002, "Steering L/R Trim", "Fine tunes the centerpoint of the steering", {"subCategory":"Alignment"}]
+        ["$steeringWheelLock", "range", "Deg", "Suspension", 467.778076, 225, 900, "Steering Wheel Lock", "Adjusts the steering ratio",{"subCategory":"Alignment","minDis":225,"maxDis":900,"stepDis":5}],
+    ],
+    //steering rack rail
+    //rails form a line between 2 nodes that slidenodes will slide on. Used for any kind of telescoping motion such as steering racks, hydraulic rams, strut shafts.
+    "rails": {
+        "steeringrack":{"links:":["st2r", "st2l"], "broken:":[], "looped":false, "capped":true,}
+    },
+    "slidenodes": [
+        ["id:", "railName", "attached", "fixToRail", "tolerance", "spring", "strength", "capStrength"],
+        //the steering rack slides on these nodes
+        ["st1r", "steeringrack", true, true, 0.0, 12765689.000000, "FLT_MAX", "FLT_MAX"],
+        ["st1l", "steeringrack", true, true, 0.0, 12765689.000000, "FLT_MAX", "FLT_MAX"]
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"selfCollision":false},
+        {"collision":false},
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.5},
+        {"nodeWeight":5.743986},
+        //steering rack ends
+        ["st2r", -0.199825, 0.154410, -0.088559],
+        ["st2l",  0.199825, 0.154410, -0.088559],
+        //body mounting points for steering rack
+        {"nodeWeight":10.211530},
+        ["st1r", -0.090830, 0.154410, -0.088559],
+        ["st1l",  0.090830, 0.154410, -0.088559],
+        {"group":""}
+    ],
+    "beams": [
+        ["id1:","id2:"],
+        {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":4468820.500000,"beamDamp":127.644119},
+        {"beamDeform":50419.429688,"beamStrength":225291.875000},
+        //steering rack mounting to body
+        ["st1l", "st1r"],
+        ["fx1l", "st1l"],
+        ["fx2l", "st1l"],
+        ["fx1r", "st1r"],
+        ["fx2r", "st1r"],
+        ["st1l", "fx2r"],
+        ["st1r", "fx2l"],
+        ["fx1l", "st1r"],
+        ["fx1r", "st1l"],
+        ["fx4l", "st1l"],
+        ["fx4r", "st1r"],
+        ["fx4r", "st1l"],
+        ["fx4l", "st1r"],
+
+        //Vertical Rack Supports
+        ["st1r", "a53"],
+        ["st1r", "a57"],
+        ["st1l", "a54"],
+        ["st1l", "a58"],
+
+        //center link
+        {"beamSpring":19147894.000000,"beamDamp":319.110291},
+		["st2r","st2l"],
+
+        //tie rod ends
+        {"beamSpring":19147894.000000,"beamDamp":319.110291},
+        {"beamDeform":75948.250000,"beamStrength":352936.000000},
+        //preCompression for slight toe in tweak
+        ["fh3r","st2r",{"beamPrecompression":"$=(0.000000 * 1.099940)/110+(0.94*(1.063228))*$toe_F-$steer_center_F"}],
+        ["fh3l","st2l",{"beamPrecompression":"$=(0.000000 * 1.099940)/110+(0.94*(1.063228))*$toe_F+$steer_center_F"}],
+		
+
+        //steering limit
+        //extreme limits for steering, to prevent inversion when hitting bumps or crashing at full lock
+        //if increasing steering lock, change Precompression values to avoid binding
+        {"beamPrecompression":1, "beamType":"|SUPPORT", "beamLongBound":4},
+        {"beamSpring":6383482.500000,"beamDamp":319.110291,"beamDeform":153172.953125,"beamStrength":204230.593750},
+        {"beamPrecompression":0.73},
+        ["fh3r","fx1r"],
+        ["fh3l","fx1l"],
+        {"beamPrecompression":0.85},
+        ["fh5r","fx2r"],
+        ["fh5l","fx2l"],
+        {"beamPrecompression":1},
+
+        //steering damper
+        //doesnt interfere at normal steering speeds but dampens violent shakes
+        {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamDeform":12764.412109,"beamStrength":12764.412109},
+        {"beamLimitSpring":0,"beamLimitDamp":0},
+        {"beamSpring":0,"beamDamp":0},
+        ["fh3r","fx1r",{"beamDampVelocitySplit":0.05,"beamDampFast":1276.441162,"beamDampReboundFast":1276.441162,"beamDamp":0,"beamDampRebound":0,"dampCutoffHz":1000}],
+        ["fh3l","fx1l",{"beamDampVelocitySplit":0.05,"beamDampFast":1276.441162,"beamDampReboundFast":1276.441162,"beamDamp":0,"beamDampRebound":0,"dampCutoffHz":1000}],
+        ["fh5r","fx2r",{"beamDampVelocitySplit":0.05,"beamDampFast":1276.441162,"beamDampReboundFast":1276.441162,"beamDamp":0,"beamDampRebound":0,"dampCutoffHz":1000}],
+        ["fh5l","fx2l",{"beamDampVelocitySplit":0.05,"beamDampFast":1276.441162,"beamDampReboundFast":1276.441162,"beamDamp":0,"beamDampRebound":0,"dampCutoffHz":1000}],
+        {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":false,"beamDamp":false},
+		{"beamLimitSpring":false,"beamLimitDamp":false}
+    ],
+    "hydros": [
+        ["id1:","id2:"],
+        {"beamPrecompression":1.0, "beamType":"| BOUNDED", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":10851027.000000,"beamDamp":0,"beamDeform":"FLT_MAX","beamStrength":352936.000000},
+        //hydros are beams which can change their target length over time, in this case connected to the steering input
+        //factor controls the amount of travel as a ratio of the steering rack length
+        //steeringWheelLock controls the steering wheel visual rotation and speed of steering assists
+        //["st2l","st1r",{"factor":"$=0.000000/((0.000000+$frontSuspensionOffsetX*2)/0.000000)*$maxSteeringMult", "steeringWheelLock":450, "inRate":1.25,"outRate":1.25}],
+        //["st2r","st1l",{"factor":"$=-0.000000/((0.000000+$frontSuspensionOffsetX*2)/0.000000)*$maxSteeringMult","steeringWheelLock":450, "inRate":1.25,"outRate":1.25}],
+        ["st2l","st1r",{"factor":"$=0.19*$maxSteeringMult", "steeringWheelLock":"$steeringWheelLock", "inRate":1.25,"outRate":1.25}],
+        ["st2r","st1l",{"factor":"$=-0.19*$maxSteeringMult","steeringWheelLock":"$steeringWheelLock", "inRate":1.25,"outRate":1.25}],
+        {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1}
+    ],
+    "input": {
+        //modifier for force feedback to account for differences in vehicles
+        "FFBcoef":"$=13*1.125000*$ffbTune"
+    }
+}
+}

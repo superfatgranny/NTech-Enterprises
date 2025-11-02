@@ -1,0 +1,43 @@
+{
+	"Camso_TransferCase_AWD_34a91": {
+		"information":{
+			"name":"Trim 1 Clone AWD Transfer Case",
+			"value":1000
+		},
+		"slots": [
+			["type", "default", "description"],
+			["Camso_differential_center", "Camso_differential_center_34a91", "Center Differential", {"coreSlot":true}]
+		],
+		"slotType" : "Camso_TransferCase"
+	},
+
+	"Camso_differential_center_34a91": {
+		"information":{
+			"name":"Trim 1 Clone Viscous Center Differential",
+			"value":300
+		},
+		"slotType" : "Camso_differential_center",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_driveshaft_front", "Camso_driveshaft_front", "Front Driveshaft"],
+			["Camso_driveshaft_rear", "Camso_driveshaft_rear", "Rear Driveshaft"]
+		],
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$torquesplit", "range", "", "Gearing", 0.57, 0, 1, "Torque Split", "Power to Rear",{"subCategory": "Transfer Case", "stepDis": 0.01, "minDis":0,"maxDis":100}]
+		],
+		"controller": [
+			["fileName"],
+			
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+		//https://wiki.beamng.com/Differential
+		["differential", "transferCase", "gearbox", 1, {"diffType": "viscous", "uiName": "Center Differential", "viscousCoef": 6.99, "viscousTorque": 69.91, "defaultVirtualInertia": 0.25, "friction": 0}],
+
+		],
+		"transferCase":{
+			"diffTorqueSplit": "$=$torquesplit or 0.57"
+		}
+	}
+}

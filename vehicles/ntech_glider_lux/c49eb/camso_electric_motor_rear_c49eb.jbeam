@@ -1,0 +1,60 @@
+{
+	"Camso_ElectricMotor_R_c49eb": {
+		"information":{
+			"authors":"Camshaft Software",
+			"name":"Lux Rear Electric Motor",
+			"value": 4000
+		}
+		"slotType" : "Camso_ElectricMotor_R",
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["electricMotor", "rearMotor", "dummy", 0],
+			["shaft", "rearDriveShaft", "rearMotor", 1, {"gearRatio":0.75}]
+		],
+		"rearMotor": {
+			"torque":[
+				["rpm", "torque"],
+				[0, "$=132.05*$torquesplitE"],
+				[260, "$=132.05*$torquesplitE"],
+				[455, "$=132.05*$torquesplitE"],
+				[975, "$=132.05*$torquesplitE"],
+				[1495, "$=132.05*$torquesplitE"],
+				[2015, "$=132.05*$torquesplitE"],
+				[2470, "$=109.60*$torquesplitE"],
+				[2990, "$=91.12*$torquesplitE"],
+				[3510, "$=73.95*$torquesplitE"],
+				[3965, "$=58.10*$torquesplitE"],
+				[4485, "$=46.22*$torquesplitE"],
+				[5005, "$=38.30*$torquesplitE"],
+				[5525, "$=33.01*$torquesplitE"],
+				[5980, "$=25.09*$torquesplitE"],
+				[6500, "$=15.85*$torquesplitE"],
+
+			],
+			"maxRPM":6500,
+			"inertia":0.40,
+			"friction":4,
+			"dynamicFriction":0.0005,
+			"electricalEfficiency":0.55,
+			"electricsThrottleFactorName": "throttleFactorRear",
+			"breakTriggerBeam":"engine", //Engine breaks if beam with this name is broken
+			"soundConfig": "soundConfigRear",
+			"energyStorage": "mainBattery", //Name of the fuel tank
+			"torqueReactionNodes:":["engine1", "engine2", "engine3"],
+			"maximumWantedRegenTorque": "$=105.64183386395*($torquesplitE or 1)*($regenTorqueModRear or 1)"
+		},
+	    "vehicleController": {
+			"shiftLogicName":"electricMotor",
+			"motorNames": ["rearMotor", "frontMotor"],
+			"topSpeedLimitReverse": 15,
+			//"defaultRegen": 0.5,
+			//"brakeRegenCoef": 1,
+			"onePedalRegenCoef": 0.85
+		},
+
+		"soundConfigRear": {
+			"sampleName": "ElectricMotor_02",
+			"mainGain": -10
+		}
+	}
+}

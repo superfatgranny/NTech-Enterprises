@@ -1,0 +1,17 @@
+{
+	"Camso_ntech_widewing_core":
+	{
+			"information":{
+	        "authors":"Camshaft Software",
+	        "name":"Automation Exported Car",
+	        "value":1
+			},
+			"slotType" : "main",
+	    "slots":[
+			   ["type", "default", "description"],
+			   ["Camso_Mod", "", "Additional Modification"],
+			   ["Camso_Trim", "Camso_Trim_48289", "Body", {"coreSlot":true}],
+			   ["paint_design", "", "Paint Design"]
+			]
+	}
+}

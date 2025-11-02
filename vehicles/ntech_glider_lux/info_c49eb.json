@@ -1,0 +1,24 @@
+{
+	"Configuration": "Lux",
+	"Description": "A classic luxury car from the early 50's. Weak engine and lack of safety features but still a fun drive.",
+	"Config Type": "Factory",
+	"Weight": 1475,
+	"Power": 48,
+	"Torque": 139,
+	"PowerPeakRPM": 2900,
+	"TorquePeakRPM": 1900,
+	"Weight/Power": 30.4092,
+	"0-100 km/h": 999.0,
+	"Top Speed": 27.0,
+	"Years": {
+		"min": 1946,
+		"max": 1946
+	},
+	"Drivetrain": "RWD",
+	"Transmission": "Manual",
+	"Propulsion": "ICE",
+	"Fuel Type": "Gasoline",
+	"Induction Type": "NA",
+	"Value": 16898,
+	"defaultPaintName1": "Default1"
+}

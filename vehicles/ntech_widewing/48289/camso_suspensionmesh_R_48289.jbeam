@@ -1,0 +1,31 @@
+{
+	"Camso_suspensionmesh_R_48289":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Trim 1 Rear Suspension Meshes"
+	    },
+	    "slotType" : "Camso_suspensionmesh_R",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["48289_suspension_r11", ["susp_R"], [], {"pos":{"x":1.03413e-07, "y":0.42993, "z":0.887232}, "rot":{"x":0.00489429, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+	        ["48289_suspensionm_r15", ["susp_R"], [], {"pos":{"x":-1.03413e-07, "y":0.42993, "z":0.887232}, "rot":{"x":0.00489429, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		]
+	},
+
+	"Camso_brakemeshes_rear_48289":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Trim 1 Rear Brake Meshes"
+	    },
+	    "slotType" : "Camso_brakemeshes_rear",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["48289_brakecaliper_r13", ["hub_R"], [], {"pos":{"x":0.779589, "y":1.42278, "z":0.944066}, "rot":{"x":44.9951, "y":179.5, "z":0.000118369}, "scale":{"x":1.26491, "y":1.72, "z":1.72}}],
+	        ["48289_brakecaliper_r214", ["hub_R"], [], {"pos":{"x":-0.779589, "y":1.42278, "z":0.944066}, "rot":{"x":44.9951, "y":179.5, "z":0.000118369}, "scale":{"x":1.26491, "y":1.72, "z":1.72}}],
+	        ["48289_brakedisc_r12", ["wheel_RL"], [], {"pos":{"x":0.785442, "y":1.47993, "z":0.886977}, "rot":{"x":0.00489393, "y":-0.5, "z":180}, "scale":{"x":1.26491, "y":1.6, "z":1.6}}],
+	        ["48289_brakedisc_r12", ["wheel_RR"], [], {"pos":{"x":-0.785442, "y":1.47993, "z":0.886977}, "rot":{"x":-0.00489393, "y":0.5, "z":360}, "scale":{"x":1.26491, "y":1.6, "z":1.6}}],
+		]
+	}
+}

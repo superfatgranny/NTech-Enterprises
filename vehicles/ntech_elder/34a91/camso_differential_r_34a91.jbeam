@@ -1,0 +1,24 @@
+{
+	"Camso_differential_rear_34a91": {
+		"information":{
+			"name":"Trim 1 Clone Viscous Rear Differential",
+			"value":500
+		},
+		"slotType" : "Camso_differential_rear",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_halfshafts_rear","Camso_halfshafts_rear","Rear Halfshafts"],
+			["Camso_finaldrive_rear","Camso_finaldrive_rear_7.16","Rear Final Drive", {"coreSlot":true}]
+		],
+		"controller": [
+			["fileName"],
+			
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+		//https://wiki.beamng.com/Differential
+		["differential", "rearDiff", "rearDriveShaft", 1, {"diffType": "viscous", "uiName": "Rear Differential", "viscousCoef": 6.99, "viscousTorque": 69.91, "defaultVirtualInertia": 0.25, "friction": 7.9902970309787}],
+
+		]
+	}
+}

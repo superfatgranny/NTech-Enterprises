@@ -1,0 +1,25 @@
+{
+	"Configuration": "Widewing",
+	"Description": "The biggest engine in town, probably enough power to tow your house across the street!",
+	"Config Type": "Factory",
+	"Weight": 2512,
+	"Power": 2013,
+	"Torque": 4323,
+	"PowerPeakRPM": 3400,
+	"TorquePeakRPM": 3300,
+	"Weight/Power": 1.24774,
+	"0-100 km/h": 5.6,
+	"Top Speed": 89.3,
+	"Years": {
+		"min": 2012,
+		"max": 2012
+	},
+	"Drivetrain": "AWD",
+	"Transmission": "Automatic",
+	"Propulsion": "ICE",
+	"Fuel Type": "Gasoline",
+	"Induction Type": "Turbo",
+	"Value": 347228,
+	"defaultPaintName1": "Default1",
+	"defaultPaintName2": "Default2"
+}

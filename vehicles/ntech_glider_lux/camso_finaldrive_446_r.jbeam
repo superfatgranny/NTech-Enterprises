@@ -1,0 +1,12 @@
+{
+	"Camso_finaldrive_rear_4.47": {
+		"information":{
+			"name":"4.47 Rear Final Drive",
+			"value":150
+		},
+		"slotType" : "Camso_finaldrive_rear",
+		"rearDiff":{
+			"gearRatio": 4.47
+		}
+	}
+}

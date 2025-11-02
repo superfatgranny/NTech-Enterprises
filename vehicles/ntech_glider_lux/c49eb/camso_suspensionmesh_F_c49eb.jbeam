@@ -1,0 +1,29 @@
+{
+	"Camso_suspensionmesh_F_c49eb":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Lux Front Suspension Meshes"
+	    },
+	    "slotType" : "Camso_suspensionmesh_F",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["c49eb_suspension_f4", ["susp_F"], [], {"pos":{"x":0, "y":-0.780012, "z":0.800425}, "rot":{"x":0.000781032, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+	        ["c49eb_suspensionm_f8", ["susp_F"], [], {"pos":{"x":-0, "y":-0.780012, "z":0.800425}, "rot":{"x":0.000781032, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		]
+	},
+
+	"Camso_brakemeshes_front_c49eb":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Lux Front Brake Meshes"
+	    },
+	    "slotType" : "Camso_brakemeshes_front",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["c49eb_brakedisc_f5", ["wheel_FL"], [], {"pos":{"x":0.785442, "y":-1.66001, "z":0.800067}, "rot":{"x":0.000780823, "y":-0.5, "z":180}, "scale":{"x":1.73205, "y":3, "z":3}}],
+	        ["c49eb_brakedisc_f5", ["wheel_FR"], [], {"pos":{"x":-0.785442, "y":-1.66001, "z":0.800067}, "rot":{"x":-0.000780823, "y":0.5, "z":360}, "scale":{"x":1.73205, "y":3, "z":3}}],
+		]
+	}
+}

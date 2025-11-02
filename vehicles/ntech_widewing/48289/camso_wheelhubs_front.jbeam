@@ -1,0 +1,100 @@
+{
+"camso_hubs_front_48289":
+{
+    "information":{
+        "authors":"Camshaft Software",
+        "name":"Automation Exported Wheels",
+        "value":100
+    },
+    "slotType" : "camso_hubs_front_48289",
+    "slots":[
+		   ["type", "default", "description"],
+		   ["Camso_wheels_front","Camso_wheels_front_48289","Front Wheels", {"nodeOffset":{"x":"$=($frontSuspensionOffsetX or 0) + ($trackOffset_F or 0)", "y":"$=($frontSuspensionOffsetY or 0)", "z":"$=($frontSuspensionOffsetZ or 0)"}}],
+		   ["Camso_hub_bearings_front","Camso_hub_bearings_front","Front Hub Bearings", {"coreSlot":true}]
+    ]
+},
+"camso_hubs_5_front_48289":
+{
+    "information":{
+        "authors":"Camshaft Software",
+        "name":"5-Lug Wheel Hubs",
+        "value":100
+    },
+    "slotType" : "camso_hubs_front_48289",
+    "slots":[
+		   ["type", "default", "description"],
+		   ["wheel_F_5","steelwheel_01a_15x7_F","Front Wheels", {"nodeOffset":{"x":"$=0.15 + -9.13144 + ($frontSuspensionOffsetX or 0) + ($trackOffset_F or 0)", "y":"$=-1.86007 + ($frontSuspensionOffsetY or 0)", "z":"$=0.886923 + ($frontSuspensionOffsetZ or 0)"}}],
+		   ["Camso_hub_bearings_front","Camso_hub_bearings_front","Front Hub Bearings", {"coreSlot":true}]
+    ]
+},
+"camso_hubs_4_front_48289":
+{
+    "information":{
+        "authors":"Camshaft Software",
+        "name":"4-Lug Wheel Hubs",
+        "value":50
+    },
+    "slotType" : "camso_hubs_front_48289",
+    "slots":[
+		   ["type", "default", "description"],
+		   ["wheel_F_4","steelwheel_01a_14x5.5_F","Front Wheels", {"nodeOffset":{"x":"$=0.15 + -9.13144 + ($frontSuspensionOffsetX or 0) + ($trackOffset_F or 0)", "y":"$=-1.86007 + ($frontSuspensionOffsetY or 0)", "z":"$=0.886923 + ($frontSuspensionOffsetZ or 0)"}}],
+		   ["Camso_hub_bearings_front","Camso_hub_bearings_front","Front Hub Bearings", {"coreSlot":true}]
+    ]
+},
+"camso_hubs_3_front_48289":
+{
+    "information":{
+        "authors":"Camshaft Software",
+        "name":"3-Lug Wheel Hubs",
+        "value":30
+    },
+    "slotType" : "camso_hubs_front_48289",
+    "slots":[
+		   ["type", "default", "description"],
+		   ["wheel_F_3","pigeon_wheel_02a_F","Front Wheels", {"nodeOffset":{"x":"$=0.15 + -9.13144 + ($frontSuspensionOffsetX or 0) + ($trackOffset_F or 0)", "y":"$=-1.86007 + ($frontSuspensionOffsetY or 0)", "z":"$=0.886923 + ($frontSuspensionOffsetZ or 0)"}}],
+		   ["Camso_hub_bearings_front","Camso_hub_bearings_front","Front Hub Bearings", {"coreSlot":true}]
+    ]
+},
+"camso_hubs_6_front_48289":
+{
+    "information":{
+        "authors":"Camshaft Software",
+        "name":"6-Lug Wheel Hubs",
+        "value":150
+    },
+    "slotType" : "camso_hubs_front_48289",
+    "slots":[
+		   ["type", "default", "description"],
+		   ["wheel_F_6","steelwheel_02a_16x7_F","Front Wheels", {"nodeOffset":{"x":"$=0.15 + -9.13144 + ($frontSuspensionOffsetX or 0) + ($trackOffset_F or 0)", "y":"$=-1.86007 + ($frontSuspensionOffsetY or 0)", "z":"$=0.886923 + ($frontSuspensionOffsetZ or 0)"}}],
+		   ["Camso_hub_bearings_front","Camso_hub_bearings_front","Front Hub Bearings", {"coreSlot":true}]
+    ]
+},
+"camso_hubs_8_front_48289":
+{
+    "information":{
+        "authors":"Camshaft Software",
+        "name":"8-Lug Wheel Hubs",
+        "value":200
+    },
+    "slotType" : "camso_hubs_front_48289",
+    "slots":[
+		   ["type", "default", "description"],
+		   ["wheel_F_8","wheel_28a_16x7_8_F","Front Wheels", {"nodeOffset":{"x":"$=0.15 + -9.13144 + ($frontSuspensionOffsetX or 0) + ($trackOffset_F or 0)", "y":"$=-1.86007 + ($frontSuspensionOffsetY or 0)", "z":"$=0.886923 + ($frontSuspensionOffsetZ or 0)"}}],
+		   ["Camso_hub_bearings_front","Camso_hub_bearings_front","Front Hub Bearings", {"coreSlot":true}]
+    ]
+},
+"camso_hubs_center_front_48289":
+{
+    "information":{
+        "authors":"Camshaft Software",
+        "name":"Center Lug Wheel Hubs",
+        "value":300
+    },
+    "slotType" : "camso_hubs_front_48289",
+    "slots":[
+		   ["type", "default", "description"],
+		   ["wheel_F_centerlug","wheel_civetta_01a_16x9_F","Front Wheels", {"nodeOffset":{"x":"$=0.15 + -9.13144 + ($frontSuspensionOffsetX or 0) + ($trackOffset_F or 0)", "y":"$=-1.86007 + ($frontSuspensionOffsetY or 0)", "z":"$= 0.886923 + ($frontSuspensionOffsetZ or 0)"}}],
+		   ["Camso_hub_bearings_front","Camso_hub_bearings_front","Front Hub Bearings", {"coreSlot":true}]
+    ]
+}
+}

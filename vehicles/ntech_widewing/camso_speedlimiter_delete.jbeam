@@ -1,0 +1,12 @@
+{
+	"Camso_SpeedLimiter_off": {
+		"information":{
+			"name":"None",
+			"value":2500
+		},
+		"slotType": "Camso_SpeedLimiter"
+		"vehicleController": {
+			"topSpeedLimit":-1
+		}
+	}
+}

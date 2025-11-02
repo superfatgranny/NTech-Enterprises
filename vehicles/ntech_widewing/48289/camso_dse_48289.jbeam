@@ -1,0 +1,32 @@
+{
+	"Camso_DSE_48289": {
+		"information":{
+			"name":"Trim 1 Electronic Stability & Traction Control",
+			"value":250
+		}
+
+		"slotType" : "Camso_DSE",
+
+		"slots":[
+			["type", "default", "description"],
+			["Camso_DriveModes_48289", "Camso_DriveModes_48289", "Drive Modes"] 
+
+		],
+
+		"controller": [
+			["fileName"],
+			["postCrashBrake",{"brakeThreshold": 60}],
+			["drivingDynamics/CMU", {"name":"CMU", "debugSettings": {"enableDebugMode": false, "peerIP": "127.0.0.1"}}],
+			["drivingDynamics/sensors/sensorHub"],
+			["drivingDynamics/sensors/virtualSensors" {"name":"sensors"}],
+			["drivingDynamics/sensors/vehicleData" {"name":"vehicleData"}],
+
+			["adaptiveBrakeLights"],
+		],
+
+		"vehicleData": {
+			"skewStiffnessFront": 185143.4799771,
+			"skewStiffnessRear": 121527.36895073
+		}
+	}
+}

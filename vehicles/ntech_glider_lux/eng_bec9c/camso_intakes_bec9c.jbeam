@@ -1,0 +1,10 @@
+{
+	"Camso_Intake_bec9c": {
+		"information":{
+			"name":"Stock Intake",
+			"value":250
+		},
+		"slotType" : "Camso_Intake_bec9c",
+	},
+
+}

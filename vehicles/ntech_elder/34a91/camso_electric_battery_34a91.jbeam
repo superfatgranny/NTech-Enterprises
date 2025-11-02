@@ -1,0 +1,22 @@
+{
+	"Camso_Battery_34a91": {
+		"information":{
+			"name":"Trim 1 Clone Battery",
+			"value": 10000
+		},
+		"slotType" : "Camso_FuelTank",
+		"energyStorage": [
+			["type", "name"],
+			["electricBattery", "mainBattery"],
+		],
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$charge", "range", "kWh", "Chassis", 80, 0, 80, "Battery Level", "Initial battery charge", {"stepDis":0.5}]
+		],
+		"mainBattery": {
+			"energyType":"electricEnergy",
+			"batteryCapacity": 80,
+			"startingCapacity": "$charge"
+		}
+	}
+}

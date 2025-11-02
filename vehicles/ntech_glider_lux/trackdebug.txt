@@ -1,0 +1,2 @@
+frontTrackScale: 1.55
+rearTrackScale: 1.55

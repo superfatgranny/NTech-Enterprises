@@ -1,0 +1,25 @@
+{
+	"Configuration": "Screecher",
+	"Description": "The NTech Elder is made for accessability even to senile people, they need to get to bingo somehow. This top of the line Screecher engine and state of the art bouncetech suspension will make sure you never fall asleep at the wheel again!",
+	"Config Type": "Factory",
+	"Weight": 1538,
+	"Power": 276,
+	"Torque": 209,
+	"PowerPeakRPM": 9500,
+	"TorquePeakRPM": 9300,
+	"Weight/Power": 5.5562,
+	"0-100 km/h": 8.2,
+	"Top Speed": 67.5,
+	"Years": {
+		"min": 2012,
+		"max": 2012
+	},
+	"Drivetrain": "AWD",
+	"Transmission": "Automatic",
+	"Propulsion": "ICE",
+	"Fuel Type": "Gasoline",
+	"Induction Type": "NA",
+	"Value": 300834,
+	"defaultPaintName1": "Default1",
+	"defaultPaintName2": "Default2"
+}

@@ -1,0 +1,84 @@
+{
+	"Camso_Transmission_c49eb": {
+		"information":{
+			"authors":"Camshaft Software",
+			"name":"Lux 4-Speed Manual Transmission",
+			"value": 1100
+		},
+		"slotType" : "Camso_Transmission",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_TransferCase", "Camso_TransferCase_RWD_c49eb", "Transfer Case"],
+			
+		],
+		
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+				["$whineMult", "range", "", "Gearing", 1, 0, 5, "Whine Volume", "Gearbox whine volume multiplier",{"subCategory": "Transmission", "stepDis": 1, "minDis": 0, "maxDis": 500}],
+
+			["$gear_R_c49eb", "range", ":1", "Gearing", 3.38, 0.1, 17, "Gear R", "Gear ratio", {"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_1_c49eb", "range", ":1", "Gearing", 3.22, 0.1, 17, "Gear 1", "Gear ratio", {"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_2_c49eb", "range", ":1", "Gearing", 1.97, 0.1, 17, "Gear 2", "Gear ratio", {"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_3_c49eb", "range", ":1", "Gearing", 1.16, 0.1, 17, "Gear 3", "Gear ratio", {"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_4_c49eb", "range", ":1", "Gearing", 0.76, 0.1, 17, "Gear 4", "Gear ratio", {"subCategory": "Transmission", "stepDis": 0.01}]
+		],
+
+		"controller": [
+			["fileName"],
+			
+		],
+		"gearbox": {
+			//https://wiki.beamng.com/ManualGearbox
+			//"gearDamageThreshold":3000, //Multiplier for tolerance to smashing gears (no clutch + mismatched rpm)
+			"gearRatios": ["$=-$gear_R_c49eb", 0, "$gear_1_c49eb", "$gear_2_c49eb", "$gear_3_c49eb", "$gear_4_c49eb"],
+			"friction": 8.828237196227, //Constant friction torque on input shaft
+			"gearboxNode:": ["engine0"], //node used to play gear damage sound
+
+			"gearWhineCoefsInput":  ["$=$whineMult * 0.60", 0, "$=$whineMult * 0.5104", "$=$whineMult * 0.5104", "$=$whineMult * 0.5104", "$=$whineMult * 0.5104"],
+			"gearWhineCoefsOutput": [0, 0, "$=$whineMult * 0.6", "$=$whineMult * 0.6", "$=$whineMult * 0.6", "$=$whineMult * 0.6"],
+			//"gearWhineInputEvent": "event:>Vehicle>Transmission>helical_01>twine_in",
+			//"gearWhineOutputEvent": "event:>Vehicle>Transmission>helical_01>twine_out",
+			"gearWhineInputEvent": "event:>Vehicle>Transmission>helical_01>twine_in",
+			"gearWhineOutputEvent": "event:>Vehicle>Transmission>helical_01>twine_out"
+		},
+
+		"clutch": {
+			//"thermalsEnabled": true
+			//"clutchMass": 10, //Thermal mass representing clutch disc and PP/Clutch surfaces
+			//"coolingCoef": 1, //Multiplier to tweak how fast it cools
+			//"warningTemp": 200, //Temp for UI warning
+			//"maxSafeClutchTemp": 300, //Temp after which torque limit decreases (but may recover if left to cool)
+			//"clutchOverheatRange": 100, //Additional temp before clutch is pretty wrecked and won't recover much
+			//"maxClutchTemp": 500 //Clutch will never recover at all if it hits this temp
+		},
+
+		/*
+		"engine": {
+			"transmissionType": "manual",
+			// -1, 0 (neutral), 1, etc
+			"gears": ["$=-$gear_R_c49eb", 0, "$gear_1_c49eb", "$gear_2_c49eb", "$gear_3_c49eb", "$gear_4_c49eb"],
+			"clutchDuration":0.15,
+			//"clutchTorque":180
+		},
+		*/
+
+		"vehicleController": {
+			//manual transmission useful values
+			"shiftDownRPMOffsetCoef":1.2,
+			"clutchLaunchStartRPM": 1100, //RPM where launching behavior starts
+			"clutchLaunchTargetRPM": 1600, //RPM it tries to maintain while launching
+			"transmissionShiftDelay": 0.2, //Time taken in between clutching actions
+			"revMatchThrottle": 0.65, //Controls shift rev matching assist. Reduce this value to as much as 0.25 for high powered engines
+			"clutchInRate": 9, //Controls shift assist clutching speed (value of 5 will be take 1/5 seconds to complete)
+			"clutchOutRate": 9, //Controls shift assist clutching speed (value of 5 will be take 1/5 seconds to complete)
+			"calculateOptimalLoadShiftPoints": true //The high shift points ones can be auto calculated
+		},
+
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["frictionClutch", "clutch", "mainEngine", 1],
+			["manualGearbox", "gearbox", "clutch", 1]
+
+		]
+	}
+}

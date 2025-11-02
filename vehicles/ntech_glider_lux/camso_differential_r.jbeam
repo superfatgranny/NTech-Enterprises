@@ -1,0 +1,68 @@
+{
+	"Camso_differential_rear_welded": {
+		"information":{
+			"name":"Welded Rear Differential",
+			"value":800
+		},
+		"slotType" : "Camso_differential_rear",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_halfshafts_rear","Camso_halfshafts_rear","Rear Halfshafts"],
+			["Camso_finaldrive_rear","Camso_finaldrive_rear_4.47","Rear Final Drive", {"coreSlot":true}]
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["differential", "rearDiff", "rearDriveShaft", 1, {"diffType":"locked", "lockTorque":10000, "diffTorqueSplit":0.5, "uiName":"Rear Differential", "defaultVirtualInertia":0.25, "friction": 10}]
+		]
+	},
+
+	"Camso_differential_rear_race": {
+		"information":{
+			"name":"Race Rear Differential",
+			"value":1500
+		},
+		"slotType" : "Camso_differential_rear",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_halfshafts_rear","Camso_halfshafts_rear","Rear Halfshafts"],
+			["Camso_finaldrive_rear","Camso_finaldrive_rear_4.47","Rear Final Drive", {"coreSlot":true}]
+		],
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$lsdpreload_R", "range", "N/m", "Differentials", 100, 0, 500, "Pre-load Torque", "Initial locking torque between left and right wheels", {"subCategory":"Rear"}]
+			["$lsdlockcoef_R", "range", "", "Differentials", 0.15, 0, 0.5, "Power Lock Rate", "Additional locking torque proportional to engine torque", {"minDis":0, "maxDis":100, "subCategory":"Rear"}],
+			["$lsdlockcoefrev_R", "range", "", "Differentials", 0.075, 0, 0.5, "Coast Lock Rate", "Additional locking torque proportional to engine braking", {"minDis":0, "maxDis":100, "subCategory":"Rear"}]
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["differential", "rearDiff", "rearDriveShaft", 1, {"diffType":"lsd", "lsdPreload":"$lsdpreload_R", "lsdLockCoef":"$lsdlockcoef_R", "lsdRevLockCoef":"$lsdlockcoefrev_R", "uiName":"Rear Differential", "defaultVirtualInertia":0.25, "friction": 5}]
+		]
+	},
+
+	"Camso_halfshafts_rear": {
+		"information":{
+			"name":"Rear Halfshafts",
+			"value":100
+		},
+		"slotType" : "Camso_halfshafts_rear",
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			//["shaft", "wheelaxleRL", "rearDiff", 1, {"connectedWheel":"RL", "friction":0}],
+			//["shaft", "wheelaxleRR", "rearDiff", 2, {"connectedWheel":"RR", "friction":0}],
+			["shaft", "halfshaftRL", "rearDiff", 1, {"breakTriggerBeam": "axle_RL", "uiName": "Rear Left Halfshaft", "friction": 1}],
+			["shaft", "halfshaftRR", "rearDiff", 2, {"breakTriggerBeam": "axle_RR", "uiName": "Rear Right Halfshaft", "friction": 1}]
+		]
+	},
+
+	"Camso_driveshaft_rear": {
+		"information":{
+			"name":"Rear Driveshaft",
+			"value":150
+		},
+		"slotType" : "Camso_driveshaft_rear",
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["shaft", "rearDriveShaft", "transferCase", 1, {"friction": 1}] // 1
+		]
+	}
+}

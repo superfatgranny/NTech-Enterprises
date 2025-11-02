@@ -1,0 +1,24 @@
+{
+	"Camso_differential_rear_48289": {
+		"information":{
+			"name":"Trim 1 Viscous Rear Differential",
+			"value":500
+		},
+		"slotType" : "Camso_differential_rear",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_halfshafts_rear","Camso_halfshafts_rear","Rear Halfshafts"],
+			["Camso_finaldrive_rear","Camso_finaldrive_rear_3.30","Rear Final Drive", {"coreSlot":true}]
+		],
+		"controller": [
+			["fileName"],
+			
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+		//https://wiki.beamng.com/Differential
+		["differential", "rearDiff", "rearDriveShaft", 1, {"diffType": "viscous", "uiName": "Rear Differential", "viscousCoef": 144.13, "viscousTorque": 1441.31, "defaultVirtualInertia": 0.25, "friction": 54.964404284075}],
+
+		]
+	}
+}
