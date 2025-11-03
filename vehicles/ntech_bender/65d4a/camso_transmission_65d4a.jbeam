@@ -1,0 +1,88 @@
+{
+	"Camso_Transmission_65d4a": {
+		"information":{
+			"authors":"Camshaft Software",
+			"name":"Utility 9-Speed Automatic Transmission",
+			"value": 1100
+		},
+		"slotType" : "Camso_Transmission",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_TransferCase", "Camso_TransferCase_4x4_65d4a", "Transfer Case"],
+			
+		],
+		
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+
+			["$gear_R_65d4a", "range", ":1", "Gearing", 2.36, 0.1, 17, "Gear R", "Gear ratio", {"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_1_65d4a", "range", ":1", "Gearing", 2.24, 0.1, 17, "Gear 1", "Gear ratio", {"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_2_65d4a", "range", ":1", "Gearing", 2.07, 0.1, 17, "Gear 2", "Gear ratio", {"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_3_65d4a", "range", ":1", "Gearing", 1.78, 0.1, 17, "Gear 3", "Gear ratio", {"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_4_65d4a", "range", ":1", "Gearing", 1.49, 0.1, 17, "Gear 4", "Gear ratio", {"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_5_65d4a", "range", ":1", "Gearing", 1.25, 0.1, 17, "Gear 5", "Gear ratio", {"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_6_65d4a", "range", ":1", "Gearing", 1.05, 0.1, 17, "Gear 6", "Gear ratio", {"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_7_65d4a", "range", ":1", "Gearing", 0.89, 0.1, 17, "Gear 7", "Gear ratio", {"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_8_65d4a", "range", ":1", "Gearing", 0.76, 0.1, 17, "Gear 8", "Gear ratio", {"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_9_65d4a", "range", ":1", "Gearing", 0.66, 0.1, 17, "Gear 9", "Gear ratio", {"subCategory": "Transmission", "stepDis": 0.01}]
+		],
+
+		"controller": [
+			["fileName"],
+			
+		],
+		"gearbox": {
+			//https://wiki.beamng.com/AutomaticGearbox
+			"gearChangeTime": 0.40054459201389, //Seconds to do the shift (forced minimum, vehicleController can make it longer)
+			"shiftEfficiency": 0.35, //Proportion of torque wasted during shifting
+			"gearRatios": ["$=-$gear_R_65d4a", 0, "$gear_1_65d4a", "$gear_2_65d4a", "$gear_3_65d4a", "$gear_4_65d4a", "$gear_5_65d4a", "$gear_6_65d4a", "$gear_7_65d4a", "$gear_8_65d4a", "$gear_9_65d4a"],
+			"friction": 2.9654538218307, //Constant friction torque on input shaft
+			"oneWayViscousCoef": 25, //One way clutch - hill holding strength
+			"parkLockTorque": 1000, //Maximum holding torque of park mode
+			"gearboxNode:": ["engine0"] //node used to play gear damage sound
+		},
+		"torqueConverter": {
+			//https://wiki.beamng.com/TorqueConverter
+			"converterDiameter": 0.27885528617116, //Affects stall RPM and torque carrying ability
+			"converterStiffness":12, //Affects tightness of converter around cruising speeds
+			"couplingAVRatio": 0.92, //Speed ratio where the torque multiplication reaches 1:1
+			"stallTorqueRatio": 1.8, //Maximum torque multiplication value (occurs at stall)
+			"lockupClutchTorque": 436.30476379395 //Maximum holding torque of lockup clutch
+		},
+
+		"vehicleController": {
+			//fancy new auto gearbox or dct useful values
+			"shiftDownRPMOffsetCoef":1.2,
+			"automaticModes": "PRNDSM", //Add or remove P,R,N,D,S,M,L,1,2 from the string to customize modes
+			"transmissionGearChangeDelay": 0.5, //Seconds before it will allow to shift again
+			"gearboxDecisionSmoothingUp": 0.75, //Multiplier for how fast it reacts to throttle increase for deciding to shift
+			"gearboxDecisionSmoothingDown": 0.75, //Multiplier for how fast it reacts to throttle decrease for deciding to shift
+
+			"useSmartAggressionCalculation": true, //Smart gearbox logic - has a bunch of logic to determine aggression from user input and vehicle sensors
+			"aggressionHoldOffThrottleDelay": 2, //How many seconds it will resist an upshift while engine braking after full throttle
+			"aggressionSmoothingUp": 2, //Multiplier for how fast aggression is allowed to increase
+			"aggressionSmoothingDown": 0.25, //Multiplier for how fast its allowed to decrease
+
+			"maxGearChangeTime": 0, //Shift time (s) depends on aggression calculation
+			"minGearChangeTime": 0,
+
+			"sportGearChangeTime": 0, //Shift time (s) in sport mode
+			"autoDownShiftInM": true, //Does it still downshift for you in manual mode if rpm drops too low
+
+			//torque converter
+			"torqueConverterLockupRPM": 750, //RPM above which lockup starts to engage
+			"torqueConverterLockupRange": 850, //RPM range that lockup closes over. Default is lockupRPM * 0.2
+			"torqueConverterLockupMinGear": 5, //Minimum gear that lockup will engage in
+			"torqueConverterLockupRate": 5, //Value of 5 means finished in 1/5 seconds
+
+			"calculateOptimalLoadShiftPoints": true //The high shift points ones can be auto calculated
+		},
+
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+		["torqueConverter", "torqueConverter", "mainEngine", 1],
+		["automaticGearbox", "gearbox", "torqueConverter", 1]
+
+		]
+	}
+}

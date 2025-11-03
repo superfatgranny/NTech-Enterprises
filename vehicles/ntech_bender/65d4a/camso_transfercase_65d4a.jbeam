@@ -1,0 +1,30 @@
+{
+	"Camso_TransferCase_4x4_65d4a": {
+		"information":{
+			"name":"Utility 4X4 Transfer Case",
+			"value":500
+		},
+		"slotType" : "Camso_TransferCase",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_driveshaft_rear", "Camso_driveshaft_rear", "Rear Driveshaft"],
+			["Camso_4wd_controller", "Camso_4wd_controller_2hi4hi4lo", "4WD Controller", {"coreSlot": true}]
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["rangeBox", "rangebox", "gearbox", 1, {"gearRatios":[1,2.5], "uiName":"Rangebox"}],
+			["differential", "transferCase", "rangebox", 1, {"diffType":"locked", "uiName":"Transfer Case","defaultVirtualInertia":0.1, "friction": 0}],
+			["shaft", "frontDriveShaft", "transferCase", 2, {"canDisconnect":true,"uiName":"Front Output Shaft", "friction": 1}]
+		],
+		"gearbox": {
+			"uiName":"Gearbox",
+			//added stabilization for one way clutch with ultra low range
+			"oneWayViscousSmoothing":100
+		},
+		"torqueConverter": {
+			"uiName":"Torque Converter",
+			//added stabilization for torque converter with ultra low range
+			"kFactorSmoothing":200
+		}
+	}
+}

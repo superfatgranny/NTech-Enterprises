@@ -1,0 +1,89 @@
+{
+	"Camso_Engine_ElectricMotor4x4_65d4a": {
+		"information":{
+			"authors":"Camshaft Software",
+			"name":"Utility 4x4 Electric Powertrain",
+			"value": 10000
+		}
+		"slotType" : "Camso_Engine",
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+			["$EngineOffsetXVis", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Visual Engine Offset X", "Visual lateral engine offset", {"stepDis":0.01, "subCategory":"Engine Offset"}],
+			["$EngineOffsetYVis", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Visual Engine Offset Y", "Visual longitudinal engine offset", {"stepDis":0.01, "subCategory":"Engine Offset"}],
+			["$EngineOffsetZVis", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Visual Engine Offset Z", "Visual vertical engine offset", {"stepDis":0.01, "subCategory":"Engine Offset"}],
+			["$ExhaustOffsetX", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Exhaust Offset X", "Lateral exhaust offset", {"stepDis":0.01, "subCategory":"Exhaust Offset"}],
+			["$ExhaustOffsetY", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Exhaust Offset Y", "Longitudinal exhaust offset", {"stepDis":0.01, "subCategory":"Exhaust Offset"}],
+			["$ExhaustOffsetZ", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Exhaust Offset Z", "Vertical exhaust offset", {"stepDis":0.01, "subCategory":"Exhaust Offset"}],
+			["$ExhaustOffsetXVis", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Visual Exhaust Offset X", "Visual lateral exhaust offset", {"stepDis":0.01, "subCategory":"Exhaust Offset"}],
+			["$ExhaustOffsetYVis", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Visual Exhaust Offset Y", "Visual longitudinal exhaust offset", {"stepDis":0.01, "subCategory":"Exhaust Offset"}],
+			["$ExhaustOffsetZVis", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Visual Exhaust Offset Z", "Visual vertical exhaust offset", {"stepDis":0.01, "subCategory":"Exhaust Offset"}],
+			["$regenTorqueModRear", "range", "", "Motor Controller", 0.6, 0, 3, "Regenerative braking torque", "Maximum regenerative braking torque", {"stepDis": 1, "minDis":0, "maxDis":300}],
+		],
+
+		"slots": [
+			["type", "default", "description"],
+			["Camso_engine_structure", "Camso_engine_structure_65d4a", "Engine Structure", {"coreSlot": true, "nodeMove":{"x":"$=($EngineOffsetX or 0)","y":"$=($EngineOffsetY or 0)","z":"$=($EngineOffsetZ or 0)"}}],
+			["Camso_SpeedLimiter", "", "Speed Limiter", {"coreSlot": true}],
+			["Camso_driveshaft_rear", "Camso_driveshaft_rear", "Rear Driveshaft"],
+			["Camso_4wd_controller", "Camso_4wd_controller_2hi4hi4lo", "4WD Controller", {"coreSlot": true}]
+		],
+
+		//"controller": [
+		//	["fileName"],
+		//	["4wd", {"shaftName":"frontDriveShaft", "rangeBoxName":"rangebox"}]
+		//],
+
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["electricMotor", "rearMotor", "dummy", 0],
+			["rangeBox", "rangebox", "rearMotor", 1, {"gearRatios":[0.75,1.875], "uiName":"Rangebox"}],
+			["differential", "transferCase", "rangebox", 1, {"diffType":"locked", "friction":5, "uiName":"Transfer Case","defaultVirtualInertia":0.1}],
+			//["shaft", "rearDriveShaft", "transferCase", 1],
+			["shaft", "frontDriveShaft", "transferCase", 2, {"canDisconnect":true,"uiName":"Front Output Shaft"}]
+		],
+		"rearMotor": {
+			"torque":[
+				["rpm", "torque"],
+				[0, "$=381.21"],
+				[297, "$=381.21"],
+				[520, "$=381.21"],
+				[1114, "$=381.21"],
+				[1708, "$=381.21"],
+				[2302, "$=381.21"],
+				[2822, "$=316.41"],
+				[3417, "$=263.04"],
+				[4011, "$=213.48"],
+				[4531, "$=167.73"],
+				[5125, "$=133.43"],
+				[5720, "$=110.55"],
+				[6314, "$=95.30"],
+				[6834, "$=72.43"],
+				[7428, "$=45.75"],
+
+			],
+			"maxRPM":7428.5714285714,
+			"inertia":0.40,
+			"friction":4,
+			"dynamicFriction":0.0005,
+			"electricalEfficiency":0.55,
+			"electricsThrottleFactorName": "throttleFactorRear",
+			"breakTriggerBeam":"engine", //Engine breaks if beam with this name is broken
+			"soundConfig": "soundConfigRear",
+			"energyStorage": "mainBattery", //Name of the fuel tank
+			"torqueReactionNodes:":["engine1", "engine2", "engine3"],
+			"maximumWantedRegenTorque": "$=304.97168347858*($regenTorqueModRear or 1)"
+		},
+	    "vehicleController": {
+			"shiftLogicName":"electricMotor",
+			"motorNames": ["rearMotor"],
+			"topSpeedLimitReverse": 15,
+			//"defaultRegen": 0.5,
+			//"brakeRegenCoef": 1,
+			"onePedalRegenCoef": 0.85
+		},
+		"soundConfigRear": {
+			"sampleName": "ElectricMotor_02",
+			"mainGain": -10
+		}
+	}
+}

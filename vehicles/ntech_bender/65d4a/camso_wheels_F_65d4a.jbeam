@@ -1,0 +1,163 @@
+{"Camso_wheels_front_65d4a":
+{
+    "information":{
+        "authors":"Camshaft Software",
+        "name":"Utility 245/65/20 Radial Sport Steel Front Wheels",
+    }
+     
+    "slotType" : "Camso_wheels_front",
+	
+	"flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["65d4a_tyre_f2", ["tire_FL", "wheel_FL"], [], {"pos":{"x":0.785716, "y":-1.75486, "z":0.813714}, "rot":{"x":-0.0112577, "y":-1.5, "z":0.000274295}, "scale":{"x":1, "y":1, "z":1}}],
+	        ["65d4a_tyre_f2", ["tire_FR","wheel_FR"], [], {"pos":{"x":-0.785716, "y":-1.75486, "z":0.813714}, "rot":{"x":0.0112577, "y":1.5, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+	        ["65d4a_wheel_f3", ["wheel_FL", "axf_L"], [], {"pos":{"x":0.795, "y":-1.75486, "z":0.813957}, "rot":{"x":-0.0112577, "y":-1.5, "z":0.000274295}, "scale":{"x":1, "y":1, "z":1}}],
+	        ["65d4a_wheel_f3", ["wheel_FR","axf_R"], [], {"pos":{"x":-0.795, "y":-1.75486, "z":0.813957}, "rot":{"x":0.0112577, "y":1.5, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+     ],
+    
+    "nodes": [       
+        ["id", "posX", "posY", "posZ"],
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+        {"collision":true},
+        {"selfCollision":true},
+		//axles:
+		{"group":"axles"},
+	        {"selfCollision":true},
+
+	        {"nodeWeight":7.41003},
+			["fw1r", -0.663216, -1.75486, 0.810506, { "group":"axf_R" }],
+			["fw1ll", 0.908216, -1.75486, 0.816921, { "group":"axf_L" }],
+			["fw1l", 0.663216, -1.75486, 0.810506, { "group":"axf_L" }],
+			["fw1rr", -0.908216, -1.75486, 0.816921, { "group":"axf_R" }],
+		
+    ],
+ 
+	"beams": [   
+ 
+	["id1:", "id2:"], 
+	/*{"highlight":{"radius":0.0075, "col":"#C0C0C03f"}}*/
+
+	{"beamPrecompression":1.0, "beamType":" | NORMAL", "beamLongBound":1, "beamShortBound":1},
+				//axles:
+				{"beamStrength":222301},
+				{"beamDeform":74100.3},
+				{"breakGroup":""},
+				{"breakGroupType":0},
+
+				{"beamSpring":5.35334e+06,"beamDamp":411},
+				["fw1ll", "fw1l"],
+				["fw1rr", "fw1r"],
+	
+	/*{"highlight":{"radius":0, "col":"#00000000"}}*/
+	{"beamSpring":false,"beamDamp":false,"beamDeform":false,"beamStrength":false},
+	{"beamLimitSpring":false,"beamLimitDamp":false}
+	],
+    
+    
+     
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$frontPSI", "range", "PSI", "Tyres", 33.4, 5, 100, "Front Tyre Pressure", "Initial Tyre Pressure", {"stepDis":0.5}],
+        ["$rimStiffnessMult_F", "range", "", "Vehicle Advanced Settings", 1, 0.1, 3, "Front Rim Stiffness", "Lower this value if rims become unstable at speed. Raise it if there is unwanted flex in the wheels", {"subCategory":"Wheels","stepDis":1,"minDis":10,"maxDis":300}],
+        ["$tireStiffnessMult_F", "range", "", "Vehicle Advanced Settings", 1, 0.1, 3, "Front Tire Stiffness", "Lower this value if tires become unstable at speed. Raise it if there is unwanted flex in the tires", {"subCategory":"Wheels","stepDis":1,"minDis":10,"maxDis":300}]
+    ],
+	
+    "pressureWheels": [
+    ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+    //these things enable new features that have been added since the introduction of the pressurewheel
+    {"disableMeshBreaking":false,"disableHubMeshBreaking":false},
+    {"hasTire":true},
+    {"enableTireReinfBeams":false},
+    {"enableTireLbeams":true},
+    {"enableTireSideReinfBeams":false},
+    {"enableTreadReinfBeams":true},
+    {"enableTirePeripheryReinfBeams":true},
+    {"triangleCollision":false},
+
+    //general settings
+    {"radius":0.417500}, //Radius of the tire nodes
+    {"hubRadius":0.279400}, //Radius of the rim
+    {"wheelOffset":0}, //Offset from the original axle position (Left/right)
+    {"hubWidth":0.245000}, //Width of the rim
+    {"tireWidth":0.245000}, //Width of the tire
+    {"numRays":16.000000}, //The amount of nodes to make the circle, more may result in smoother driving, but at the cost of performance, weight & stability
+
+    //hub options
+    {"hubTreadBeamSpring":"$=743987.812500 * ($rimStiffnessMult_F or 1)", "hubTreadBeamDamp":"$=35.659870 * ($rimStiffnessMult_F or 1)"},
+    {"hubPeripheryBeamSpring":"$=1100872.625000 * ($rimStiffnessMult_F or 1)", "hubPeripheryBeamDamp":"$=43.377586 * ($rimStiffnessMult_F or 1)"},
+    {"hubSideBeamSpring":"$=1497666.375000 * ($rimStiffnessMult_F or 1)", "hubSideBeamDamp":"$=41.641624 * ($rimStiffnessMult_F or 1)"},
+    {"hubNodeWeight":0.683681},
+    {"hubNodeMaterial":"|NM_METAL"},
+    {"hubFrictionCoef":0.5},
+
+    //tire options
+    //sidebeams need to be high in expansion to control rolling resistance and tire expansion, but low in compression to allow air pressure to hold the weight
+    {"wheelSideBeamSpringExpansion":"$=530287.500000 * ($tireStiffnessMult_F or 1)","wheelSideBeamDampExpansion":"$=33.854523 * ($tireStiffnessMult_F or 1)"},
+    {"wheelSideBeamSpring":"$=0.000000 * ($tireStiffnessMult_F or 1) * $frontPSI","wheelSideBeamDamp":"$=33.854523 * ($tireStiffnessMult_F or 1)"},
+    {"wheelSideTransitionZone":0.119875,"wheelSideBeamPrecompression":0.980000},
+
+    //tread beams mainly control lateral stiffness of the tire, the higher the more responsive the handling
+    {"wheelTreadBeamSpring":"$=166614.828125 * ($tireStiffnessMult_F or 1)","wheelTreadBeamDamp":"$=56.929726 * ($tireStiffnessMult_F or 1)"},
+    {"wheelTreadBeamPrecompression":0.990000},
+    {"wheelTreadBeamDampCutoffHz":500.000000},
+
+    {"wheelTreadReinfBeamSpring":"$=135513.390625 * ($tireStiffnessMult_F or 1)","wheelTreadReinfBeamDamp":"$=77.013107 * ($tireStiffnessMult_F or 1)"},
+    {"wheelTreadReinfBeamPrecompression":0.990000},
+    {"wheelTreadReinfBeamDampCutoffHz":500.000000},
+
+    //periphery beams mainly control longitudinal stiffness of the tire, the higher the values, the higher the peak grip, but can have more abrupt loss of traction
+    {"wheelPeripheryBeamSpring":"$=75252.304688 * ($tireStiffnessMult_F or 1)","wheelPeripheryBeamDamp":"$=57.389629 * ($tireStiffnessMult_F or 1)"},
+    {"wheelPeripheryBeamPrecompression":0.990000},
+    {"wheelPeripheryBeamDampCutoffHz":500.000000},
+
+    {"wheelPeripheryReinfBeamSpring":"$=70235.484375 * ($tireStiffnessMult_F or 1)","wheelPeripheryReinfBeamDamp":"$=55.443649 * ($tireStiffnessMult_F or 1)"},
+    {"wheelPeripheryReinfBeamPrecompression":0.990000},
+    {"wheelPeripheryReinfBeamDampCutoffHz":500.000000},
+
+    //adds lateral stiffness to the tire structure, replicating stiff sidewalls
+    {"wheelReinfBeamSpring":"$=14393.890625 * ($tireStiffnessMult_F or 1)","wheelReinfBeamDamp":"$=178.484329 * ($tireStiffnessMult_F or 1)"},
+    {"wheelReinfBeamPrecompression":0.990000},
+    {"wheelReinfBeamDampCutoffHz":500.000000},
+
+
+    //general tire values
+    {"nodeWeight":0.216133},
+    {"nodeMaterial":"|NM_RUBBER"}, //Material just changes sound, skid marks, particles
+    {"pressurePSI":"$frontPSI"}, //Tire pressure
+    {"dragCoef":1}, //Air drag
+
+    //groundmodel friction multipliers
+    {"frictionCoef":1.000000}, //Multiplies the groundmodels maximum friction coefficient
+    {"slidingFrictionCoef":1.220000}, //Multiplies the groundmodels minimum friction coefficient
+    {"treadCoef":0.500000}, //How much grip loss on rough groundmodels. Max value of 1 for the best off road tires
+    {"stribeckExponent":2.295000},
+    {"stribeckVelMult":2.200000},
+
+    //advanced friction values
+    {"noLoadCoef":1.585099}, //The friction coefficient with no normal force on the tire (highest possible coef)
+    {"loadSensitivitySlope":0.000154}, //Determines the rate that friction coef drops off as normal force is added. Acts per node, in coef/Newton of normal force
+    {"fullLoadCoef":0.131729}, //Minimum friction coef. Adding more normal force will not decrease the friction any more than this
+    {"softnessCoef":0.600000}, //Influences the time variant friction behavior. Max value of 1 makes the tire more like soft racing slick rubber
+
+    //deform values
+    {"hubBeamDeform":72102.125000, "hubBeamStrength":81698.445312},
+
+    {"wheelSideBeamDeform":25936.015625,"wheelSideBeamStrength":32420.019531},
+    {"wheelReinfBeamDeform":129680.078125,"wheelReinfBeamStrength":129680.078125},
+    {"wheelTreadBeamDeform":12968.007812,"wheelTreadBeamStrength":16858.410156},
+    {"wheelTreadReinfBeamDeform":12968.007812,"wheelTreadReinfBeamStrength":16858.410156},
+    {"wheelPeripheryBeamDeform":64840.039062,"wheelPeripheryBeamStrength":64840.039062},
+
+    //cancel out brake properties before future wheel parts are loaded
+    {"brakeTorque":0},
+    {"parkingTorque":0},
+    {"enableBrakeThermals":false},
+    {"brakeDiameter":false},
+    {"brakeMass":false},
+    {"brakeType":false},
+    {"rotorMaterial":false},
+    {"brakeVentingCoef":false}
+    ]
+}, 
+}

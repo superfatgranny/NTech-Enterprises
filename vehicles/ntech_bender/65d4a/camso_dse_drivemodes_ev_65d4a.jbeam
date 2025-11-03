@@ -1,0 +1,148 @@
+{
+	"Camso_DriveModes_65d4a_electric": {
+		"information":{
+			"authors":"Diamondback",
+			"name":"Utility EV Drive Modes",
+			"value":250
+		},
+		"slotType" : "Camso_DriveModes_65d4a",
+		"slots":[
+			["type", "default", "description"],
+			["Camso_DriveModes_default_65d4a","Camso_DriveModes_default_comfort_65d4a", "Default Mode"],
+			["Camso_DriveModes_offroad_65d4a","_65d4a", "Offroad Mode"]
+		],
+
+		"controller": [
+			["fileName"],
+			["driveModes"],
+			["AVAS"]
+		],
+
+		"AVAS": {
+            "forwardSoundEvent":"event:>Engine>Pedestrian Warning>Version_02",
+            "reverseSoundEvent":"event:>Engine>Pedestrian Warning>Version_02",
+            "forwardSoundNode:":["a61"],
+            "reverseSoundNode:":["a1"],
+            "warningMaxSpeed": 14,
+            "warningVolume": 0.5
+        }
+
+		"driveModes": {
+			"enabledModes":["comfort", "sport", "race", "off"],
+			"defaultMode": "sport",
+			"defaultSettings": [
+				["type"],
+
+				["controller", {"controllerName":"tractionControl", "isEnabled":true}],
+				["controller", {"controllerName":"yawControl", "isEnabled":true}],
+				["controller", {"controllerName":"motorTorqueControl", "tractionControl": "default", "yawControl": "default"}],
+				["controller", {"controllerName":"brakeControl", "tractionControl": "default", "yawControl": "default"}],
+				["controller", {"controllerName":"adaptiveBrakeLights", "isEnabled":true}]
+			],
+			"modes": {
+				"comfort": {
+					"name": "Comfort",
+					"order": 10,
+					"settings": [
+						["type"],
+						["controller", {"controllerName":"CMU", "uiDisplayData.simplePowertrainApp.activeColor": "238BE6"}],
+
+						["controller", {"controllerName":"adaptiveFrontDamper", "damperMode":"soft"}],
+                        ["controller", {"controllerName":"adaptiveRearDamper", "damperMode":"soft"}],
+
+                        ["controller", {"controllerName":"adaptiveFrontSwayBar", "torsionBarMode":"soft"}],
+                        ["controller", {"controllerName":"adaptiveRearSwayBar", "torsionBarMode":"soft"}],
+
+						["controller", {"controllerName":"motorTorqueControl",
+							"tractionControl.isEnabled":true,
+							"yawControl.yawAvThreshold": 0.6,
+							"yawControl.isEnabled":false
+						}],
+						["controller", {"controllerName":"brakeControl",
+							"tractionControl.isEnabled":true,
+							"yawControl.isEnabled":true,
+							"yawControl.slipAngleThreshold": 0.1,
+							"yawControl.yawAvThreshold": 0.4
+						}]
+					]
+				},
+				"sport": {
+					"name": "Sport",
+					"order": 20,
+					"settings": [
+						["type"],
+						["controller", {"controllerName":"adaptiveFrontDamper", "damperMode":"hard"}],
+                        ["controller", {"controllerName":"adaptiveRearDamper", "damperMode":"hard"}],
+
+                        ["controller", {"controllerName":"adaptiveFrontSwayBar", "torsionBarMode":"hard"}],
+                        ["controller", {"controllerName":"adaptiveRearSwayBar", "torsionBarMode":"hard"}],
+
+						["controller", {"controllerName":"motorTorqueControl",
+							"tractionControl.isEnabled":true,
+							"tractionControl.wheelGroupSettings.frontMotor.slipThreshold": 0.3,
+                            "tractionControl.wheelGroupSettings.rearMotor.slipThreshold": 0.3,
+							"yawControl.isEnabled":true
+						}],
+						["controller", {"controllerName":"brakeControl",
+							"tractionControl.isEnabled":true,
+							"tractionControl.wheelGroupSettings.frontMotor.slipThreshold": 0.2,
+                            "tractionControl.wheelGroupSettings.rearMotor.slipThreshold": 0.2,
+							"yawControl.isEnabled":true,
+							"yawControl.slipAngleThreshold": 0.4,
+							"yawControl.yawAvThreshold": 0.5
+						}],
+						["controller", {"controllerName":"CMU", "uiDisplayData.simplePowertrainApp.activeColor": "FFFF00"}]
+					]
+				},
+				"offroad": {
+					"name": "Off-road",
+					"order": 30,
+					"settings": [
+						["type"],
+						["controller", {"controllerName":"adaptiveFrontDamper", "damperMode":"soft"}],
+                        ["controller", {"controllerName":"adaptiveRearDamper", "damperMode":"soft"}],
+
+                        ["controller", {"controllerName":"adaptiveFrontSwayBar", "torsionBarMode":"off"}],
+                        ["controller", {"controllerName":"adaptiveRearSwayBar", "torsionBarMode":"off"}],
+
+						["controller", {"controllerName":"yawControl", "isEnabled":false}],
+
+						["controller", {"controllerName":"motorTorqueControl",
+							"tractionControl.isEnabled":true,
+							"tractionControl.wheelGroupSettings.frontMotor.slipThreshold": 0.7,
+                            "tractionControl.wheelGroupSettings.rearMotor.slipThreshold": 0.7,
+							"yawControl.isEnabled":false
+						}],
+						["controller", {"controllerName":"brakeControl",
+							"tractionControl.isEnabled":true,
+							"tractionControl.wheelGroupSettings.frontMotor.slipThreshold": 0.4,
+                            "tractionControl.wheelGroupSettings.rearMotor.slipThreshold": 0.4,
+							"yawControl.isEnabled":false
+						}],
+						["controller", {"controllerName":"CMU", "uiDisplayData.simplePowertrainApp.activeColor": "F5A442"}]
+					]
+				},
+				"off": {
+					"name": "ESC & TC Off",
+					"order": 50,
+					"settings": [
+						["type"],
+						["controller", {"controllerName":"adaptiveFrontDamper", "damperMode":"hard"}],
+				        ["controller", {"controllerName":"adaptiveRearDamper", "damperMode":"hard"}],
+
+				        ["controller", {"controllerName":"adaptiveFrontSwayBar", "torsionBarMode":"hard"}],
+				        ["controller", {"controllerName":"adaptiveRearSwayBar", "torsionBarMode":"hard"}],
+
+						["controller", {"controllerName":"tractionControl", "isEnabled":false}],
+						["controller", {"controllerName":"yawControl", "isEnabled":false}],
+						["controller", {"controllerName":"motorTorqueControl"}],
+						["controller", {"controllerName":"brakeControl"}],
+						["transmission", {"defaultForwardMode": "S"}],
+						["controller", {"controllerName":"CMU", "uiDisplayData.simplePowertrainApp.activeColor": "DCDCDC"}]
+					]
+				}
+				
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+{
+	"Camso_suspensionmesh_R_65d4a":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Utility Rear Suspension Meshes"
+	    },
+	    "slotType" : "Camso_suspensionmesh_R",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["65d4a_suspension_r11", ["susp_R"], [], {"pos":{"x":0, "y":0.695138, "z":0.813475}, "rot":{"x":-0.011261, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+	        ["65d4a_suspensionm_r15", ["susp_R"], [], {"pos":{"x":-0, "y":0.695138, "z":0.813475}, "rot":{"x":-0.011261, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		]
+	},
+
+	"Camso_brakemeshes_rear_65d4a":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Utility Rear Brake Meshes"
+	    },
+	    "slotType" : "Camso_brakemeshes_rear",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["65d4a_brakecaliper_r13", ["hub_R"], [], {"pos":{"x":0.748784, "y":1.67015, "z":0.887488}, "rot":{"x":45.0113, "y":179, "z":-0.000219955}, "scale":{"x":1.44914, "y":2.32, "z":2.32}}],
+	        ["65d4a_brakecaliper_r214", ["hub_R"], [], {"pos":{"x":-0.748784, "y":1.67015, "z":0.887488}, "rot":{"x":45.0113, "y":179, "z":-0.000219955}, "scale":{"x":1.44914, "y":2.32, "z":2.32}}],
+	        ["65d4a_brakedisc_r12", ["wheel_RL"], [], {"pos":{"x":0.755446, "y":1.74514, "z":0.812578}, "rot":{"x":-0.0112596, "y":-1, "z":-180}, "scale":{"x":1.44914, "y":2.1, "z":2.1}}],
+	        ["65d4a_brakedisc_r12", ["wheel_RR"], [], {"pos":{"x":-0.755446, "y":1.74514, "z":0.812578}, "rot":{"x":0.0112596, "y":1, "z":0.000152588}, "scale":{"x":1.44914, "y":2.1, "z":2.1}}],
+		]
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"Camso_differential_front_65d4a": {
+		"information":{
+			"name":"Utility Electric Front Differential",
+			"value":500
+		},
+		"slotType" : "Camso_differential_front",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_halfshafts_front","Camso_halfshafts_front","Front Halfshafts"],
+			["Camso_finaldrive_front","Camso_finaldrive_front_5.01","Front Final Drive", {"coreSlot":true}]
+		],
+		"controller": [
+			["fileName"],
+					["drivingDynamics/actuators/activeDiffBias", {"name": "activeDiffBiasFront", "differentialName": "frontDiff", "maxBiasOffset": 0.20}] 
+
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+		//https://wiki.beamng.com/Differential
+		["differential", "frontDiff", "frontDriveShaft", 1, {"diffType": "torqueVectoring", "uiName": "Front Differential", "defaultVirtualInertia": 0.25, "friction": 32.266328389062}],
+
+		]
+	}
+}

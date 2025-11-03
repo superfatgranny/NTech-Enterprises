@@ -1,0 +1,21 @@
+{
+"vars":{
+  "$finaldrive_f": 5.01,
+  "$finaldrive_r": 5.01
+},
+"format":2,
+"parts":{
+	"Camso_differential_rear": "Camso_differential_rear_65d4a",
+	"Camso_DSE": "Camso_DSE_65d4a",
+	"Camso_finaldrive_front": "Camso_finaldrive_front_5.01",
+	"Camso_finaldrive_rear": "Camso_finaldrive_rear_5.01",
+	"Camso_Trim": "Camso_Trim_65d4a",
+	"Camso_wheels_front": "Camso_wheels_front_65d4a",
+	"Camso_wheels_rear": "Camso_wheels_rear_65d4a",
+	"Camso_Engine": "Camso_Engine_8185a",
+	"Camso_Transmission": "Camso_Transmission_65d4a",
+	"Camso_SpeedLimiter": "Camso_SpeedLimiter_off",
+	"Camso_hub_bearings_front": "Camso_hub_bearings_front_locking",
+	"Camso_engine_structure": "Camso_engine_structure_65d4a"
+}
+}

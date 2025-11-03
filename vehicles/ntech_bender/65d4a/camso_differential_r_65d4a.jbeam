@@ -1,0 +1,25 @@
+{
+	"Camso_differential_rear_65d4a": {
+		"information":{
+			"name":"Utility Electric Rear Differential",
+			"value":500
+		},
+		"slotType" : "Camso_differential_rear",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_halfshafts_rear","Camso_halfshafts_rear","Rear Halfshafts"],
+			["Camso_finaldrive_rear","Camso_finaldrive_rear_5.01","Rear Final Drive", {"coreSlot":true}]
+		],
+		"controller": [
+			["fileName"],
+					["drivingDynamics/actuators/activeDiffBias", {"name": "activeDiffBiasRear", "differentialName": "rearDiff", "maxBiasOffset": 0.30}] 
+
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+		//https://wiki.beamng.com/Differential
+		["differential", "rearDiff", "rearDriveShaft", 1, {"diffType": "torqueVectoring", "uiName": "Rear Differential", "defaultVirtualInertia": 0.25, "friction": 32.266328389062}],
+
+		]
+	}
+}

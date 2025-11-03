@@ -1,0 +1,24 @@
+{
+	"Configuration": "Utility",
+	"Description": "This is the perfect SUV for your family/utility needs! With 5 permanent seats and 3 extra folding seats in the trunk, you can take the whole family for a ride. Need to make a trip? The seats in the back fold down allowing for tons of grocery space!",
+	"Config Type": "Factory",
+	"Weight": 1823,
+	"Power": 163,
+	"Torque": 290,
+	"PowerPeakRPM": 4000,
+	"TorquePeakRPM": 4000,
+	"Weight/Power": 11.1604,
+	"0-100 km/h": 14.9,
+	"Top Speed": 52.9,
+	"Years": {
+		"min": 2012,
+		"max": 2012
+	},
+	"Drivetrain": "4WD",
+	"Transmission": "Automatic",
+	"Propulsion": "ICE",
+	"Fuel Type": "Gasoline",
+	"Induction Type": "Turbo",
+	"Value": 201691,
+	"defaultPaintName1": "Default1"
+}

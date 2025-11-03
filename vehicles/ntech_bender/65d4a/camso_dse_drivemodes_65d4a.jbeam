@@ -1,0 +1,343 @@
+{
+	"Camso_DriveModes_default_sport_65d4a": {
+		"driveModes": {
+			"defaultMode": "sport"
+		},
+		"information": {
+			"value": 500,
+			"name": "Sport Mode",
+			"authors": "Camshaft Software"
+		},
+		"slotType": "Camso_DriveModes_default_65d4a"
+	},
+	"Camso_DriveModes_default_off_65d4a": {
+		"driveModes": {
+			"defaultMode": "off"
+		},
+		"information": {
+			"value": 500,
+			"name": "ESC & TC Off Mode",
+			"authors": "Camshaft Software"
+		},
+		"slotType": "Camso_DriveModes_default_65d4a"
+	},
+	"Camso_DriveModes_offroad_65d4a": {
+		"driveModes": {
+			"enabledModes_offroad": [
+				"offroad"
+			]
+		},
+		"information": {
+			"value": 500,
+			"name": "Off-Road Mode",
+			"authors": "Camshaft Software"
+		},
+		"slotType": "Camso_DriveModes_offroad_65d4a"
+	},
+	"Camso_DriveModes_default_comfort_65d4a": {
+		"driveModes": {
+			"defaultMode": "comfort"
+		},
+		"information": {
+			"value": 500,
+			"name": "Comfort Mode",
+			"authors": "Camshaft Software"
+		},
+		"slotType": "Camso_DriveModes_default_65d4a"
+	},
+	"Camso_DriveModes_default_offroad_65d4a": {
+		"driveModes": {
+			"defaultMode": "offroad"
+		},
+		"information": {
+			"value": 500,
+			"name": "Off-Road Mode",
+			"authors": "Camshaft Software"
+		},
+		"slotType": "Camso_DriveModes_default_65d4a"
+	},
+	"Camso_DriveModes_65d4a": {
+		"slots": [
+			[
+				"type",
+				"default",
+				"description"
+			],
+			[
+				"Camso_DriveModes_default_65d4a",
+				"Camso_DriveModes_default_comfort_65d4a",
+				"Default Mode",
+				{
+					"coreSlot": true
+				}
+			],
+			[
+				"Camso_DriveModes_offroad_65d4a",
+				"Camso_DriveModes_offroad_65d4a",
+				"Offroad Mode"
+			],
+			[
+				"Camso_DriveModes_off2wd_65d4a",
+				"",
+				"2WD ESC & TC Off Mode"
+			],
+			[
+				"Camso_DriveModes_mod",
+				"",
+				"Additional Mode"
+			]
+		],
+		"information": {
+			"value": 250,
+			"name": "Utility Drive Modes",
+			"authors": "Camshaft Software"
+		},
+		"driveModes": {
+			"modes": {
+				"offroad": {
+					"order": 30,
+					"name": "Off-Road",
+					"settings": [
+						[
+							"type"
+						],
+						[
+							"controller",
+							{
+								"controllerName": "CMU",
+								"uiDisplayData.simplePowertrainApp.activeColor": "F5A442"
+							}
+						],
+						[
+							"controller",
+							{
+								"controllerName": "adaptiveFrontDamper",
+								"damperMode": "soft"
+							}
+						],
+						[
+							"controller",
+							{
+								"controllerName": "adaptiveRearDamper",
+								"damperMode": "soft"
+							}
+						],
+						[
+							"controller",
+							{
+								"tractionControl.isEnabled": true,
+								"tractionControl.wheelGroupSettings.mainEngine.slipThreshold": 0.7,
+								"controllerName": "motorTorqueControl",
+								"tractionControl.wheelGroupSettings.mainEngine.minimumThrottleLimit": 0.2
+							}
+						],
+						[
+							"controller",
+							{
+								"tractionControl.wheelGroupSettings.mainEngine.slipThreshold": 0.4,
+								"controllerName": "brakeControl",
+								"tractionControl.isEnabled": true
+							}
+						]
+					]
+				},
+				"off": {
+					"order": 50,
+					"name": "Off",
+					"settings": [
+						[
+							"type"
+						],
+						[
+							"controller",
+							{
+								"controllerName": "CMU",
+								"uiDisplayData.simplePowertrainApp.activeColor": "DCDCDC"
+							}
+						],
+						[
+							"controller",
+							{
+								"controllerName": "adaptiveFrontDamper",
+								"damperMode": "hard"
+							}
+						],
+						[
+							"controller",
+							{
+								"controllerName": "adaptiveRearDamper",
+								"damperMode": "hard"
+							}
+						],
+						[
+							"controller",
+							{
+								"controllerName": "motorTorqueControl"
+							}
+						],
+						[
+							"controller",
+							{
+								"controllerName": "brakeControl"
+							}
+						],
+						[
+							"transmission",
+							{
+								"defaultForwardMode": "S"
+							}
+						],
+						[
+							"controller",
+							{
+								"controllerName": "tractionControl",
+								"isEnabled": false
+							}
+						]
+					]
+				},
+				"comfort": {
+					"order": 10,
+					"name": "Comfort",
+					"settings": [
+						[
+							"type"
+						],
+						[
+							"controller",
+							{
+								"controllerName": "CMU",
+								"uiDisplayData.simplePowertrainApp.activeColor": "238BE6"
+							}
+						],
+						[
+							"controller",
+							{
+								"controllerName": "adaptiveFrontDamper",
+								"damperMode": "soft"
+							}
+						],
+						[
+							"controller",
+							{
+								"controllerName": "adaptiveRearDamper",
+								"damperMode": "soft"
+							}
+						],
+						[
+							"controller",
+							{
+								"tractionControl.isEnabled": true,
+								"tractionControl.wheelGroupSettings.mainEngine.slipThreshold": 0.125,
+								"controllerName": "motorTorqueControl",
+								"tractionControl.wheelGroupSettings.mainEngine.minimumThrottleLimit": 0.1
+							}
+						],
+						[
+							"controller",
+							{
+								"tractionControl.wheelGroupSettings.mainEngine.slipThreshold": 0.125,
+								"controllerName": "brakeControl",
+								"tractionControl.isEnabled": true
+							}
+						]
+					]
+				},
+				"sport": {
+					"order": 20,
+					"name": "Sport",
+					"settings": [
+						[
+							"type"
+						],
+						[
+							"controller",
+							{
+								"controllerName": "CMU",
+								"uiDisplayData.simplePowertrainApp.activeColor": "FFFF00"
+							}
+						],
+						[
+							"controller",
+							{
+								"controllerName": "adaptiveFrontDamper",
+								"damperMode": "hard"
+							}
+						],
+						[
+							"controller",
+							{
+								"controllerName": "adaptiveRearDamper",
+								"damperMode": "hard"
+							}
+						],
+						[
+							"controller",
+							{
+								"tractionControl.isEnabled": true,
+								"tractionControl.wheelGroupSettings.mainEngine.slipThreshold": 0.35,
+								"controllerName": "motorTorqueControl",
+								"tractionControl.wheelGroupSettings.mainEngine.minimumThrottleLimit": 0.2
+							}
+						],
+						[
+							"controller",
+							{
+								"tractionControl.wheelGroupSettings.mainEngine.slipThreshold": 0.4,
+								"controllerName": "brakeControl",
+								"tractionControl.isEnabled": true
+							}
+						],
+						[
+							"transmission",
+							{
+								"defaultForwardMode": "S"
+							}
+						]
+					]
+				}
+			},
+			"enabledModes": [
+				"comfort",
+				"sport",
+				"off"
+			],
+			"defaultMode": "sport",
+			"defaultSettings": [
+				[
+					"type"
+				],
+				[
+					"controller",
+					{
+						"controllerName": "tractionControl",
+						"isEnabled": true
+					}
+				],
+				[
+					"controller",
+					{
+						"controllerName": "motorTorqueControl",
+						"isEnabled": true
+					}
+				],
+				[
+					"controller",
+					{
+						"controllerName": "brakeControl",
+						"isEnabled": true
+					}
+				]
+			]
+		},
+		"controller": [
+			[
+				"fileName"
+			],
+			[
+				"driveModes"
+			]
+		],
+		"slotType": "Camso_DriveModes_65d4a"
+	}
+}

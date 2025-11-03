@@ -1,0 +1,35 @@
+{
+	"Camso_DSE_65d4a": {
+		"information":{
+			"name":"Utility Electronic Stability & Traction Control",
+			"value":250
+		}
+
+		"slotType" : "Camso_DSE",
+
+		"slots":[
+			["type", "default", "description"],
+			["Camso_DriveModes_65d4a", "Camso_DriveModes_65d4a", "Drive Modes"] 
+			["Camso_TC_65d4a", "Camso_TC_65d4a", "Traction Control"] 
+
+		],
+
+		"controller": [
+			["fileName"],
+			["postCrashBrake",{"brakeThreshold": 60}],
+			["drivingDynamics/CMU", {"name":"CMU", "debugSettings": {"enableDebugMode": false, "peerIP": "127.0.0.1"}}],
+			["drivingDynamics/sensors/sensorHub"],
+			["drivingDynamics/sensors/virtualSensors" {"name":"sensors"}],
+			["drivingDynamics/sensors/vehicleData" {"name":"vehicleData"}],
+			["drivingDynamics/supervisors/components/motorTorqueControl" {"name":"motorTorqueControl"}],
+			["drivingDynamics/supervisors/components/brakeControl" {"name":"brakeControl"}],
+
+			["adaptiveBrakeLights"],
+		],
+
+		"vehicleData": {
+			"skewStiffnessFront": 153833.8094683,
+			"skewStiffnessRear": 123795.93319454
+		}
+	}
+}

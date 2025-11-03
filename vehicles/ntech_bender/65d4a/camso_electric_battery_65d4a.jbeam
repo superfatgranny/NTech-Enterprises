@@ -1,0 +1,22 @@
+{
+	"Camso_Battery_65d4a": {
+		"information":{
+			"name":"Utility Battery",
+			"value": 10000
+		},
+		"slotType" : "Camso_FuelTank",
+		"energyStorage": [
+			["type", "name"],
+			["electricBattery", "mainBattery"],
+		],
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$charge", "range", "kWh", "Chassis", 75, 0, 75, "Battery Level", "Initial battery charge", {"stepDis":0.5}]
+		],
+		"mainBattery": {
+			"energyType":"electricEnergy",
+			"batteryCapacity": 75,
+			"startingCapacity": "$charge"
+		}
+	}
+}

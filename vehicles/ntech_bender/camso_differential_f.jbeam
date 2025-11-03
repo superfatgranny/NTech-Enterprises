@@ -1,0 +1,56 @@
+{
+	"Camso_differential_front_welded": {
+		"information":{
+			"name":"Welded Front Differential",
+			"value":800
+		},
+		"slotType" : "Camso_differential_front",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_halfshafts_front","Camso_halfshafts_front","Front Halfshafts"],
+			["Camso_finaldrive_front","Camso_finaldrive_front_5.01","Front Final Drive", {"coreSlot":true}]
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["differential", "frontDiff", "frontDriveShaft", 1, {"diffType":"locked", "lockTorque":10000, "diffTorqueSplit":0.5, "uiName":"Front Differential", "defaultVirtualInertia":0.25, "friction": 10}]
+		]
+	},
+
+	"Camso_differential_front_race": {
+		"information":{
+			"name":"Race Front Differential",
+			"value":1500
+		},
+		"slotType" : "Camso_differential_front",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_halfshafts_front","Camso_halfshafts_front","Front Halfshafts"],
+			["Camso_finaldrive_front","Camso_finaldrive_front_5.01","Front Final Drive", {"coreSlot":true}]
+		],
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$lsdpreload_F", "range", "N/m", "Differentials", 50, 0, 500, "Pre-load Torque", "Initial locking torque between left and right wheels", {"subCategory":"Front"}],
+			["$lsdlockcoef_F", "range", "", "Differentials", 0.15, 0, 0.5, "Power Lock Rate", "Additional locking torque proportional to engine torque", {"minDis":0, "maxDis":100, "subCategory":"Front"}],
+			["$lsdlockcoefrev_F", "range", "", "Differentials", 0.075, 0, 0.5, "Coast Lock Rate", "Additional locking torque proportional to engine braking", {"minDis":0, "maxDis":100, "subCategory":"Front"}]
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["differential", "frontDiff", "frontDriveShaft", 1, {"diffType":"lsd", "lsdPreload":"$lsdpreload_F", "lsdLockCoef":"$lsdlockcoef_F", "lsdRevLockCoef":"$lsdlockcoefrev_F", "uiName":"Front Differential", "defaultVirtualInertia":0.25, "friction": 5}]
+		]
+	},
+	
+	"Camso_halfshafts_front": {
+		"information":{
+			"name":"Front Halfshafts",
+			"value":100
+		},
+		"slotType" : "Camso_halfshafts_front",
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			//["shaft", "wheelaxleFL", "frontDiff", 1, {"connectedWheel":"FL", "friction":0}],
+			//["shaft", "wheelaxleFR", "frontDiff", 2, {"connectedWheel":"FR", "friction":0}],
+			["shaft", "halfshaftFL", "frontDiff", 1, {"breakTriggerBeam":"axle_FL", "uiName":"Front Left Halfshaft", "friction":  1}],
+			["shaft", "halfshaftFR", "frontDiff", 2, {"breakTriggerBeam":"axle_FR", "uiName":"Front Right Halfshaft", "friction": 1}]
+		]
+	}
+}

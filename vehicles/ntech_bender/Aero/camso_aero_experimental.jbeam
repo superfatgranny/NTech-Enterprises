@@ -1,0 +1,229 @@
+{
+"aero_xperimental":
+	{
+		"information": {
+			"authors": "Camshaft Software",
+			"name": "Experimental Drag Model",
+			"value": 1
+		}
+		
+		"slotType" : "camso_drag_model",
+		
+		"nodes":[
+			["id", "posX", "posY", "posZ"],
+			{"frictionCoef":0},
+			//{"nodeMaterial":"|NM_METAL"},
+			{"collision":false},
+			//{"group":"CarBody"},
+			{"selfCollision":false},		
+			{"nodeWeight":3},
+			["dmref", 0, 0, 0.0],
+			["dmy", 0, 0.1, 0.0],
+			["dmx", 0.1, 0, 0.0],
+			["dmz", 0, 0, 0.1],
+			
+			{"group":""},
+			{"collision":		true},
+			{"selfCollision":	true},
+			{"frictionCoef":1.0},
+			{"nodeWeight":25},
+		],
+		
+		"beams": [
+			["id1:", "id2:"], 
+			//{"highlight":{"radius":0.0075, "col":"#FF00003F"}}
+			{"beamStrength":"FLT_MAX"},
+			{"beamDeform":"FLT_MAX"}
+			{"beamSpring":1554863,"beamDamp":100},
+			
+			["dmref","dmy"],
+			["dmref","dmx"],
+			["dmref","dmz"],
+			["dmy","dmz"],
+			["dmy","dmx"],
+			["dmx","dmz"],
+			
+			{"beamDeform":18277}
+			{"beamSpring":1854863,"beamDamp":140},
+			
+			["dmref","fs1l"],
+			["dmref","fs1r"],
+			["dmref","rs1l"],
+			["dmref","rs1r"],
+			
+			["dmy","fs1l"],
+			["dmy","fs1r"],
+			["dmy","rs1l"],
+			["dmy","rs1r"],
+			
+			["dmx","fs1l"],
+			["dmx","fs1r"],
+			["dmx","rs1l"],
+			["dmx","rs1r"],
+			
+			["dmz","fs1l"],
+			["dmz","fs1r"],
+			["dmz","rs1l"],
+			["dmz","rs1r"],
+			
+			{"beamPrecompression":1}
+			{"beamStrength":"FLT_MAX"},
+			{"beamDeform":220000}
+			{"beamSpring":4300000,"beamDamp":580},
+			{"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		]
+	}
+
+"downforce_rear_xperimental":
+	{
+		"information": {
+			"authors": "Camshaft Software",
+			"name": "Experimental Rear Downforce",
+			"value": 1
+		}
+		
+		"slotType" : "camso_downforce_rear",
+		
+		"nodes": [
+			["id", "posX", "posY", "posZ"],
+			{"collision":false},
+			{"selfCollision":false},
+			//{"nodeMaterial":"|NM_METAL"},
+			{"frictionCoef":0.0},
+			//body mounting points for spring and shock
+			{"nodeWeight":3},
+			
+			["drref", 0, 0, 0],
+			["drz", 0, 0, 0.1]
+			
+			{"group":""},
+			{"collision":		true},
+			{"selfCollision":	true},
+			{"frictionCoef":1.0},
+			{"nodeWeight":25},
+		],
+		
+		"beams": [
+			["id1:", "id2:"], 
+			//{"highlight":{"radius":0.0075, "col":"#FF00003F"}}
+			{"beamStrength":"FLT_MAX"},
+			{"beamDeform":"FLT_MAX"}
+			{"beamSpring":1554863,"beamDamp":100},
+			
+			["drref", "drz"],
+			
+			{"beamDeform":28277}
+			{"beamSpring":2354863,"beamDamp":150},
+			
+			["drref","rs1l"],
+			["drref","rs1r"],
+			
+			["drz","rs1l"],
+			["drz","rs1r"],
+			
+			["drz","a4"],
+			["drz","a8"],
+			["drz","a36"],
+			["drz","a40"],
+			
+			["drref","a4"],
+			["drref","a8"],
+			["drref","a36"],
+			["drref","a40"],
+
+			//left side to body
+			["drz","a7"],
+			["drz","a11"],
+			["drz","a39"],
+			["drz","a43"],
+
+			["drref","a7"],
+			["drref","a11"],
+			["drref","a39"],
+			["drref","a43"],
+			
+			{"beamPrecompression":1}
+			{"beamStrength":"FLT_MAX"},
+			{"beamDeform":220000}
+			{"beamSpring":4300000,"beamDamp":580},
+			{"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		]
+	},
+	
+"downforce_front_xperimental":
+	{
+		"information": {
+			"authors": "Camshaft Software",
+			"name": "Experimental Front Downforce",
+			"value": 1
+		}
+		
+		"slotType" : "camso_downforce_front",
+		
+		"nodes": [
+			["id", "posX", "posY", "posZ"],
+			{"collision":false},
+			{"selfCollision":false},
+			//{"nodeMaterial":"|NM_METAL"},
+			{"frictionCoef":0.0},
+			//body mounting points for spring and shock
+			{"nodeWeight":3},
+			
+			["dfref", 0, 0, 0],
+			["dfz", 0, 0, 0.1]
+			
+			{"group":""},
+			{"collision":		true},
+			{"selfCollision":	true},
+			{"frictionCoef":1.0},
+			{"nodeWeight":25},
+		],
+		
+		"beams": [
+			["id1:", "id2:"], 
+			//{"highlight":{"radius":0.0075, "col":"#FF00003F"}}
+			{"beamStrength":"FLT_MAX"},
+			{"beamDeform":"FLT_MAX"}
+			{"beamSpring":1554863,"beamDamp":100},
+			
+			["dfref", "dfz"],
+			
+			{"beamDeform":28277}
+			{"beamSpring":2354863,"beamDamp":150},
+			
+			["dfref","fs1l"],
+			["dfref","fs1r"],
+			
+			["dfz","fs1l"],
+			["dfz","fs1r"],
+			
+			["dfz","a24"],
+			["dfz","a20"],
+			["dfz","a52"],
+			["dfz","a56"],
+			
+			["dfref","a24"],
+			["dfref","a20"],
+			["dfref","a52"],
+			["dfref","a56"],
+
+			//left side to body
+			["dfz","a23"],
+			["dfz","a27"],
+			["dfz","a59"],
+			["dfz","a55"],
+			
+			["dfref","a23"],
+			["dfref","a27"],
+			["dfref","a59"],
+			["dfref","a55"],
+			
+			{"beamPrecompression":1}
+			{"beamStrength":"FLT_MAX"},
+			{"beamDeform":220000}
+			{"beamSpring":4300000,"beamDamp":580},
+			{"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		]
+	}
+
+}
