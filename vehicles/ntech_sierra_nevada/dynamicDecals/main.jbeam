@@ -1,0 +1,12 @@
+{
+	"ntech_sierra_nevada_pickup_skin_dynamicTextures": {
+		"information": {
+			"authors": "Camshaft Software",
+			"name": "Dynamic Textures",
+			"isAuxiliary": true,
+			"value": 1350,
+		},
+		"slotType": "paint_design",
+		"globalSkin": "dynamicTextures"
+	},
+}

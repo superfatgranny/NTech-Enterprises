@@ -1,0 +1,94 @@
+{
+	"Camso_4wd_controller_2hi4hi4lo": {
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"2Hi/4Hi/4Lo Controller",
+	        "value":600
+	    },
+	    "slotType" : "Camso_4wd_controller",
+	    "controller": [
+	        ["fileName"],
+	        ["driveModes", {"name":"transfercaseControl"}],
+	        ["4wd", {"driveModesTransfercaseNames":["transfercaseControl"], "driveModesRangeNames":["transfercaseControl"]}]
+	    ],
+
+		"frontDriveShaft": {
+			"uiSimpleModeControl":false
+		},
+		"rangebox": {
+			"uiSimpleModeControl":false
+		},
+		"wheelaxleFR": {
+			"uiSimpleModeControl":false
+		},
+		"wheelaxleFL": {
+			"uiSimpleModeControl":false
+		},
+	
+	    "transfercaseControl":{
+	        "uiName": "Transfercase",
+	        "quickAccessTitle":"Transfercase",
+	        "quickAccessIcon":"radial_highrangebox",
+	        "quickAccessLevel":"/powertrain/",
+	        "enabledModes":["2hi", "4hi", "4lo"],
+	        "defaultMode": "2hi",
+	        "modes": {
+	            "2hi": {
+	                "name": "2WD High Gear",
+	                "order": 10,
+	                "settings": [
+	                    ["type"],
+	                    ["powertrainDeviceMode", {"deviceName":"rangebox", "mode":"high"}],
+	                    ["powertrainDeviceMode", {"deviceName":"frontDriveShaft", "mode":"disconnected"}],
+	                    ["powertrainDeviceMode", {"deviceName":"wheelaxleFR", "mode":"disconnected"}],
+	                    ["powertrainDeviceMode", {"deviceName":"wheelaxleFL", "mode":"disconnected"}],
+	                    ["electricsValue", {"electricsName":"transfercase_state", "value":1}],
+	                    ["simpleControlButton", {"buttonId":"transfercase", "icon":"powertrain_transfercase_high-2", "uiName":"Transfercase"}],
+	                    ["quickAccess", {"icon":"powertrain_transfercase_high-2"}]
+	                ]
+	            },
+	            "4hi": {
+	                "name": "4WD High Gear",
+	                "order": 20,
+	                "settings": [
+	                    ["type"],
+	                    ["powertrainDeviceMode", {"deviceName":"rangebox", "mode":"high"}],
+	                    ["powertrainDeviceMode", {"deviceName":"frontDriveShaft", "mode":"connected"}],
+	                    ["powertrainDeviceMode", {"deviceName":"wheelaxleFR", "mode":"connected"}],
+	                    ["powertrainDeviceMode", {"deviceName":"wheelaxleFL", "mode":"connected"}],
+	                    ["electricsValue", {"electricsName":"transfercase_state", "value":0.33}],
+	                    ["simpleControlButton", {"buttonId":"transfercase", "icon":"powertrain_transfercase_high-4", "uiName":"Transfercase"}],
+	                    ["quickAccess", {"icon":"powertrain_transfercase_high-4"}]
+	                ]
+	            },
+	            "4lo": {
+	                "name": "4WD Low Gear",
+	                "order": 30,
+	                "settings": [
+	                    ["type"],
+	                    ["powertrainDeviceMode", {"deviceName":"rangebox", "mode":"low"}],
+	                    ["powertrainDeviceMode", {"deviceName":"frontDriveShaft", "mode":"connected"}],
+	                    ["powertrainDeviceMode", {"deviceName":"wheelaxleFR", "mode":"connected"}],
+	                    ["powertrainDeviceMode", {"deviceName":"wheelaxleFL", "mode":"connected"}],
+	                    ["electricsValue", {"electricsName":"transfercase_state", "value":-1}],
+	                    ["simpleControlButton", {"buttonId":"transfercase", "icon":"powertrain_transfercase_low-4", "uiName":"Transfercase"}],
+	                    ["quickAccess", {"icon":"powertrain_transfercase_low-4"}]
+	                ]
+	            }
+	        }
+	    }
+	},
+
+	"Camso_4wd_controller": {
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"4WD Controller",
+	        "value":200
+	    },
+	    "slotType" : "Camso_4wd_controller",
+	    "controller": [
+			["fileName"],
+			["4wd", {"shaftName":"frontDriveShaft", "rangeBoxName":"rangebox"}]
+		]
+	}
+}

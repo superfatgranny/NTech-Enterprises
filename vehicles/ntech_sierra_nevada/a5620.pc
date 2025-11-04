@@ -1,0 +1,21 @@
+{
+"vars":{
+  "$finaldrive_f": 6.41,
+  "$finaldrive_r": 6.41
+},
+"format":2,
+"parts":{
+	"Camso_differential_rear": "Camso_differential_rear_a5620",
+	"Camso_DSE": "Camso_DSE_a5620",
+	"Camso_finaldrive_front": "Camso_finaldrive_front_6.41",
+	"Camso_finaldrive_rear": "Camso_finaldrive_rear_6.41",
+	"Camso_Trim": "Camso_Trim_a5620",
+	"Camso_wheels_front": "Camso_wheels_front_a5620",
+	"Camso_wheels_rear": "Camso_wheels_rear_a5620",
+	"Camso_Engine": "Camso_Engine_e2803",
+	"Camso_Transmission": "Camso_Transmission_a5620",
+	"Camso_SpeedLimiter": "Camso_SpeedLimiter_off",
+	"Camso_hub_bearings_front": "Camso_hub_bearings_front_locking",
+	"Camso_engine_structure": "Camso_engine_structure_a5620"
+}
+}

@@ -1,0 +1,254 @@
+{
+	"material_0_m_carpaint_a5620.skin.dynamicTextures": {
+		"name": "material_0_m_carpaint_a5620.skin.dynamicTextures",
+		"class": "Material",
+		"mapTo": "material_0_m_carpaint_a5620.skin.dynamicTextures",
+		"Stages": [
+			{
+				"normalMap": "vehicles/ntech_sierra_nevada_pickup/camso_col_0xff8080ff.dds",
+				"normalMapStrength": 1,
+				"clearCoatFactor": 1,
+				"clearCoatRoughnessFactor": 1,
+				"opacityMap": "vehicles/ntech_sierra_nevada_pickup/a5620_stamp0.dds",
+				"opacityMapUseUV": 1,
+				"instanceDiffuse": true,
+				"roughnessFactor": 1,
+				"metallicFactor": 1,
+				"diffuseColor": [ 1, 1, 1, 1 ],
+				"useAnisotropic": true
+			},
+			{
+				"normalMap": "vehicles/ntech_sierra_nevada_pickup/camso_col_0xff8080ff.dds",
+				"normalMapStrength": 1,
+				"clearCoatFactor": 1,
+				"clearCoatRoughnessFactor": 1,
+				"opacityMap": "vehicles/ntech_sierra_nevada_pickup/a5620_stamp0.dds",
+				"opacityMapUseUV": 1,
+				"instanceDiffuse": true,
+				"roughnessFactor": 1,
+				"metallicFactor": 1,
+				"baseColorMap": "@DynamicTextureBaseColor",
+				"diffuseMapUseUV": 1,
+				"colorPaletteMap": "@DynamicTextureColorPalette",
+				"colorPaletteMapUseUV": 1,
+				"roughnessMap": "@DynamicTextureRoughness",
+				"roughnessMapUseUV": 1,
+				"metallicMap": "@DynamicTextureMetallic",
+				"metallicMapUseUV": 1,
+				"useAnisotropic": true
+			},
+			{
+			},
+			{
+			}
+		],
+		"alphaRef": 255,
+		"alphaTest": true,
+		"translucent": false,
+		"translucentBlendOp": "None",
+		"doubleSided": true,
+		"invertBackFaceNormals": true,
+		"dynamicCubemap": true,
+		"activeLayers": 2,
+		"materialTag0": "beamng",
+		"materialTag1": "vehicle",
+		"order_simset": 0,
+		"version": 1.5
+	},
+	"material_14_m_carpaint_a5620.skin.dynamicTextures": {
+		"name": "material_14_m_carpaint_a5620.skin.dynamicTextures",
+		"class": "Material",
+		"mapTo": "material_14_m_carpaint_a5620.skin.dynamicTextures",
+		"Stages": [
+			{
+				"normalMap": "vehicles/ntech_sierra_nevada_pickup/camso_col_0xff8080ff.dds",
+				"normalMapStrength": 1,
+				"clearCoatFactor": 1,
+				"clearCoatRoughnessFactor": 0,
+				"diffuseColor": [ 0.847059, 0.0941176, 0, 1 ],
+				"roughnessFactor": 0.263333,
+				"metallicFactor": 0.752381
+			},
+			{
+				"normalMap": "vehicles/ntech_sierra_nevada_pickup/camso_col_0xff8080ff.dds",
+				"normalMapStrength": 1,
+				"clearCoatFactor": 1,
+				"clearCoatRoughnessFactor": 0,
+				"roughnessFactor": 0.263333,
+				"metallicFactor": 0.752381,
+				"baseColorMap": "@DynamicTextureBaseColor",
+				"diffuseMapUseUV": 1,
+				"colorPaletteMap": "@DynamicTextureColorPalette",
+				"colorPaletteMapUseUV": 1,
+				"roughnessMap": "@DynamicTextureRoughness",
+				"roughnessMapUseUV": 1,
+				"metallicMap": "@DynamicTextureMetallic",
+				"metallicMapUseUV": 1
+			},
+			{
+			},
+			{
+			}
+		],
+		"alphaRef": 255,
+		"alphaTest": true,
+		"translucent": false,
+		"translucentBlendOp": "None",
+		"doubleSided": true,
+		"invertBackFaceNormals": true,
+		"dynamicCubemap": true,
+		"activeLayers": 2,
+		"materialTag0": "beamng",
+		"materialTag1": "vehicle",
+		"order_simset": 0,
+		"version": 1.5
+	},
+	"material_18_m_carpaint_a5620.skin.dynamicTextures": {
+		"name": "material_18_m_carpaint_a5620.skin.dynamicTextures",
+		"class": "Material",
+		"mapTo": "material_18_m_carpaint_a5620.skin.dynamicTextures",
+		"Stages": [
+			{
+				"normalMap": "vehicles/ntech_sierra_nevada_pickup/camso_col_0xff8080ff.dds",
+				"normalMapStrength": 1,
+				"clearCoatFactor": 1,
+				"clearCoatRoughnessFactor": 1,
+				"instanceDiffuse": true,
+				"roughnessFactor": 1,
+				"metallicFactor": 1,
+				"diffuseColor": [ 1, 1, 1, 1 ]
+			},
+			{
+				"normalMap": "vehicles/ntech_sierra_nevada_pickup/camso_col_0xff8080ff.dds",
+				"normalMapStrength": 1,
+				"clearCoatFactor": 1,
+				"clearCoatRoughnessFactor": 1,
+				"instanceDiffuse": true,
+				"roughnessFactor": 1,
+				"metallicFactor": 1,
+				"baseColorMap": "@DynamicTextureBaseColor",
+				"diffuseMapUseUV": 1,
+				"colorPaletteMap": "@DynamicTextureColorPalette",
+				"colorPaletteMapUseUV": 1,
+				"roughnessMap": "@DynamicTextureRoughness",
+				"roughnessMapUseUV": 1,
+				"metallicMap": "@DynamicTextureMetallic",
+				"metallicMapUseUV": 1
+			},
+			{
+			},
+			{
+			}
+		],
+		"alphaRef": 255,
+		"alphaTest": true,
+		"translucent": false,
+		"translucentBlendOp": "None",
+		"doubleSided": true,
+		"invertBackFaceNormals": true,
+		"dynamicCubemap": true,
+		"activeLayers": 2,
+		"materialTag0": "beamng",
+		"materialTag1": "vehicle",
+		"order_simset": 0,
+		"version": 1.5
+	},
+	"material_47_m_carpaint_a5620.skin.dynamicTextures": {
+		"name": "material_47_m_carpaint_a5620.skin.dynamicTextures",
+		"class": "Material",
+		"mapTo": "material_47_m_carpaint_a5620.skin.dynamicTextures",
+		"Stages": [
+			{
+				"normalMap": "vehicles/ntech_sierra_nevada_pickup/camso_col_0xff8080ff.dds",
+				"normalMapStrength": 1,
+				"clearCoatFactor": 1,
+				"clearCoatRoughnessFactor": 1,
+				"instanceDiffuse": true,
+				"roughnessFactor": 1,
+				"metallicFactor": 1,
+				"diffuseColor": [ 1, 1, 1, 1 ]
+			},
+			{
+				"normalMap": "vehicles/ntech_sierra_nevada_pickup/camso_col_0xff8080ff.dds",
+				"normalMapStrength": 1,
+				"clearCoatFactor": 1,
+				"clearCoatRoughnessFactor": 1,
+				"instanceDiffuse": true,
+				"roughnessFactor": 1,
+				"metallicFactor": 1,
+				"baseColorMap": "@DynamicTextureBaseColor",
+				"diffuseMapUseUV": 1,
+				"colorPaletteMap": "@DynamicTextureColorPalette",
+				"colorPaletteMapUseUV": 1,
+				"roughnessMap": "@DynamicTextureRoughness",
+				"roughnessMapUseUV": 1,
+				"metallicMap": "@DynamicTextureMetallic",
+				"metallicMapUseUV": 1
+			},
+			{
+			},
+			{
+			}
+		],
+		"alphaRef": 255,
+		"alphaTest": true,
+		"translucent": false,
+		"translucentBlendOp": "None",
+		"doubleSided": true,
+		"invertBackFaceNormals": true,
+		"dynamicCubemap": true,
+		"activeLayers": 2,
+		"materialTag0": "beamng",
+		"materialTag1": "vehicle",
+		"order_simset": 0,
+		"version": 1.5
+	},
+	"material_86_m_carpaint_a5620.skin.dynamicTextures": {
+		"name": "material_86_m_carpaint_a5620.skin.dynamicTextures",
+		"class": "Material",
+		"mapTo": "material_86_m_carpaint_a5620.skin.dynamicTextures",
+		"Stages": [
+			{
+				"normalMap": "vehicles/ntech_sierra_nevada_pickup/camso_col_0xff8080ff.dds",
+				"normalMapStrength": 1,
+				"clearCoatFactor": 1,
+				"clearCoatRoughnessFactor": 0,
+				"diffuseColor": [ 1, 0.584314, 0, 1 ],
+				"roughnessFactor": 1,
+				"metallicFactor": 0
+			},
+			{
+				"normalMap": "vehicles/ntech_sierra_nevada_pickup/camso_col_0xff8080ff.dds",
+				"normalMapStrength": 1,
+				"clearCoatFactor": 1,
+				"clearCoatRoughnessFactor": 0,
+				"roughnessFactor": 1,
+				"metallicFactor": 0,
+				"baseColorMap": "@DynamicTextureBaseColor",
+				"diffuseMapUseUV": 1,
+				"colorPaletteMap": "@DynamicTextureColorPalette",
+				"colorPaletteMapUseUV": 1,
+				"roughnessMap": "@DynamicTextureRoughness",
+				"roughnessMapUseUV": 1,
+				"metallicMap": "@DynamicTextureMetallic",
+				"metallicMapUseUV": 1
+			},
+			{
+			},
+			{
+			}
+		],
+		"alphaRef": 255,
+		"alphaTest": true,
+		"translucent": false,
+		"translucentBlendOp": "None",
+		"doubleSided": true,
+		"invertBackFaceNormals": true,
+		"dynamicCubemap": true,
+		"activeLayers": 2,
+		"materialTag0": "beamng",
+		"materialTag1": "vehicle",
+		"order_simset": 0,
+		"version": 1.5
+	}
+}

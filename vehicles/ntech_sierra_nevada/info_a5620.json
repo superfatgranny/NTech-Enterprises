@@ -1,0 +1,24 @@
+{
+	"Configuration": "Pickup",
+	"Description": "This is a utilitarian dream come true! NTech's first modern pickup truck is now available to markets. Boasting a 400+ Horsepower engine and a carrying capacity of 11k lbs, this is certainly NTech's most capable transportation unit.",
+	"Config Type": "Factory",
+	"Weight": 1646,
+	"Power": 436,
+	"Torque": 486,
+	"PowerPeakRPM": 6700,
+	"TorquePeakRPM": 6100,
+	"Weight/Power": 3.76895,
+	"0-100 km/h": 5.6,
+	"Top Speed": 85.4,
+	"Years": {
+		"min": 2012,
+		"max": 2012
+	},
+	"Drivetrain": "4WD",
+	"Transmission": "Automatic",
+	"Propulsion": "ICE",
+	"Fuel Type": "Gasoline",
+	"Induction Type": "NA",
+	"Value": 140178,
+	"defaultPaintName1": "Default1"
+}

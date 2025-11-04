@@ -1,0 +1,22 @@
+{
+	"Camso_Battery_a5620": {
+		"information":{
+			"name":"Pickup Battery",
+			"value": 10000
+		},
+		"slotType" : "Camso_FuelTank",
+		"energyStorage": [
+			["type", "name"],
+			["electricBattery", "mainBattery"],
+		],
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$charge", "range", "kWh", "Chassis", 85, 0, 85, "Battery Level", "Initial battery charge", {"stepDis":0.5}]
+		],
+		"mainBattery": {
+			"energyType":"electricEnergy",
+			"batteryCapacity": 85,
+			"startingCapacity": "$charge"
+		}
+	}
+}

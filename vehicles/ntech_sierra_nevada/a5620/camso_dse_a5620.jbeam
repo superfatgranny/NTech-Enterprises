@@ -1,0 +1,35 @@
+{
+	"Camso_DSE_a5620": {
+		"information":{
+			"name":"Pickup Electronic Stability & Traction Control",
+			"value":250
+		}
+
+		"slotType" : "Camso_DSE",
+
+		"slots":[
+			["type", "default", "description"],
+			["Camso_DriveModes_a5620", "Camso_DriveModes_a5620", "Drive Modes"] 
+			["Camso_TC_a5620", "Camso_TC_a5620", "Traction Control"] 
+
+		],
+
+		"controller": [
+			["fileName"],
+			["postCrashBrake",{"brakeThreshold": 60}],
+			["drivingDynamics/CMU", {"name":"CMU", "debugSettings": {"enableDebugMode": false, "peerIP": "127.0.0.1"}}],
+			["drivingDynamics/sensors/sensorHub"],
+			["drivingDynamics/sensors/virtualSensors" {"name":"sensors"}],
+			["drivingDynamics/sensors/vehicleData" {"name":"vehicleData"}],
+			["drivingDynamics/supervisors/components/motorTorqueControl" {"name":"motorTorqueControl"}],
+			["drivingDynamics/supervisors/components/brakeControl" {"name":"brakeControl"}],
+
+			["adaptiveBrakeLights"],
+		],
+
+		"vehicleData": {
+			"skewStiffnessFront": 182361.39189726,
+			"skewStiffnessRear": 123381.3789526
+		}
+	}
+}

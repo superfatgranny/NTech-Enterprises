@@ -1,0 +1,24 @@
+{
+	"Camso_differential_front_a5620": {
+		"information":{
+			"name":"Pickup Locking Front Differential",
+			"value":500
+		},
+		"slotType" : "Camso_differential_front",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_halfshafts_front","Camso_halfshafts_front","Front Halfshafts"],
+			["Camso_finaldrive_front","Camso_finaldrive_front_6.41","Front Final Drive", {"coreSlot":true}]
+		],
+		"controller": [
+			["fileName"],
+			
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+		//https://wiki.beamng.com/Differential
+		["differential", "frontDiff", "frontDriveShaft", 1, {"diffType": ["open", "locked"], "uiName": "Front Differential","defaultVirtualInertia": 0.25, "friction": 55.985433395598}],
+
+		]
+	}
+}

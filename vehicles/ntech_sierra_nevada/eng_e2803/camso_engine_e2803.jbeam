@@ -1,0 +1,375 @@
+{
+	"Camso_Engine_e2803": {
+		"information":{
+			"authors":"Camshaft Software",
+			"name":"Power Block Utility",
+			"value": 6000
+		}
+		//"variables": [
+		//	["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+		//	["$AfterfireMod", "range", "", "Vehicle Advanced Settings", 1, 0, 10, "Afterfire Modifier", "Modifier for the amount of engine afterfire", {"stepDis":1,"subCategory":"Engine","minDis":0,"maxDis":1000}],
+		//	["$ParticulatesMod", "range", "", "Vehicle Advanced Settings", 1, 0, 100, "Particluates Modifier", "Modifier for the amount of engine particulates", {"stepDis":1,"subCategory":"Engine","minDis":0,"maxDis":10000}],
+		//	//["$EngineOffsetX", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Engine Offset X", "Lateral engine offset", {"stepDis":0.01,"subCategory":"Engine Offset"}],
+		//	//["$EngineOffsetY", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Engine Offset Y", "Longitudinal engine offset", {"stepDis":0.01,"subCategory":"Engine Offset"}],
+		//	//["$EngineOffsetZ", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Engine Offset Z", "Vertical engine offset", {"stepDis":0.01,"subCategory":"Engine Offset"}],
+		//	["$EngineOffsetXVis", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Visual Engine Offset X", "Visual lateral engine offset", {"stepDis":0.01,"subCategory":"Engine Offset"}],
+		//	["$EngineOffsetYVis", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Visual Engine Offset Y", "Visual longitudinal engine offset", {"stepDis":0.01,"subCategory":"Engine Offset"}],
+		//	["$EngineOffsetZVis", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Visual Engine Offset Z", "Visual vertical engine offset", {"stepDis":0.01,"subCategory":"Engine Offset"}],
+		//	["$ExhaustOffsetX", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Exhaust Offset X", "Lateral exhaust offset", {"stepDis":0.01,"subCategory":"Exhaust Offset"}],
+		//	["$ExhaustOffsetY", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Exhaust Offset Y", "Longitudinal exhaust offset", {"stepDis":0.01,"subCategory":"Exhaust Offset"}],
+		//	["$ExhaustOffsetZ", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Exhaust Offset Z", "Vertical exhaust offset", {"stepDis":0.01,"subCategory":"Exhaust Offset"}],
+		//	["$ExhaustOffsetXVis", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Visual Exhaust Offset X", "Visual lateral exhaust offset", {"stepDis":0.01,"subCategory":"Exhaust Offset"}],
+		//	["$ExhaustOffsetYVis", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Visual Exhaust Offset Y", "Visual longitudinal exhaust offset", {"stepDis":0.01,"subCategory":"Exhaust Offset"}],
+		//	["$ExhaustOffsetZVis", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Visual Exhaust Offset Z", "Visual vertical exhaust offset", {"stepDis":0.01,"subCategory":"Exhaust Offset"}]
+		//],
+		"slotType" : "Camso_Engine",
+		"slots": [
+			["type", "default", "description"],
+			["camso_tuning_parameters_engine", "", "Advanced Engine Parameters"],
+			//["Camso_Enginesound", "Camso_Enginesound_e2803", "Engine Sound"],
+			["Camso_Intake_e2803", "Camso_Intake_e2803", "Intake", {"coreSlot": true}],
+			["Camso_BalancingMass", "Camso_BalancingMass", "Engine Balancing", {"coreSlot": true}],
+			["Camso_Nitrous", "", "Nitrous Injection"],
+			["Camso_EngineManagement_e2803", "Camso_EngineManagement_e2803", "Engine Management", {"coreSlot": true}],
+			["Camso_engine_structure", "Camso_engine_structure_a5620", "Engine Structure", {"coreSlot": true}],
+			["Camso_EngineInternals_e2803", "Camso_EngineInternals_e2803", "Engine Internals", {"coreSlot": true}]
+			["Camso_Turbo_e2803", "", "Turbocharger"],
+			["Camso_Supercharger_e2803", "", "Supercharger"],
+			["Camso_Turbo", "", "Turbocharger Mod"], //backwards compatibility for mods
+			["Camso_Supercharger", "", "Supercharger Mod"], //backwards compatibility for mods
+			["Camso_Transmission", "Camso_Transmission_a5620", "Transmission"]
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["combustionEngine", "mainEngine", "dummy", 0]
+		],
+
+		"mainEngine": {
+			"torque":[
+				["rpm", "torque"],
+				[0,0],
+				[500, 277.05],
+				[500, 362.90],
+				[600, 369.61],
+				[700, 375.65],
+				[800, 381.24],
+				[900, 386.58],
+				[1000, 391.80],
+				[1100, 396.95],
+				[1200, 401.92],
+				[1300, 406.89],
+				[1400, 412.51],
+				[1500, 418.11],
+				[1600, 422.73],
+				[1700, 426.07],
+				[1800, 428.77],
+				[1900, 431.89],
+				[2000, 435.48],
+				[2100, 439.65],
+				[2200, 444.20],
+				[2300, 448.73],
+				[2400, 452.79],
+				[2500, 455.98],
+				[2600, 458.14],
+				[2700, 459.43],
+				[2800, 460.27],
+				[2900, 461.24],
+				[3000, 462.92],
+				[3100, 465.56],
+				[3200, 468.43],
+				[3300, 471.46],
+				[3400, 474.64],
+				[3500, 477.97],
+				[3600, 481.63],
+				[3700, 486.29],
+				[3800, 491.76],
+				[3900, 497.57],
+				[4000, 503.20],
+				[4100, 508.11],
+				[4200, 511.88],
+				[4300, 514.29],
+				[4400, 515.52],
+				[4500, 516.01],
+				[4600, 516.28],
+				[4700, 516.81],
+				[4800, 517.74],
+				[4900, 518.29],
+				[5000, 518.36],
+				[5100, 517.99],
+				[5200, 517.20],
+				[5300, 516.03],
+				[5400, 515.27],
+				[5500, 515.73],
+				[5600, 517.27],
+				[5700, 519.56],
+				[5800, 522.38],
+				[5900, 525.37],
+				[6000, 527.89],
+				[6100, 529.46],
+				[6200, 529.75],
+				[6300, 528.50],
+				[6400, 525.71],
+				[6500, 521.52],
+				[6600, 516.11],
+				[6700, 509.74],
+				[6800, 502.78],
+				[6900, 495.61],
+				[7000, 488.55],
+				[7500, 474.42],
+				[8000, 446.16],
+				[8500, 389.64],
+				[9000, 276.60],
+				[9500, 50.52],
+
+			],
+			//rev limiters have some options
+			//"revLimiterType":"rpmDrop", //Default choice. waits for rpm to fall before torque comes back. Can have long delays in high gears. Uses "revLimiterRPMDrop".
+			//"revLimiterType":"timeBased", //Waits for "revLimiterCutTime" time window, but also has "revLimiterMaxRPMDrop" fallback, if the rpm falls too much in the time window.
+			//"revLimiterType:"soft", //Tapers the the torque off in some range of rpm defined by "revLimiterSmoothOvershootRPM"
+			"hasRevLimiter":false, //Disables rev limiter
+			//"revLimiterRPMDrop":100,
+			//engine performance
+			"idleRPM":500,
+			"idleRPMRoughness":48.294589014117,
+			"maxRPM":11106.361665969, //Max RPM before overrev damage is likely
+			"inertia":0.22399194465751, //(kg*m/s^2)
+			"friction":17.376693755067, //Constant friction torque (Nm)
+			"dynamicFriction":0.040198173312703, //Friction torque that increases with engine speed (Nm/rad/s)
+			"engineBrakeTorque":34.753387510133, //Constant friction torque (Nm)
+
+			"starterMaxRPM":500,
+			"starterTorque":104.2601625304,
+
+			"waterDamage": {"[engineGroup]:":["engine_intake"]}, //Engine hydrolocks when nodes in this group go under water
+			"radiator": {"[engineGroup]:":["radiator"]}, //Radiator steam is emitted from nodes in this group
+			"engineBlock": {"[engineGroup]:":["engine_block"]}, //Engine thermal mass is taken from nodes in this group
+			//"fuel": {"[engineGroup]:":["fuel"]},
+			"breakTriggerBeam":"engine", //Engine breaks if beam with this name is broken
+
+			"soundConfigExhaust": "soundConfigExhaust", //What section name to look for for engine sound information
+
+			//Exhaust Settings
+			"particulates":"$=0.0346814432621*($ParticulatesMod or 1)",
+			//Exhaust Sound/back fires
+			"instantAfterFireCoef": "$=0.66806031173855*($AfterfireMod or 1)",
+			"sustainedAfterFireCoef": "$=1.0020904676078*($AfterfireMod or 1)",
+			"instantAfterFireVolumeCoef":0.6,
+			"sustainedAfterFireVolumeCoef":0.55,
+			"shiftAfterFireVolumeCoef":0.8,
+			"instantAfterFireSound": "event:>Vehicle>Afterfire>v8_crossflow_02>muffled>stock_single",
+			"sustainedAfterFireSound": "event:>Vehicle>Afterfire>v8_crossflow_02>muffled>stock_multi",
+			"shiftAfterFireSound": "event:>Vehicle>Afterfire>v8_crossflow_02>muffled>stock_shift",
+				
+			//cooling and oil system,
+			"thermalsEnabled":true,
+			"engineBlockMaterial":"aluminium", //"aluminum", "aluminium", "iron"
+
+			"starterSample":"event:>Engine>Starter>v8_20xy_eng",
+			"starterSampleExhaust":"event:>Engine>Starter>v8_20xy_exh",
+			"shutOffSampleEngine":"event:>Engine>Shutoff>v8_20xy_eng",
+			"shutOffSampleExhaust":"event:>Engine>Shutoff>v8_20xy_exh",
+			"starterVolume":0.67,
+			"starterVolumeExhaust":0.8,
+			"shutOffVolumeEngine":0.33,
+			"shutOffVolumeExhaust":0.4,
+				
+
+			//cooling system
+			"radiatorArea":0.51867432045946,
+			"radiatorEffectiveness":20000,
+			"coolantVolume":6.2568747612775,
+			"radiatorFanType":"electric",
+			"radiatorFanTemperature":105
+			"radiatorFanMaxAirSpeed":2,
+			"thermostatTemperature":90,
+
+			"radiatorFanLoopEvent": "event:>Vehicle>Cooling Fan>Electric_05",
+			"radiatorFanVolume": 0.6,
+
+			//oil radiator
+			"oilRadiatorArea":6.2568747612775,
+			"oilRadiatorEffectiveness":2000,
+			"oilThermostatTemperature":100,
+			"oilVolume":4.9426560709581, //Litres
+
+			//engine durability
+			"cylinderWallTemperatureDamageThreshold":310, //Cylinder temp (C) over which damage starts to occur to rings
+			"headGasketDamageThreshold":1700000, //Durability of headgasket
+			"pistonRingDamageThreshold":1700000, //Durability of headgasket
+			"connectingRodDamageThreshold":2200000, //Durability of connecting rods
+
+			"maxTorqueRating": 3727.9435185074,
+			"maxOverTorqueDamage": 250,
+
+			"energyStorage": "mainTank", //Name of the fuel tank
+			"requiredEnergyType":"gasoline", //Type of fuel required
+			"burnEfficiency": [ //How much fuel energy is converted to work in the cylinders (does not account for engine friction losses)
+				[0.00, 0.17],
+				[0.05, 0.37],
+				[0.40, 0.48],
+				[0.70, 0.60],
+				[1.00, 0.41],
+
+			],
+			"torqueReactionNodes:":["engine1", "engine2", "engine3"]
+		},
+		"vehicleController": {
+			//https://wiki.beamng.com/VehicleController
+			//I will put commonly used values below
+
+			//universally useful values
+			//"calculateOptimalLoadShiftPoints":true, //The high shift points ones can be auto calculated
+			//"shiftDownRPMOffsetCoef":1.3, //Can spread the downshift points for auto calculation if it tends to hunt too much (choose lower number to spread more)
+
+			"lowShiftDownRPM":500,
+			"highShiftDownRPM":4600,
+			"lowShiftUpRPM":1100,
+			"highShiftUpRPM":6900,
+
+			//"topSpeedLimit":0, //Speed limiter in m/s
+
+			//may want to increase values below for ultra high powered cars. On our drag cars they are set to 99999 to effectively disable
+			//"wheelSlipUpThreshold":7000, //A wheelspin threshold to stop arcade/auto gearbox from upshifting while spinning the tires or drifting
+			//"wheelSlipDownThreshold":10000, //A wheelspin threshold to stop arcade/auto gearbox from downshifting when locking the brakes
+		},
+
+		"soundConfigExhaust": {
+			"sampleName": "E2803110446815D9868D559D58F51092",
+			"mainGain": 7.5,
+			"maxLoadMix": 1,
+			"minLoadMix": 0,
+			"onLoadGain": 1.1,
+			"offLoadGain": 0.8,
+			"eqLowGain": 0,
+			"eqLowFreq": 400,
+			"eqLowWidth": 1,
+			"eqHighGain": 1.21,
+			"eqHighFreq": 6000,
+			"eqHighWidth": 0.5,
+			"lowCutFreq": 80,
+			//"fundamentalFrequencyCylinderCount": 4,
+			"eqFundamentalGain": 0
+		}
+	},
+
+
+
+	"Camso_EngineManagement_e2803": {
+		"information":{
+			"name":"Stock Engine Management",
+			"value":600
+		},
+		"slotType" : "Camso_EngineManagement_e2803",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_SpeedLimiter", "Camso_SpeedLimiter_off", "Speed Limiter", {"coreSlot": true}]
+		],
+
+		"mainEngine": {
+			//rev limiters have some options
+			//"revLimiterType":"rpmDrop", //Default choice. waits for rpm to fall before torque comes back. Can have long delays in high gears. Uses "revLimiterRPMDrop".
+			//"revLimiterType":"timeBased", //Waits for "revLimiterCutTime" time window, but also has "revLimiterMaxRPMDrop" fallback, if the rpm falls too much in the time window.
+			//"revLimiterType:"soft", //Tapers the the torque off in some range of rpm defined by "revLimiterSmoothOvershootRPM"
+			//"hasRevLimiter":false, //Disables rev limiter
+			"hasRevLimiter": true,
+			"revLimiterRPMDrop":100,
+			"revLimiterRPM":7000
+		}
+	},
+
+	"Camso_EngineManagement_race_e2803": {
+		"information":{
+			"name":"Race Engine Management",
+			"value":3600
+		},
+
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$idleRPM", "range", "RPM", "Engine", 500, 0, 9500, "Idle RPM", "Idle RPM",{"subCategory": "Idle RPM", "stepDis": 50}]
+		],
+		"slotType" : "Camso_EngineManagement_e2803",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_SpeedLimiter", "Camso_SpeedLimiter_off", "Speed Limiter", {"coreSlot": true}],
+			["Camso_RevLimiter_e2803", "Camso_RevLimiter_Drop_e2803", "Rev Limiter", {"coreSlot": true}]
+		],
+
+		"mainEngine": {
+			"idleRPM":"$idleRPM"
+		}
+	},
+
+	"Camso_RevLimiter_Drop_e2803": {
+		"information":{
+			"name":"RPM Drop",
+			"value":50
+		},
+
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$revLimitRPMDrop", "range", "RPM", "Engine", 100, 0, 2000, "RPM Drop", "RPM drop amount when the limit is hit",{"subCategory": "RPM Limit", "stepDis": 1}],
+			["$revLimitRPM", "range", "RPM", "Engine", 7000, 0, 9500, "RPM Limit", "RPM where the rev limiter prevents further revving",{"subCategory": "RPM Limit", "stepDis": 50}]
+		],
+
+		"slotType" : "Camso_RevLimiter_e2803",
+
+		"mainEngine": {
+			//rev limiters have some options
+			"revLimiterType":"rpmDrop", //Default choice. waits for rpm to fall before torque comes back. Can have long delays in high gears. Uses "revLimiterRPMDrop".
+			"hasRevLimiter": true,
+			"revLimiterRPMDrop":"$revLimitRPMDrop",
+			"revLimiterRPM":"$revLimitRPM",
+			"highShiftUpRPM":"$=$revLimitRPM - 200"
+		}
+	},
+
+	"Camso_RevLimiter_Soft_e2803": {
+		"information":{
+			"name":"Soft",
+			"value":50
+		},
+
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$revLimitOvershoot", "range", "RPM", "Engine", 300, 0, 2000, "RPM Soft Limit", "Range before the RPM limit in which the torque is tapered",{"subCategory": "RPM Limit", "stepDis": 50}],
+			["$revLimitRPM", "range", "RPM", "Engine", 7000, 0, 9500, "RPM Limit", "RPM where the rev limiter prevents further revving",{"subCategory": "RPM Limit", "stepDis": 50}]
+		],
+
+		"slotType" : "Camso_RevLimiter_e2803",
+
+		"mainEngine": {
+			//rev limiters have some options
+			"revLimiterType":"soft", //Tapers the the torque off in some range of rpm defined by "revLimiterSmoothOvershootRPM"
+			"hasRevLimiter": true,
+			"revLimiterRPM":"$revLimitRPM",
+			"revLimiterSmoothOvershootRPM":"$revLimitOvershoot"
+			"highShiftUpRPM":"$=$revLimitRPM - 200"
+		}
+	},
+
+	"Camso_RevLimiter_TimeBased_e2803": {
+		"information":{
+			"name":"Time Based",
+			"value":50
+		},
+
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$revLimitRPMDrop", "range", "RPM", "Engine", 100, 0, 2000, "RPM Drop", "RPM drop amount when the limit is hit",{"subCategory": "RPM Limit", "stepDis": 1}],
+			["$revLimitCutTime", "range", "S", "Engine", 0.1, 0, 1, "Cut Time", "How fast the rev limiter cycles",{"subCategory": "RPM Limit", "stepDis": 0.01}],
+			["$revLimitRPM", "range", "RPM", "Engine", 7000, 0, 9500, "RPM Limit", "RPM where the rev limiter prevents further revving",{"subCategory": "RPM Limit", "stepDis": 50}]
+		],
+
+		"slotType" : "Camso_RevLimiter_e2803",
+
+		"mainEngine": {
+			//rev limiters have some options
+			"revLimiterType":"timeBased", //Waits for "revLimiterCutTime" time window, but also has "revLimiterMaxRPMDrop" fallback, if the rpm falls too much in the time window.
+			"hasRevLimiter":true, //Disables rev limiter
+			"revLimiterRPM":"$revLimitRPM",
+			"revLimiterCutTime":"$revLimitCutTime",
+			"revLimiterMaxRPMDrop":"$revLimitRPMDrop",
+			"highShiftUpRPM":"$=$revLimitRPM - 200"
+		}
+	}
+}

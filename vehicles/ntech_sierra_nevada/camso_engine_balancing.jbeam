@@ -1,0 +1,67 @@
+{
+
+	"Camso_BalancingMass": {
+		"information": {
+			"name": "Stock Balancing",
+			"value": 50
+		},
+		"slotType": "Camso_BalancingMass"
+	},
+
+	"Camso_BalancingMass_Custom": {
+		"information": {
+			"name":"Customizable Balancing",
+			"value":99999999999
+		},
+
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$EngineInertiaMod", "range", "", "Engine", 1, 0, 5, "Engine Balancing", "Modifies Engine Inertia", {"stepDis":1,"minDis":0,"maxDis":500}]
+		],
+
+		"slotType" : "Camso_BalancingMass",
+
+		"mainEngine": {
+			"$*inertia":"$EngineInertiaMod", //(kg*m/s^2)
+		}
+	},
+
+	"Camso_BalancingMass_Lightened": {
+		"information": {
+			"name": "Lightened Balancing",
+			"value": 150
+		},
+
+		"slotType": "Camso_BalancingMass",
+
+		"mainEngine": {
+			"$+inertia": -0.04, //(kg*m/s^2)
+		}
+	},
+
+	"Camso_BalancingMass_Race": {
+		"information": {
+			"name": "Ultra Light Balancing",
+			"value": 250
+		},
+
+		"slotType": "Camso_BalancingMass",
+
+		"mainEngine": {
+			"$+inertia": -0.07, //(kg*m/s^2)
+		}
+	}
+
+	"Camso_BalancingMass_Heavy_$engineUID$": {
+		"information": {
+			"name":"Heavy Balancing",
+			"value": 150
+		},
+
+		"slotType": "Camso_BalancingMass",
+
+		"mainEngine": {
+			"$+inertia": 0.07, //(kg*m/s^2)
+		}
+	}
+}

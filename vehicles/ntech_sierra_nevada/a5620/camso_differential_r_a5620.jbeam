@@ -1,0 +1,24 @@
+{
+	"Camso_differential_rear_a5620": {
+		"information":{
+			"name":"Pickup Locking Rear Differential",
+			"value":500
+		},
+		"slotType" : "Camso_differential_rear",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_halfshafts_rear","Camso_halfshafts_rear","Rear Halfshafts"],
+			["Camso_finaldrive_rear","Camso_finaldrive_rear_6.41","Rear Final Drive", {"coreSlot":true}]
+		],
+		"controller": [
+			["fileName"],
+			
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+		//https://wiki.beamng.com/Differential
+		["differential", "rearDiff", "rearDriveShaft", 1, {"diffType": ["open", "locked"], "uiName": "Rear Differential","defaultVirtualInertia": 0.25, "friction": 55.985433395598}],
+
+		]
+	}
+}

@@ -1,0 +1,30 @@
+{
+	"Camso_suspensionmesh_R_a5620":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Pickup Rear Suspension Meshes"
+	    },
+	    "slotType" : "Camso_suspensionmesh_R",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["a5620_suspension_r10", ["susp_R"], [], {"pos":{"x":1.35064e-07, "y":0.755, "z":1.263}, "rot":{"x":-0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		]
+	},
+
+	"Camso_brakemeshes_rear_a5620":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Pickup Rear Brake Meshes"
+	    },
+	    "slotType" : "Camso_brakemeshes_rear",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["a5620_brakecaliper_r12", ["hub_R"], [], {"pos":{"x":0.805086, "y":1.655, "z":1.309}, "rot":{"x":45, "y":-180, "z":5.79561e-05}, "scale":{"x":2.04939, "y":4.84, "z":4.84}}],
+	        ["a5620_brakecaliper_r213", ["hub_R"], [], {"pos":{"x":-0.805086, "y":1.655, "z":1.309}, "rot":{"x":45, "y":-180, "z":5.79561e-05}, "scale":{"x":2.04939, "y":4.84, "z":4.84}}],
+	        ["a5620_brakedisc_r11", ["wheel_RL"], [], {"pos":{"x":0.81044, "y":1.805, "z":1.159}, "rot":{"x":-0, "y":0, "z":180}, "scale":{"x":2.04939, "y":4.2, "z":4.2}}],
+	        ["a5620_brakedisc_r11", ["wheel_RR"], [], {"pos":{"x":-0.81044, "y":1.805, "z":1.159}, "rot":{"x":0, "y":-0, "z":360}, "scale":{"x":2.04939, "y":4.2, "z":4.2}}],
+		]
+	}
+}

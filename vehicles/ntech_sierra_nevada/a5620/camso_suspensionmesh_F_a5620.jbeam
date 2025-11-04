@@ -1,0 +1,30 @@
+{
+	"Camso_suspensionmesh_F_a5620":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Pickup Front Suspension Meshes"
+	    },
+	    "slotType" : "Camso_suspensionmesh_F",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["a5620_suspension_f4", ["susp_F"], [], {"pos":{"x":1.35064e-07, "y":-1.095, "z":1.263}, "rot":{"x":-0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		]
+	},
+
+	"Camso_brakemeshes_front_a5620":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Pickup Front Brake Meshes"
+	    },
+	    "slotType" : "Camso_brakemeshes_front",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["a5620_brakecaliper_f6", ["hub_F"], [], {"pos":{"x":0.805086, "y":-1.825, "z":1.309}, "rot":{"x":45, "y":-4.09811e-05, "z":180}, "scale":{"x":2.04939, "y":4.84, "z":4.84}}],
+	        ["a5620_brakecaliper_f27", ["hub_F"], [], {"pos":{"x":-0.805086, "y":-1.825, "z":1.309}, "rot":{"x":45, "y":-4.09811e-05, "z":180}, "scale":{"x":2.04939, "y":4.84, "z":4.84}}],
+	        ["a5620_brakedisc_f5", ["wheel_FL"], [], {"pos":{"x":0.81044, "y":-1.975, "z":1.159}, "rot":{"x":-0, "y":0, "z":180}, "scale":{"x":2.04939, "y":4.2, "z":4.2}}],
+	        ["a5620_brakedisc_f5", ["wheel_FR"], [], {"pos":{"x":-0.81044, "y":-1.975, "z":1.159}, "rot":{"x":0, "y":-0, "z":360}, "scale":{"x":2.04939, "y":4.2, "z":4.2}}],
+		]
+	}
+}
