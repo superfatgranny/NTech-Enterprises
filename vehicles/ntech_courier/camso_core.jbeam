@@ -1,0 +1,17 @@
+{
+	"Camso_ntech_courier_powerblock_core":
+	{
+			"information":{
+	        "authors":"Camshaft Software",
+	        "name":"Automation Exported Car",
+	        "value":1
+			},
+			"slotType" : "main",
+	    "slots":[
+			   ["type", "default", "description"],
+			   ["Camso_Mod", "", "Additional Modification"],
+			   ["Camso_Trim", "Camso_Trim_ad0e9", "Body", {"coreSlot":true}],
+			   ["paint_design", "", "Paint Design"]
+			]
+	}
+}

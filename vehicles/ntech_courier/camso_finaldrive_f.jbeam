@@ -1,0 +1,16 @@
+{
+	"Camso_finaldrive_front_race": {
+		"information":{
+			"name":"Race Front Final Drive",
+			"value":500
+		},
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$finaldrive_f", "range", ":1", "Gearing", 4.92, 0.5, 16, "Front Final Drive", "Gear ratio",{"subCategory": "Differentials", "stepDis": 0.01}]
+		],
+		"slotType" : "Camso_finaldrive_front",
+		"frontDiff":{
+			"gearRatio": "$finaldrive_f"
+		}
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"Configuration": "Powerblock",
+	"Description": "The NTech Courier is the ideal vehicle for transit and express shipping. This van runs on the Powerblock Utility engine, taking hold of the same power used inside the Sierra Nevada.",
+	"Config Type": "Factory",
+	"Weight": 1255,
+	"Power": 436,
+	"Torque": 486,
+	"PowerPeakRPM": 6700,
+	"TorquePeakRPM": 6100,
+	"Weight/Power": 2.87493,
+	"0-100 km/h": 3.9,
+	"Top Speed": 90.2,
+	"Years": {
+		"min": 1994,
+		"max": 1994
+	},
+	"Drivetrain": "AWD",
+	"Transmission": "Automatic",
+	"Propulsion": "ICE",
+	"Fuel Type": "Gasoline",
+	"Induction Type": "NA",
+	"Value": 141740,
+	"defaultPaintName1": "Default1"
+}

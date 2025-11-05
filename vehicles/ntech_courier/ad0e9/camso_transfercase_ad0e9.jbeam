@@ -1,0 +1,43 @@
+{
+	"Camso_TransferCase_AWD_ad0e9": {
+		"information":{
+			"name":"Powerblock AWD Transfer Case",
+			"value":1000
+		},
+		"slots": [
+			["type", "default", "description"],
+			["Camso_differential_center", "Camso_differential_center_ad0e9", "Center Differential", {"coreSlot":true}]
+		],
+		"slotType" : "Camso_TransferCase"
+	},
+
+	"Camso_differential_center_ad0e9": {
+		"information":{
+			"name":"Powerblock On-Demand Center Differential",
+			"value":300
+		},
+		"slotType" : "Camso_differential_center",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_driveshaft_front", "Camso_driveshaft_front", "Front Driveshaft"],
+			["Camso_driveshaft_rear", "Camso_driveshaft_rear", "Rear Driveshaft"]
+		],
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$torquesplit", "range", "", "Gearing", 0.50, 0, 1, "Torque Split", "Power to Rear",{"subCategory": "Transfer Case", "stepDis": 0.01, "minDis":0,"maxDis":100}]
+		],
+		"controller": [
+			["fileName"],
+				    ["drivingDynamics/actuators/electronicSplitShaftLock", {"name": "electronicSplitShaftLock", "splitShaftName": "transferCase"}]
+
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+	    ["splitShaft", "transferCase", "gearbox", 1, {"splitType": "locked", "primaryOutputID": 2, "lockTorque": 3000, "uiName": "Electrically Clutched Torque Splitter", "defaultVirtualInertia": 0.1, "defaultClutchRatio": 0, "friction": 0}],
+
+		],
+		"transferCase":{
+			"diffTorqueSplit": "$=$torquesplit or 0.50"
+		}
+	}
+}

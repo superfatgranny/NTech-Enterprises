@@ -1,0 +1,22 @@
+{
+	"Camso_Battery_ad0e9": {
+		"information":{
+			"name":"Powerblock Battery",
+			"value": 10000
+		},
+		"slotType" : "Camso_FuelTank",
+		"energyStorage": [
+			["type", "name"],
+			["electricBattery", "mainBattery"],
+		],
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$charge", "range", "kWh", "Chassis", 60, 0, 60, "Battery Level", "Initial battery charge", {"stepDis":0.5}]
+		],
+		"mainBattery": {
+			"energyType":"electricEnergy",
+			"batteryCapacity": 60,
+			"startingCapacity": "$charge"
+		}
+	}
+}

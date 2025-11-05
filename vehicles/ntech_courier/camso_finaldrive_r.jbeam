@@ -1,0 +1,16 @@
+{
+	"Camso_finaldrive_rear_race": {
+		"information":{
+			"name":"Race Rear Final Drive",
+			"value":500
+		},
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$finaldrive_r", "range", ":1", "Gearing", 4.92, 0.5, 16, "Rear Final Drive", "Gear ratio",{"subCategory": "Differentials", "stepDis": 0.01}]
+		],
+		"slotType" : "Camso_finaldrive_rear",
+		"rearDiff":{
+			"gearRatio": "$finaldrive_r"
+		}
+	}
+}

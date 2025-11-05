@@ -1,0 +1,30 @@
+{
+	"Camso_suspensionmesh_R_ad0e9":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Powerblock Rear Suspension Meshes"
+	    },
+	    "slotType" : "Camso_suspensionmesh_R",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["ad0e9_suspension_r10", ["susp_R"], [], {"pos":{"x":1.08719e-07, "y":0.305, "z":1.132}, "rot":{"x":-0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		]
+	},
+
+	"Camso_brakemeshes_rear_ad0e9":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Powerblock Rear Brake Meshes"
+	    },
+	    "slotType" : "Camso_brakemeshes_rear",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["ad0e9_brakecaliper_r12", ["hub_R"], [], {"pos":{"x":0.685086, "y":1.26214, "z":1.12386}, "rot":{"x":45, "y":-180, "z":5.79561e-05}, "scale":{"x":1.61245, "y":2.92, "z":2.92}}],
+	        ["ad0e9_brakecaliper_r213", ["hub_R"], [], {"pos":{"x":-0.685086, "y":1.26214, "z":1.12386}, "rot":{"x":45, "y":-180, "z":5.79561e-05}, "scale":{"x":1.61245, "y":2.92, "z":2.92}}],
+	        ["ad0e9_brakedisc_r11", ["wheel_RL"], [], {"pos":{"x":0.69044, "y":1.355, "z":1.031}, "rot":{"x":-0, "y":0, "z":180}, "scale":{"x":1.61245, "y":2.6, "z":2.6}}],
+	        ["ad0e9_brakedisc_r11", ["wheel_RR"], [], {"pos":{"x":-0.69044, "y":1.355, "z":1.031}, "rot":{"x":0, "y":-0, "z":360}, "scale":{"x":1.61245, "y":2.6, "z":2.6}}],
+		]
+	}
+}

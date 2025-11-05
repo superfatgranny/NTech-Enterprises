@@ -1,0 +1,133 @@
+{
+	"camso_tuning_parameters": {
+		"information": {
+			"authors": "Camshaft Software",
+			"name": "Advanced tuning parameters",
+			"value": 99999999
+		},
+		"slotType": "camso_tuning_parameters",
+		"slots": [
+			["type", "default", "description"],
+			["camso_tuning_parameters_body", "camso_tuning_parameters_body", "Body Parameters"]
+			["camso_tuning_parameters_cameras", "camso_tuning_parameters_cameras", "Camera Parameters"],
+			["camso_tuning_parameters_aero", "camso_tuning_parameters_aero", "Aerodynamic Parameters"],
+			["camso_tuning_parameters_engineplacement", "camso_tuning_parameters_engineplacement", "Engine Placement Parameters"],
+			["camso_tuning_parameters_suspensionplacement", "camso_tuning_parameters_suspensionplacement", "Suspension Placement Parameters"]
+		]
+	},
+	
+	"camso_tuning_parameters_body": {
+		"information": {
+			"authors": "Camshaft Software",
+			"name": "Body Parameters",
+			"value": 1
+		},
+		"slotType": "camso_tuning_parameters_body",
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$ignitionTemperatureMod", "range", "", "Vehicle Advanced Settings", 1, -10, 10, "Ignition Temperature Adjust", "Adjusts the temepature at which the car catches fire", {"subCategory":"Fire Simulation","stepDis": 0.05,"minDis":-1000,"maxDis":1000}],
+			//["$ignitionChanceMod", "range", "", "Vehicle Advanced Settings", 1, 0, 10, "Ignition Chance Adjust", "Adjusts the temepature at which the car catches fire", {"subCategory":"Fire Simulation","stepDis":1,"minDis":0,"maxDis":1000}],
+			["$bodyDragCoef", "range", "coef.", "Vehicle Advanced Settings", 0, 0, 10, "Body drag and buoyancy", "Adjusts BeamNG physics drag and buoyancy", {"subCategory":"BeamNG Aerodynamics","stepDis":1,"minDis":0,"maxDis":1000}],
+			["$nodeWeightScale", "range", "", "Vehicle Advanced Settings", 1, 0.1, 4, "Node Weight", "Adjusts the weight of all nodes on the car", {"subCategory":"Global","stepDis":1,"minDis":10,"maxDis":400}],
+			["$beamSpringScale", "range", "", "Vehicle Advanced Settings", 1, 0.1, 4, "Beam Spring", "Adjusts the spring of all beams on the car", {"subCategory":"Global","stepDis":1,"minDis":10,"maxDis":400}],
+			["$beamDampScale", "range", "", "Vehicle Advanced Settings", 1, 0.1, 4, "Beam Damp", "Adjusts the damping of all beams on the car", {"subCategory":"Global","stepDis":1,"minDis":10,"maxDis":400}],
+			["$beamDeformScale", "range", "", "Vehicle Advanced Settings", 1, 0.1, 4, "Beam Deformation", "Adjusts the deformation point of all beams on the car", {"subCategory":"Global","stepDis":1,"minDis":10,"maxDis":400}],
+			["$beamStrengthScale", "range", "", "Vehicle Advanced Settings", 1, 0.1, 4, "Beam Strength", "Adjusts the strength of all beams on the car", {"subCategory":"Global","stepDis":1,"minDis":10,"maxDis":400}]
+		]
+	},
+	
+	"camso_tuning_parameters_cameras": {
+		"information": {
+			"authors": "Camshaft Software",
+			"name": "Camera Parameters",
+			"value": 1
+		},
+		"slotType": "camso_tuning_parameters_cameras",
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$dashCamX", "range", "+m", "Camera Positions", 0, -2, 2, "X Offset", "Moves the driver camera sideways", {"subCategory":"Driver Camera","stepDis":0.001}],
+			["$dashCamY", "range", "+m", "Camera Positions", 0, -2, 2, "Y Offset", "Moves the driver camera forwards/backwards", {"subCategory":"Driver Camera","stepDis":0.001}],
+			["$dashCamZ", "range", "+m", "Camera Positions", 0, -2, 2, "Z Offset", "Moves the driver camera vertically", {"subCategory":"Driver Camera","stepDis":0.001}],
+			["$hoodCamX", "range", "+m", "Camera Positions", 0, -2, 2, "X Offset", "Moves the hood camera sideways", {"subCategory":"Hood Camera","stepDis":0.001}],
+			["$hoodCamY", "range", "+m", "Camera Positions", 0, -2, 2, "Y Offset", "Moves the hood camera forwards/backwards", {"subCategory":"Hood Camera","stepDis":0.001}],
+			["$hoodCamZ", "range", "+m", "Camera Positions", 0, -2, 2, "Z Offset", "Moves the hood camera vertically", {"subCategory":"Hood Camera","stepDis":0.001}]
+		]
+	},
+	
+	"camso_tuning_parameters_aero": {
+		"information": {
+			"authors": "Camshaft Software",
+			"name": "Aerodynamic Parameters",
+			"value": 1
+		},
+		"slotType": "camso_tuning_parameters_aero",
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$frontalAreaAdjust", "range", "", "Car Aerodynamics", 1, 0, 10, "Frontal Area Scale", "Adjusts the drag the body of the car produces", {"stepDis":1, "minDis":0, "maxDis":1000}],
+			["$downforceAdjust_F", "range", "+Kg", "Car Aerodynamics", 0, -2000, 2000, "Front Downforce/Lift Adjust", "Adjusts the front downforce or lift", {"subCategory":"Downforce", "stepDis":1}],
+			["$downforceAdjust_R", "range", "+Kg", "Car Aerodynamics", 0, -2000, 2000, "Rear Downforce/Lift Adjust", "Adjusts the rear downforce or lift", {"subCategory":"Downforce", "stepDis":1}],
+			["$downforceTargetSpeed", "range", "Km/h", "Car Aerodynamics", 200, 10, 500, "Target Speed", "Speed at which the downforce should reach target values", {"subCategory":"Downforce", "stepDis":1}],
+			["$constantDownforce_F", "range", "Kg", "Car Aerodynamics", 0, -2000, 2000, "Constant front downforce/lift", "Adjusts the constant front downforce or lift", {"subCategory":"Constant Downforce", "stepDis":1}],
+			["$constantDownforce_R", "range", "Kg", "Car Aerodynamics", 0, -2000, 2000, "Constant rear downforce/lift", "Adjusts the constant rear downforce or lift", {"subCategory":"Constant Downforce", "stepDis":1}]
+		]
+	},
+	
+	"camso_tuning_parameters_suspensionplacement": {
+		"information": {
+			"authors": "Camshaft Software",
+			"name": "Suspension Placement Parameters",
+			"value": 1
+		},
+		"slotType": "camso_tuning_parameters_suspensionplacement",
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$frontSuspensionOffsetY", "range", "+m", "Vehicle Advanced Settings", 0, -10, 10, "Front Suspension Y Offset", "Adjusts the longitudinal position of the front suspension", {"subCategory":"Suspension","stepDis":0.001}],
+			["$frontSuspensionOffsetX", "range", "+m", "Vehicle Advanced Settings", 0, -10, 10, "Front Suspension X Offset", "Adjusts the lateral position of the front suspension", {"subCategory":"Suspension","stepDis":0.001}],
+			["$frontSuspensionOffsetZ", "range", "+m", "Vehicle Advanced Settings", 0, -10, 10, "Front Suspension Z Offset", "Adjusts the vertical position of the front suspension", {"subCategory":"Suspension","stepDis":0.001}],
+			["$rearSuspensionOffsetY", "range", "+m", "Vehicle Advanced Settings", 0, -10, 10, "Rear Suspension Y Offset", "Adjusts the longitudinal position of the rear suspension", {"subCategory":"Suspension","stepDis":0.001}],
+			["$rearSuspensionOffsetX", "range", "+m", "Vehicle Advanced Settings", 0, -10, 10, "Rear Suspension X Offset", "Adjusts the lateral position of the rear suspension", {"subCategory":"Suspension","stepDis":0.001}],
+			["$rearSuspensionOffsetZ", "range", "+m", "Vehicle Advanced Settings", 0, -10, 10, "Rear Suspension Z Offset", "Adjusts the vertical position of the rear suspension", {"subCategory":"Suspension","stepDis":0.001}]
+		]
+	},
+	
+	"camso_tuning_parameters_engineplacement": {
+		"information": {
+			"authors": "Camshaft Software",
+			"name": "Engine Placement Parameters",
+			"value": 1
+		},
+		"slotType": "camso_tuning_parameters_engineplacement",
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$EngineOffsetX", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Engine Offset X", "Lateral engine offset", {"stepDis":0.01,"subCategory":"Engine Offset"}],
+			["$EngineOffsetY", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Engine Offset Y", "Longitudinal engine offset", {"stepDis":0.01,"subCategory":"Engine Offset"}],
+			["$EngineOffsetZ", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Engine Offset Z", "Vertical engine offset", {"stepDis":0.01,"subCategory":"Engine Offset"}],
+		]
+	},
+	
+	"camso_tuning_parameters_engine": {
+		"information": {
+			"authors": "Camshaft Software",
+			"name": "Advanced Engine Parameters",
+			"value": 99999999
+		},
+		"slotType": "camso_tuning_parameters_engine",
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$AfterfireMod", "range", "", "Vehicle Advanced Settings", 1, 0, 10, "Afterfire Modifier", "Modifier for the amount of engine afterfire", {"stepDis":1,"subCategory":"Engine","minDis":0,"maxDis":1000}],
+			["$ParticulatesMod", "range", "", "Vehicle Advanced Settings", 1, 0, 100, "Particluates Modifier", "Modifier for the amount of engine particulates", {"stepDis":1,"subCategory":"Engine","minDis":0,"maxDis":10000}],
+			//["$EngineOffsetX", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Engine Offset X", "Lateral engine offset", {"stepDis":0.01,"subCategory":"Engine Offset"}],
+			//["$EngineOffsetY", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Engine Offset Y", "Longitudinal engine offset", {"stepDis":0.01,"subCategory":"Engine Offset"}],
+			//["$EngineOffsetZ", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Engine Offset Z", "Vertical engine offset", {"stepDis":0.01,"subCategory":"Engine Offset"}],
+			["$EngineOffsetXVis", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Visual Engine Offset X", "Visual lateral engine offset", {"stepDis":0.01,"subCategory":"Engine Offset"}],
+			["$EngineOffsetYVis", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Visual Engine Offset Y", "Visual longitudinal engine offset", {"stepDis":0.01,"subCategory":"Engine Offset"}],
+			["$EngineOffsetZVis", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Visual Engine Offset Z", "Visual vertical engine offset", {"stepDis":0.01,"subCategory":"Engine Offset"}],
+			["$ExhaustOffsetX", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Exhaust Offset X", "Lateral exhaust offset", {"stepDis":0.01,"subCategory":"Exhaust Offset"}],
+			["$ExhaustOffsetY", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Exhaust Offset Y", "Longitudinal exhaust offset", {"stepDis":0.01,"subCategory":"Exhaust Offset"}],
+			["$ExhaustOffsetZ", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Exhaust Offset Z", "Vertical exhaust offset", {"stepDis":0.01,"subCategory":"Exhaust Offset"}],
+			["$ExhaustOffsetXVis", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Visual Exhaust Offset X", "Visual lateral exhaust offset", {"stepDis":0.01,"subCategory":"Exhaust Offset"}],
+			["$ExhaustOffsetYVis", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Visual Exhaust Offset Y", "Visual longitudinal exhaust offset", {"stepDis":0.01,"subCategory":"Exhaust Offset"}],
+			["$ExhaustOffsetZVis", "range", "+m", "Vehicle Advanced Settings", 0, -4, 4, "Visual Exhaust Offset Z", "Visual vertical exhaust offset", {"stepDis":0.01,"subCategory":"Exhaust Offset"}]
+		]
+	}
+}

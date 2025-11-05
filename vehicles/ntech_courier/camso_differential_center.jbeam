@@ -1,0 +1,166 @@
+{
+	"Camso_differential_center_welded": {
+		"information":{
+			"name":"Welded Center Differential",
+			"value":350
+		},
+		"slotType" : "Camso_differential_center",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_driveshaft_front","Camso_driveshaft_front","Front Driveshaft"],
+			["Camso_driveshaft_rear","Camso_driveshaft_rear","Rear Driveshaft"]
+		],
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$torquesplit", "range", "", "Gearing", 0.50, 0, 1, "Torque Split", "Power to Rear",{"subCategory": "Transfer Case", "stepDis": 0.01, "minDis":0,"maxDis":100}]
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["differential", "transferCase", "gearbox", 1, {"diffType":"locked", "lockTorque":10000, "diffTorqueSplit":"$=$torquesplit or 0.50", "uiName":"Differential", "defaultVirtualInertia":0.25, "friction": 10}]
+		]
+	},
+
+	"Camso_differential_center_race": {
+		"information":{
+			"name":"Race Center Differential",
+			"value":800
+		},
+		"slotType" : "Camso_differential_center",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_driveshaft_front","Camso_driveshaft_front","Front Driveshaft"],
+			["Camso_driveshaft_rear","Camso_driveshaft_rear","Rear Driveshaft"]
+		],
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$torquesplit", "range", "", "Gearing", 0.50, 0, 1, "Torque Split", "Power to Rear",{"subCategory": "Transfer Case", "stepDis": 0.01, "minDis":0,"maxDis":100}]
+			["$lsdpreload_C", "range", "N/m", "Differentials", 25, 0, 200, "Pre-load Torque", "Initial cross torque between front and rear wheels", {"subCategory":"Center"}],
+			["$lsdlockcoef_C", "range", "", "Differentials", 0.125, 0, 0.5, "Power Lock Rate", "Additional locking torque proportional to engine torque", {"minDis":0, "maxDis":100, "subCategory":"Center"}],
+			["$lsdlockcoefrev_C", "range", "", "Differentials", 0.025, 0, 0.5, "Coast Lock Rate", "Additional locking torque proportional to engine braking", {"minDis":0, "maxDis":100, "subCategory":"Center"}]
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["differential", "transferCase", "gearbox", 1, {"diffType":"lsd", "lsdPreload":"$lsdpreload_C", "lsdLockCoef":"$lsdlockcoef_C", "lsdRevLockCoef":"$lsdlockcoefrev_C", "diffTorqueSplit":"$=$torquesplit or 0.50", "uiName":"Center Differential", "defaultVirtualInertia":0.25, "friction": 5}]
+		]
+	},
+
+	"Camso_differential_center_locking": {
+		"information":{
+			"name":"Locking Center Differential",
+			"value":500
+		},
+		"slotType" : "Camso_differential_center",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_driveshaft_front","Camso_driveshaft_front","Front Driveshaft"],
+			["Camso_driveshaft_rear","Camso_driveshaft_rear","Rear Driveshaft"]
+		],
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$torquesplit", "range", "", "Gearing", 0.50, 0, 1, "Torque Split", "Power to Rear",{"subCategory": "Transfer Case", "stepDis": 0.01, "minDis":0,"maxDis":100}]
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["differential", "transferCase", "gearbox", 1, {"diffType":["open", "locked"], "lockTorque":10000, "diffTorqueSplit":"$=$torquesplit or 0.50", "uiName":"Differential", "defaultVirtualInertia":0.25, "friction": 7}]
+		]
+	},
+
+	"Camso_differential_center_locking_rangebox": {
+		"information":{
+			"name":"Locking Center Differential w/ Rangebox",
+			"value":700
+		},
+		"slotType" : "Camso_differential_center",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_driveshaft_front","Camso_driveshaft_front","Front Driveshaft"],
+			["Camso_driveshaft_rear","Camso_driveshaft_rear","Rear Driveshaft"],
+			["Camso_differential_center_locking_rangebox_controller", "Camso_differential_center_locking_rangebox_controller_4Hi4Lo", "4WD Controller", {"coreSlot": true}]
+		],
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$torquesplit", "range", "", "Gearing", 0.50, 0, 1, "Torque Split", "Power to Rear", {"subCategory": "Transfer Case", "stepDis": 0.01, "minDis":0,"maxDis":100}]
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["rangeBox", "rangebox", "gearbox", 1, {"gearRatios":[1,2.5], "uiName":"Rangebox"}],
+			["differential", "transferCase", "rangebox", 1, {"diffType":["open", "locked"], "lockTorque":10000, "diffTorqueSplit":"$=$torquesplit or 0.50", "uiName":"Differential", "defaultVirtualInertia":0.25, "friction": 7}]
+		],
+		"gearbox": {
+			"uiName":"Gearbox",
+			//added stabilization for one way clutch with ultra low range
+			"oneWayViscousSmoothing":100
+		},
+		"torqueConverter": {
+			"uiName":"Torque Converter",
+			//added stabilization for torque converter with ultra low range
+			"kFactorSmoothing":200
+		}
+	},
+
+	"Camso_differential_center_locking_rangebox_controller_4Hi4Lo": {
+		"information":{
+			"name":"4Hi/4Lo Controller",
+			"value":600
+		},
+		"slotType" : "Camso_differential_center_locking_rangebox_controller",
+		"controller": [
+	        ["fileName"],
+	        ["driveModes", {"name":"transfercaseControl"}],
+	        ["4wd", {"driveModesTransfercaseNames":["transfercaseControl"], "driveModesRangeNames":["transfercaseControl"]}]
+	    ],
+		"rangebox": {
+			"uiSimpleModeControl":false
+		},
+		"transferCase": {
+			"uiSimpleModeControl":false
+		},
+		"transfercaseControl":{
+	        "uiName": "Transfercase",
+	        "quickAccessTitle":"Transfercase",
+	        "quickAccessIcon":"radial_highrangebox",
+	        "quickAccessLevel":"/powertrain/",
+	        "enabledModes":["4hi", "4lo"],
+	        "defaultMode": "4hi",
+	        "modes": {
+	            "4hi": {
+	                "name": "4WD High Gear",
+	                "order": 20,
+	                "settings": [
+	                    ["type"],
+	                    ["powertrainDeviceMode", {"deviceName":"rangebox", "mode":"high"}],
+	                    ["powertrainDeviceMode", {"deviceName":"transferCase", "mode":"open"}],
+	                    ["electricsValue", {"electricsName":"transfercase_state", "value":0.33}],
+	                    ["simpleControlButton", {"buttonId":"transfercase", "icon":"powertrain_transfercase_high-4", "uiName":"Transfercase"}],
+	                    ["quickAccess", {"icon":"powertrain_transfercase_high-4"}]
+	                ]
+	            },
+	            "4lo": {
+	                "name": "4WD Low Gear",
+	                "order": 30,
+	                "settings": [
+	                    ["type"],
+	                    ["powertrainDeviceMode", {"deviceName":"rangebox", "mode":"low"}],
+	                    ["powertrainDeviceMode", {"deviceName":"transferCase", "mode":"locked"}],
+	                    ["electricsValue", {"electricsName":"transfercase_state", "value":-1}],
+	                    ["simpleControlButton", {"buttonId":"transfercase", "icon":"powertrain_transfercase_low-4", "uiName":"Transfercase"}],
+	                    ["quickAccess", {"icon":"powertrain_transfercase_low-4"}]
+	                ]
+	            }
+	        }
+	    }
+	},
+
+	"Camso_differential_center_locking_rangebox_controller": {
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"4WD Controller",
+	        "value":200
+	    },
+	    "slotType" : "Camso_differential_center_locking_rangebox_controller",
+	    "controller": [
+			["fileName"],
+			["4wd", {"rangeBoxName":"rangebox"}]
+		]
+	}
+}

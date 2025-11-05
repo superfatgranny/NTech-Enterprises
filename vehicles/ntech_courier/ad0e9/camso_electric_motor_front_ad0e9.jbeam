@@ -1,0 +1,59 @@
+{
+	"Camso_ElectricMotor_F_ad0e9": {
+		"information":{
+			"authors":"Camshaft Software",
+			"name":"Powerblock Front Electric Motor",
+			"value": 4000
+		}
+		"slotType" : "Camso_ElectricMotor_F",
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["electricMotor", "frontMotor", "dummy", 0],
+			["shaft", "frontDriveShaft", "frontMotor", 1, {"gearRatio":0.75}]
+		],
+		"frontMotor": {
+			"torque":[
+				["rpm", "torque"],
+				[0, "$=580.18*(1-$torquesplitE)"],
+				[520, "$=580.18*(1-$torquesplitE)"],
+				[910, "$=580.18*(1-$torquesplitE)"],
+				[1950, "$=580.18*(1-$torquesplitE)"],
+				[2990, "$=580.18*(1-$torquesplitE)"],
+				[4030, "$=580.18*(1-$torquesplitE)"],
+				[4940, "$=481.55*(1-$torquesplitE)"],
+				[5980, "$=400.32*(1-$torquesplitE)"],
+				[7020, "$=324.90*(1-$torquesplitE)"],
+				[7930, "$=255.28*(1-$torquesplitE)"],
+				[8970, "$=203.06*(1-$torquesplitE)"],
+				[10010, "$=168.25*(1-$torquesplitE)"],
+				[11050, "$=145.04*(1-$torquesplitE)"],
+				[11960, "$=110.23*(1-$torquesplitE)"],
+				[13000, "$=69.62*(1-$torquesplitE)"],
+
+			],
+			"maxRPM":13000,
+			"inertia":0.40,
+			"friction":4,
+			"dynamicFriction":0.0005,
+			"electricalEfficiency":0.55,
+			"electricsThrottleFactorName": "throttleFactorRear",
+			"breakTriggerBeam":"engine", //Engine breaks if beam with this name is broken
+			"soundConfig": "soundConfigFront",
+			"energyStorage": "mainBattery", //Name of the fuel tank
+			"torqueReactionNodes:":["engine1", "engine2", "engine3"],
+			"maximumWantedRegenTorque": "$=350*(1-($torquesplitE or 0))*($regenTorqueModFront or 1)"
+		},
+	    "vehicleController": {
+			"shiftLogicName":"electricMotor",
+			"motorNames": ["rearMotor", "frontMotor"],
+			"topSpeedLimitReverse": 15,
+			//"defaultRegen": 0.5,
+			//"brakeRegenCoef": 1,
+			"onePedalRegenCoef": 0.85
+		},
+		"soundConfigFront": {
+			"sampleName": "ElectricMotor_02",
+			"mainGain": -4.5
+		}
+	}
+}

@@ -1,0 +1,30 @@
+{
+	"Camso_suspensionmesh_F_ad0e9":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Powerblock Front Suspension Meshes"
+	    },
+	    "slotType" : "Camso_suspensionmesh_F",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["ad0e9_suspension_f4", ["susp_F"], [], {"pos":{"x":1.08719e-07, "y":-0.615, "z":1.132}, "rot":{"x":-0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		]
+	},
+
+	"Camso_brakemeshes_front_ad0e9":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Powerblock Front Brake Meshes"
+	    },
+	    "slotType" : "Camso_brakemeshes_front",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["ad0e9_brakecaliper_f6", ["hub_F"], [], {"pos":{"x":0.685086, "y":-1.38786, "z":1.13814}, "rot":{"x":45, "y":-4.09811e-05, "z":180}, "scale":{"x":1.73205, "y":3.4, "z":3.4}}],
+	        ["ad0e9_brakecaliper_f27", ["hub_F"], [], {"pos":{"x":-0.685086, "y":-1.38786, "z":1.13814}, "rot":{"x":45, "y":-4.09811e-05, "z":180}, "scale":{"x":1.73205, "y":3.4, "z":3.4}}],
+	        ["ad0e9_brakedisc_f5", ["wheel_FL"], [], {"pos":{"x":0.69044, "y":-1.495, "z":1.031}, "rot":{"x":-0, "y":0, "z":180}, "scale":{"x":1.73205, "y":3, "z":3}}],
+	        ["ad0e9_brakedisc_f5", ["wheel_FR"], [], {"pos":{"x":-0.69044, "y":-1.495, "z":1.031}, "rot":{"x":0, "y":-0, "z":360}, "scale":{"x":1.73205, "y":3, "z":3}}],
+		]
+	}
+}

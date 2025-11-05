@@ -1,0 +1,24 @@
+{
+	"Camso_differential_rear_ad0e9": {
+		"information":{
+			"name":"Powerblock Locking Rear Differential",
+			"value":500
+		},
+		"slotType" : "Camso_differential_rear",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_halfshafts_rear","Camso_halfshafts_rear","Rear Halfshafts"],
+			["Camso_finaldrive_rear","Camso_finaldrive_rear_4.92","Rear Final Drive", {"coreSlot":true}]
+		],
+		"controller": [
+			["fileName"],
+			
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+		//https://wiki.beamng.com/Differential
+		["differential", "rearDiff", "rearDriveShaft", 1, {"diffType": ["open", "locked"], "uiName": "Rear Differential","defaultVirtualInertia": 0.25, "friction": 24.893727363692}],
+
+		]
+	}
+}
