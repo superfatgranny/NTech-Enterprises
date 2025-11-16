@@ -1,7 +1,8 @@
 {
-	"Name": "NTech Elder",
+	"Name": "Elder",
 	"Author": "superfatgranny",
 	"Type": "Car",
+	"Brand": "N-Tech",
 	"ExporterVersion": 37238,
 	"AutomationVersion": 0,
 	"default_pc": "34a91",

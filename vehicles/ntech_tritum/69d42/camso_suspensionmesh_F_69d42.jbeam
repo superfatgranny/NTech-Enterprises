@@ -1,0 +1,31 @@
+{
+	"Camso_suspensionmesh_F_69d42":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Octave Front Suspension Meshes"
+	    },
+	    "slotType" : "Camso_suspensionmesh_F",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["69d42_suspension_f4", ["susp_F"], [], {"pos":{"x":-1.27634e-07, "y":-0.442012, "z":0.695275}, "rot":{"x":0.0013768, "y":-1.36604e-05, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+	        ["69d42_suspensionm_f8", ["susp_F"], [], {"pos":{"x":1.27634e-07, "y":-0.442012, "z":0.695275}, "rot":{"x":0.0013768, "y":-1.36604e-05, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		]
+	},
+
+	"Camso_brakemeshes_front_69d42":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Octave Front Brake Meshes"
+	    },
+	    "slotType" : "Camso_brakemeshes_front",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["69d42_brakecaliper_f6", ["hub_F"], [], {"pos":{"x":0.704722, "y":-1.25237, "z":0.764662}, "rot":{"x":45.0014, "y":-0.30005, "z":180}, "scale":{"x":1.39642, "y":2.14, "z":2.14}}],
+	        ["69d42_brakecaliper_f27", ["hub_F"], [], {"pos":{"x":-0.704722, "y":-1.25237, "z":0.764662}, "rot":{"x":45.0014, "y":-0.30005, "z":180}, "scale":{"x":1.39642, "y":2.14, "z":2.14}}],
+	        ["69d42_brakedisc_f5", ["wheel_FL"], [], {"pos":{"x":0.710441, "y":-1.32201, "z":0.695047}, "rot":{"x":0.00137667, "y":-0.300001, "z":180}, "scale":{"x":1.39642, "y":1.95, "z":1.95}}],
+	        ["69d42_brakedisc_f5", ["wheel_FR"], [], {"pos":{"x":-0.710441, "y":-1.32201, "z":0.695047}, "rot":{"x":-0.00137667, "y":0.300001, "z":360}, "scale":{"x":1.39642, "y":1.95, "z":1.95}}],
+		]
+	}
+}

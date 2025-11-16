@@ -1,0 +1,35 @@
+{
+	"Camso_DSE_99933": {
+		"information":{
+			"name":"Sputter Electronic Stability & Traction Control",
+			"value":250
+		}
+
+		"slotType" : "Camso_DSE",
+
+		"slots":[
+			["type", "default", "description"],
+			["Camso_DriveModes_99933", "Camso_DriveModes_99933", "Drive Modes"] 
+			["Camso_TC_99933", "Camso_TC_99933", "Traction Control"] 
+
+		],
+
+		"controller": [
+			["fileName"],
+			
+			["drivingDynamics/CMU", {"name":"CMU", "debugSettings": {"enableDebugMode": false, "peerIP": "127.0.0.1"}}],
+			["drivingDynamics/sensors/sensorHub"],
+			["drivingDynamics/sensors/virtualSensors" {"name":"sensors"}],
+			["drivingDynamics/sensors/vehicleData" {"name":"vehicleData"}],
+			["drivingDynamics/supervisors/components/motorTorqueControl" {"name":"motorTorqueControl"}],
+			["drivingDynamics/supervisors/components/brakeControl" {"name":"brakeControl"}],
+
+			
+		],
+
+		"vehicleData": {
+			"skewStiffnessFront": 97284.854285299,
+			"skewStiffnessRear": 57819.894384629
+		}
+	}
+}

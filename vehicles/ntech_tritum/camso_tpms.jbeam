@@ -1,0 +1,29 @@
+{
+	"Camso_tpms_4w": {
+		"information":{
+		    "authors":"Camshaft Software",
+		    "name":"Tire Pressure Management System"
+		},
+		"slotType" : "Camso_tpms",
+		"controller": [
+		    ["fileName"],
+		    ["tirePressureControl", {"mode":"manualControl"}]
+		],
+		"tirePressureControl": {
+		    "wheelGroups": [
+		        ["groupName",   "uiName",   "uiIcon",   "wheelNames",   "minPressure",  "maxPressure",  "groupEqualizeFlowLimit"],
+		        ["front",       "Front",    "axle_front-large",         ["FL", "FR"],   100000,          500000,         10000],
+		        ["rear1",       "Rear",   "axle_rear-large",         ["RL", "RR"],   100000,          500000,         10000]
+		    ],
+		    "inflateMaxFlow":20000,
+		    "deflateMaxFlow":40000
+		},
+		"events": [
+		    ["id", "title", "desc"],
+		    ["tpsm_up",      "ui.inputActions.midtruck.rangebox_state.title",    "ui.inputActions.midtruck.tpsm_up.description",     {"onDown": "controller.getControllerSafe('tirePressureControl').startInflateActiveGroups()","onUp": "controller.getControllerSafe('tirePressureControl').stopActiveGroups()", "order": 1}],
+		    ["tpsm_down",    "ui.inputActions.midtruck.transfercase_lock.title", "ui.inputActions.midtruck.tpsm_down.description",   {"onDown": "controller.getControllerSafe('tirePressureControl').startDeflateActiveGroups()","onUp": "controller.getControllerSafe('tirePressureControl').stopActiveGroups()", "order": 1}],
+		    ["tpsm_group1",  "ui.inputActions.midtruck.tpsm_group1.title",         "ui.inputActions.midtruck.tpsm_group1.description", {"onDown": "controller.getControllerSafe('tirePressureControl').toggleGroupState('front')", "order": 1}],
+		    ["tpsm_group2",  "ui.inputActions.midtruck.tpsm_group2.title",         "ui.inputActions.midtruck.tpsm_group2.description", {"onDown": "controller.getControllerSafe('tirePressureControl').toggleGroupState('rear1')", "order": 1}]
+		]
+	}
+}

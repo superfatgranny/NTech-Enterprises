@@ -1,7 +1,8 @@
 {
-	"Name": "NTech Sierra Nevada",
+	"Name": "Sierra Nevada",
 	"Author": "superfatgranny",
-	"Type": "Car",
+	"Type": "Truck",
+	"Brand": "N-Tech",
 	"ExporterVersion": 37238,
 	"AutomationVersion": 0,
 	"default_pc": "a5620",

@@ -1,0 +1,24 @@
+{
+	"Camso_differential_front_99933": {
+		"information":{
+			"name":"Sputter Viscous Front Differential",
+			"value":500
+		},
+		"slotType" : "Camso_differential_front",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_halfshafts_front","Camso_halfshafts_front","Front Halfshafts"],
+			["Camso_finaldrive_front","Camso_finaldrive_front_5.23","Front Final Drive", {"coreSlot":true}]
+		],
+		"controller": [
+			["fileName"],
+			
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+		//https://wiki.beamng.com/Differential
+		["differential", "frontDiff", "frontDriveShaft", 1, {"diffType": "viscous", "uiName": "Front Differential", "viscousCoef": 7.70, "viscousTorque": 77.04, "defaultVirtualInertia": 0.25, "friction": 3.8772787275839}],
+
+		]
+	}
+}

@@ -11,7 +11,7 @@
 	"Camso_BalancingMass_Custom": {
 		"information": {
 			"name":"Customizable Balancing",
-			"value":99999999999
+			"value":2000
 		},
 
 		"variables": [

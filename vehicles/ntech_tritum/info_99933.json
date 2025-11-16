@@ -1,0 +1,25 @@
+{
+	"Configuration": "Sputter",
+	"Description": "The Sputter is a CVT version of the Economy Focused Tritum Sedan.",
+	"Config Type": "Factory",
+	"Weight": 1120,
+	"Power": 120,
+	"Torque": 231,
+	"PowerPeakRPM": 5600,
+	"TorquePeakRPM": 1600,
+	"Weight/Power": 9.31679,
+	"0-100 km/h": 7.1,
+	"Top Speed": 120.1,
+	"Years": {
+		"min": 1998,
+		"max": 1998
+	},
+	"Drivetrain": "FWD",
+	"Transmission": "CVT",
+	"Propulsion": "ICE",
+	"Population": 4000,
+	"Fuel Type": "Gasoline",
+	"Induction Type": "Turbo",
+	"Value": 44268,
+	"defaultPaintName1": "Default1"
+}

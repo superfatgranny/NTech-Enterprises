@@ -3,7 +3,7 @@
 		"information": {
 			"authors": "Camshaft Software",
 			"name": "Advanced tuning parameters",
-			"value": 99999999
+			"value": 1000
 		},
 		"slotType": "camso_tuning_parameters",
 		"slots": [

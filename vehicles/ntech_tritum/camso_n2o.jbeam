@@ -1,0 +1,112 @@
+{
+	"Camso_Nitrous": {
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Nitrous Oxide Injection",
+	        "value":350
+	    },
+	    "slotType" : "Camso_Nitrous",
+	    "slots": [
+	        ["type", "default", "description"],
+	        ["Camso_n2o_bottle","Camso_n2o_bottle_10lb", "Nitrous Oxide Bottle"],
+	        ["Camso_n2o_shot","Camso_n2o_shot_50", "Nitrous Oxide Shot Size"]
+	    ],
+	    "variables": [
+	        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+	        ["$n2o_rpm", "range", "RPM", "Nitrous Oxide", 3500, 2000, 6000, "Minimum RPM", "Minimum RPM where nitrous oxide can spray", {"stepDis":50}],
+	        ["$n2o_gear", "range", "Gear", "Nitrous Oxide", 3, 1, 6, "Minimum Gear", "Minimum gear where nitrous oxide can spray", {"minDis":1, "maxDis":6, "stepDis":1}]
+	    ],
+	    "mainEngine": {
+	        "nitrousOxideInjection": "n2o"
+	    },
+	    "n2o": {
+	        "cutInRPM": "$n2o_rpm",
+	        "minimumGear": "$n2o_gear"
+	    },
+	    "controller": [
+	        ["fileName"],
+	        ["nitrousOxideInjection", {}]
+	    ]
+	},
+	"Camso_n2o_bottle_10lb": {
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"10lb Nitrous Oxide Bottle",
+	        "value":200
+	    },
+	    "slotType" : "Camso_n2o_bottle",
+	    "energyStorage": [
+	        ["type", "name"],
+	        ["n2oTank", "mainBottle"]
+	    ],
+	    "mainBottle": {
+	        "capacity": 4.54,
+	        "startingCapacity": 4.54
+	    },
+	    "mainEngine": {
+	        "energyStorage": ["mainTank", "mainBottle"]
+	    },
+	    "n2o": {
+	        "purgeValves:": ["engine5","engine1"]
+	    }
+	},
+	"Camso_n2o_shot_50": {
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"50kW Shot Size",
+	        "value":100
+	    },
+	    "slotType" : "Camso_n2o_shot",
+	    "n2o": {
+	        "addedPower": 50
+	    }
+	},
+	"Camso_n2o_shot_100": {
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"100kW Shot Size",
+	        "value":100
+	    },
+	    "slotType" : "Camso_n2o_shot",
+	    "n2o": {
+	        "addedPower": 100
+	    }
+	},
+	"Camso_n2o_shot_150": {
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"150kW Shot Size",
+	        "value":100
+	    },
+	    "slotType" : "Camso_n2o_shot",
+	    "n2o": {
+	        "addedPower": 150
+	    }
+	},
+	"Camso_n2o_shot_200": {
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"200kW Shot Size",
+	        "value":100
+	    },
+	    "slotType" : "Camso_n2o_shot",
+	    "n2o": {
+	        "addedPower": 200
+	    }
+	},
+	"Camso_n2o_shot_variable": {
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Adjustable Shot Size",
+	        "value":200
+	    },
+	    "slotType" : "Camso_n2o_shot",
+	    "variables": [
+	        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+	        ["$n2o_power", "range", "kW", "Nitrous Oxide", 75, 25, 500, "Added Power", "Power increase the N2O injection grants", {"stepDis":5}]
+	    ],
+	    "n2o": {
+	        "addedPower": "$n2o_power"
+	    }
+	}
+}

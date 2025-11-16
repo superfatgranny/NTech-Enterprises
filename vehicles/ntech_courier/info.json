@@ -1,7 +1,8 @@
 {
-	"Name": "NTech Courier",
+	"Name": "Courier",
 	"Author": "superfatgranny",
 	"Type": "Car",
+	"Brand": "N-Tech",
 	"ExporterVersion": 37238,
 	"AutomationVersion": 0,
 	"default_pc": "ad0e9",

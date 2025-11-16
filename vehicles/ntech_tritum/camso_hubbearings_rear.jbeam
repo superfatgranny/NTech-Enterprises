@@ -1,0 +1,29 @@
+{"Camso_hub_bearings_rear":
+{
+    "information":{
+        "authors":"Camshaft Software",
+        "name":"Rear Hub Bearings",
+        "value":100
+    },
+    "slotType" : "Camso_hub_bearings_rear",
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["shaft", "wheelaxleRL", "halfshaftRL", 1, {"connectedWheel":"RL", "friction":0}],
+			["shaft", "wheelaxleRR", "halfshaftRR", 1, {"connectedWheel":"RR", "friction":0}]
+		]
+},
+"Camso_hub_bearings_rear_locking":
+{
+    "information":{
+        "authors":"Camshaft Software",
+        "name":"Locking Rear Hub Bearings",
+        "value":200
+    },
+    "slotType" : "Camso_hub_bearings_rear",
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["shaft", "wheelaxleRL", "halfshaftRL", 1, {"canDisconnect":true, "connectedWheel":"RL", "uiName":"Rear Left Axle", "friction":0}],
+			["shaft", "wheelaxleRR", "halfshaftRR", 1, {"canDisconnect":true, "connectedWheel":"RR", "uiName":"Rear Right Axle", "friction":0}]
+		]
+}
+}

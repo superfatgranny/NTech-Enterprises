@@ -1,0 +1,29 @@
+{
+	"Camso_suspensionmesh_R_69d42":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Octave Rear Suspension Meshes"
+	    },
+	    "slotType" : "Camso_suspensionmesh_R",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["69d42_suspension_r11", ["susp_R"], [], {"pos":{"x":-1.27633e-07, "y":0.0979876, "z":0.695288}, "rot":{"x":0.0013768, "y":-1.36604e-05, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+	        ["69d42_suspensionm_r15", ["susp_R"], [], {"pos":{"x":1.27633e-07, "y":0.0979876, "z":0.695288}, "rot":{"x":0.0013768, "y":-1.36604e-05, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		]
+	},
+
+	"Camso_brakemeshes_rear_69d42":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Octave Rear Brake Meshes"
+	    },
+	    "slotType" : "Camso_brakemeshes_rear",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["69d42_brakedisc_r12", ["wheel_RL"], [], {"pos":{"x":0.710441, "y":1.14799, "z":0.695106}, "rot":{"x":0.00137667, "y":-0.300001, "z":180}, "scale":{"x":1.30384, "y":1.7, "z":1.7}}],
+	        ["69d42_brakedisc_r12", ["wheel_RR"], [], {"pos":{"x":-0.710441, "y":1.14799, "z":0.695106}, "rot":{"x":-0.00137667, "y":0.300001, "z":360}, "scale":{"x":1.30384, "y":1.7, "z":1.7}}],
+		]
+	}
+}

@@ -1,7 +1,8 @@
 {
-	"Name": "NTech Bender",
+	"Name": "Bender",
 	"Author": "superfatgranny",
 	"Type": "Car",
+	"Brand": "N-Tech",
 	"ExporterVersion": 37238,
 	"AutomationVersion": 0,
 	"default_pc": "65d4a",

@@ -1,0 +1,64 @@
+{
+	"Camso_Intake_570dd": {
+		"information":{
+			"name":"Stock Intake",
+			"value":250
+		},
+		"slotType" : "Camso_Intake_570dd",
+	},
+
+	"Camso_Intake_race_570dd": {
+		"information":{
+			"name":"Race Intake",
+			"value":750
+		},
+		"slotType" : "Camso_Intake_570dd",
+		"mainEngine":{
+			"torqueModIntake":[
+			    ["rpm", "torque"],
+				[0, 0.00],
+				[800, -5.00],
+				[1600, -2.00],
+				[2400, 0.00],
+				[3200, 5.00],
+				[4000, 15.00],
+				[4800, 20.00],
+				[5600, 25.00],
+				[6400, 30.00],
+				[7200, 35.00],
+				[8000, 37.00],
+
+			],
+			"$*instantAfterFireCoef": 1.25,
+			"$*sustainedAfterFireCoef": 1.25,
+		}
+	},
+
+	"Camso_Intake_sport_570dd": {
+		"information":{
+			"name":"Sport Intake",
+			"value":450
+		},
+		"slotType" : "Camso_Intake_570dd",
+		"mainEngine":{
+			"torqueModIntake":[
+			    ["rpm", "torque"],
+				[0, 0.00],
+				[800, 1.00],
+				[1600, 3.00],
+				[2400, 5.00],
+				[3200, 7.00],
+				[4000, 14.00],
+				[4800, 10.00],
+				[5600, 6.00],
+				[6400, 3.00],
+				[7200, 1.00],
+				[8000, 0.00],
+
+			],
+			"$*instantAfterFireCoef": 1.25,
+			"$*sustainedAfterFireCoef": 1.25,
+		}
+	},
+
+}

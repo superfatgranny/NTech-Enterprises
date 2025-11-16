@@ -1,0 +1,65 @@
+{
+	"Camso_Transmission_99933": {
+		"information":{
+			"authors":"Camshaft Software",
+			"name":"Sputter Continuously-Variable Transmission",
+			"value": 1100
+		},
+		"slotType" : "Camso_Transmission",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_TransferCase", "Camso_TransferCase_FWD_99933", "Drive Type"],
+			
+		],
+		
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+
+			["$gear_min", "range", ":1", "Gearing", 0.74745166509823, 0.1, 17, "Minimum ratio", "Lowest ratio that the transmission can use", {"subCategory": "Transmission", "stepDis": 0.01}],
+			["$gear_max", "range", ":1", "Gearing", 4.4596557978917, 0.1, 17, "Maximum ratio", "Highest ratio that the transmission can use", {"subCategory": "Transmission", "stepDis": 0.01}]
+
+		],
+
+		"controller": [
+			["fileName"],
+			
+		],
+		"gearbox": {
+			//https://wiki.beamng.com/AutomaticGearbox
+			"uiName": "Gearbox",
+			"minGearRatio": "$gear_min",
+			"maxGearRatio": "$gear_max",
+			"friction": 12.935056301325, //Constant friction torque on input shaft
+			"oneWayViscousCoef": 25, //One way clutch - hill holding strength
+			"parkLockTorque": 1000, //Maximum holding torque of park mode
+			"gearboxNode:": ["engine0"] //node used to play gear damage sound
+		},
+		"clutch": {
+			//https://wiki.beamng.com/TorqueConverter
+			"uiName":"Torque Converter",
+			"converterDiameter": 0.25225435490923, //Affects stall RPM and torque carrying ability
+			"converterStiffness": 12, //Affects tightness of converter around cruising speeds
+			"couplingAVRatio": 0.92, //Speed ratio where the torque multiplication reaches 1:1
+			"stallTorqueRatio": 1.8, //Maximum torque multiplication value (occurs at stall)
+			"lockupClutchTorque": 346.67765013975 //Maximum holding torque of lockup clutch
+		},
+		"vehicleController": {
+			"automaticModes": "PRNDS",
+			"cvtHighRPM": 5600,
+			"cvtLowRPM": 1000,
+			"torqueConverterLockupRPM": 1800,
+			"aggressionSmoothingDown": 0.5,
+			"cvtAggression": 0.1,
+			"aggressionHoldOffThrottleDelay": 0,
+
+			"calculateOptimalLoadShiftPoints": false
+		},
+
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+		["torqueConverter", "clutch", "mainEngine", 1],
+		["cvtGearbox", "gearbox", "clutch", 1]
+
+		]
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"Configuration": "Octave",
+	"Description": "The Octave is a sequential variant of the Tritum, optimized for city use.",
+	"Config Type": "Factory",
+	"Weight": 1107,
+	"Power": 120,
+	"Torque": 231,
+	"PowerPeakRPM": 5600,
+	"TorquePeakRPM": 1600,
+	"Weight/Power": 9.20857,
+	"0-100 km/h": 7.5,
+	"Top Speed": 67.5,
+	"Years": {
+		"min": 1998,
+		"max": 1998
+	},
+	"Drivetrain": "FWD",
+	"Transmission": "Sequential",
+	"Propulsion": "ICE",
+	"Population": 4000,
+	"Fuel Type": "Gasoline",
+	"Induction Type": "Turbo",
+	"Value": 49654,
+	"defaultPaintName1": "Default1"
+}

@@ -17,8 +17,9 @@
 	"Drivetrain": "4WD",
 	"Transmission": "Automatic",
 	"Propulsion": "ICE",
+	"Population": 8000,
 	"Fuel Type": "Gasoline",
 	"Induction Type": "Turbo",
-	"Value": 201691,
+	"Value": 20000,
 	"defaultPaintName1": "Default1"
 }

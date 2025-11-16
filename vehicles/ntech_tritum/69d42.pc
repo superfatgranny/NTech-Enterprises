@@ -1,0 +1,20 @@
+{
+"vars":{
+  "$finaldrive_f": 4.56,
+  "$finaldrive_r": 4.56
+},
+"format":2,
+"parts":{
+	"Camso_differential_front": "Camso_differential_front_69d42",
+	"Camso_DSE": "Camso_DSE_69d42",
+	"Camso_finaldrive_front": "Camso_finaldrive_front_4.56",
+	"Camso_Trim": "Camso_Trim_69d42",
+	"Camso_wheels_front": "Camso_wheels_front_69d42",
+	"Camso_wheels_rear": "Camso_wheels_rear_69d42",
+	"Camso_ElectricMotor_F": "Camso_ElectricMotor_F_69d42",
+	"Camso_Engine": "Camso_Engine_570dd",
+	"Camso_Transmission": "Camso_Transmission_69d42",
+	"Camso_SpeedLimiter": "Camso_SpeedLimiter_off",
+	"Camso_engine_structure": "Camso_engine_structure_69d42"
+}
+}
