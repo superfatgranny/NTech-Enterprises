@@ -1,0 +1,29 @@
+{"Camso_hub_bearings_front":
+{
+    "information":{
+        "authors":"Camshaft Software",
+        "name":"Front Hub Bearings",
+        "value":100
+    },
+    "slotType" : "Camso_hub_bearings_front",
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["shaft", "wheelaxleFL", "halfshaftFL", 1, {"connectedWheel":"FL", "friction":0}],
+			["shaft", "wheelaxleFR", "halfshaftFR", 1, {"connectedWheel":"FR", "friction":0}]
+		]
+},
+"Camso_hub_bearings_front_locking":
+{
+    "information":{
+        "authors":"Camshaft Software",
+        "name":"Locking Front Hub Bearings",
+        "value":200
+    },
+    "slotType" : "Camso_hub_bearings_front",
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["shaft", "wheelaxleFL", "halfshaftFL", 1, {"canDisconnect":true, "connectedWheel":"FL", "uiName":"Front Left Axle", "friction":0}],
+			["shaft", "wheelaxleFR", "halfshaftFR", 1, {"canDisconnect":true, "connectedWheel":"FR", "uiName":"Front Right Axle", "friction":0}]
+		]
+}
+}

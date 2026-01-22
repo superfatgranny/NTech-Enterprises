@@ -1,0 +1,24 @@
+{
+	"Configuration": "Tropical",
+	"Description": "N-Tech released this sports car in 1986.",
+	"Config Type": "Factory",
+	"Weight": 1296,
+	"Power": 423,
+	"Torque": 554,
+	"PowerPeakRPM": 7000,
+	"TorquePeakRPM": 3600,
+	"Weight/Power": 3.05792,
+	"0-100 km/h": 3.6,
+	"Top Speed": 85.8,
+	"Years": {
+		"min": 1986,
+		"max": 1986
+	},
+	"Drivetrain": "RWD",
+	"Transmission": "Manual",
+	"Propulsion": "ICE",
+	"Fuel Type": "Gasoline",
+	"Induction Type": "Turbo",
+	"Value": 42047,
+	"defaultPaintName1": "Default1"
+}

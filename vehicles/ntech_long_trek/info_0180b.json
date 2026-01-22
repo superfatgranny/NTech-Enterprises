@@ -1,0 +1,25 @@
+{
+	"Configuration": "Diesel",
+	"Description": "This diesel powerhouse is perfect for long journeys and towing!",
+	"Config Type": "Factory",
+	"Weight": 2823,
+	"Power": 688,
+	"Torque": 1362,
+	"PowerPeakRPM": 3600,
+	"TorquePeakRPM": 3600,
+	"Weight/Power": 4.09815,
+	"0-100 km/h": 8.9,
+	"Top Speed": 68.9,
+	"Years": {
+		"min": 1990,
+		"max": 1990
+	},
+	"Drivetrain": "4WD",
+	"Transmission": "Automatic",
+	"Propulsion": "ICE",
+	"Fuel Type": "Diesel",
+	"Induction Type": "Turbo",
+	"Value": 41799,
+	"defaultPaintName1": "Default1",
+	"defaultPaintName2": "Default2"
+}

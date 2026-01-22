@@ -1,0 +1,31 @@
+{
+	"Camso_suspensionmesh_F_0180b":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Diesel Front Suspension Meshes"
+	    },
+	    "slotType" : "Camso_suspensionmesh_F",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["0180b_suspension_f4", ["susp_F"], [], {"pos":{"x":0, "y":-0.939856, "z":1.01029}, "rot":{"x":-0.00906372, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+	        ["0180b_suspensionm_f8", ["susp_F"], [], {"pos":{"x":-0, "y":-0.939856, "z":1.01029}, "rot":{"x":-0.00906372, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		]
+	},
+
+	"Camso_brakemeshes_front_0180b":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Diesel Front Brake Meshes"
+	    },
+	    "slotType" : "Camso_brakemeshes_front",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["0180b_brakecaliper_f6", ["hub_F"], [], {"pos":{"x":0.741932, "y":-1.69484, "z":1.13517}, "rot":{"x":44.9909, "y":-0.299981, "z":-180}, "scale":{"x":1.87083, "y":4, "z":4}}],
+	        ["0180b_brakecaliper_f27", ["hub_F"], [], {"pos":{"x":-0.741932, "y":-1.69484, "z":1.13517}, "rot":{"x":44.9909, "y":-0.299981, "z":-180}, "scale":{"x":1.87083, "y":4, "z":4}}],
+	        ["0180b_brakedisc_f5", ["wheel_FL"], [], {"pos":{"x":0.747941, "y":-1.81986, "z":1.01022}, "rot":{"x":-0.0090637, "y":-0.299988, "z":-180}, "scale":{"x":1.87083, "y":3.5, "z":3.5}}],
+	        ["0180b_brakedisc_f5", ["wheel_FR"], [], {"pos":{"x":-0.747941, "y":-1.81986, "z":1.01022}, "rot":{"x":0.0090637, "y":0.299988, "z":0}, "scale":{"x":1.87083, "y":3.5, "z":3.5}}],
+		]
+	}
+}

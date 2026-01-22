@@ -1,0 +1,32 @@
+{
+	"Camso_DSE_f42c6": {
+		"information":{
+			"name":"Tropical Electronic Stability & Traction Control",
+			"value":250
+		}
+
+		"slotType" : "Camso_DSE",
+
+		"slots":[
+			["type", "default", "description"],
+			["Camso_DriveModes_f42c6", "Camso_DriveModes_f42c6", "Drive Modes"] 
+
+		],
+
+		"controller": [
+			["fileName"],
+			
+			["drivingDynamics/CMU", {"name":"CMU", "debugSettings": {"enableDebugMode": false, "peerIP": "127.0.0.1"}}],
+			["drivingDynamics/sensors/sensorHub"],
+			["drivingDynamics/sensors/virtualSensors" {"name":"sensors"}],
+			["drivingDynamics/sensors/vehicleData" {"name":"vehicleData"}],
+
+			
+		],
+
+		"vehicleData": {
+			"skewStiffnessFront": 101669.01276424,
+			"skewStiffnessRear": 187313.71026648
+		}
+	}
+}

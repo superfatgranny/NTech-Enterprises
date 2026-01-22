@@ -1,0 +1,31 @@
+{
+	"Camso_suspensionmesh_F_f42c6":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Tropical Front Suspension Meshes"
+	    },
+	    "slotType" : "Camso_suspensionmesh_F",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["f42c6_suspension_f4", ["susp_F"], [], {"pos":{"x":0, "y":-0.252184, "z":0.761964}, "rot":{"x":-0.0306091, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+	        ["f42c6_suspensionm_f8", ["susp_F"], [], {"pos":{"x":-0, "y":-0.252184, "z":0.761964}, "rot":{"x":-0.0306091, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		]
+	},
+
+	"Camso_brakemeshes_front_f42c6":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Tropical Front Brake Meshes"
+	    },
+	    "slotType" : "Camso_brakemeshes_front",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["f42c6_brakecaliper_f6", ["hub_F"], [], {"pos":{"x":0.66239, "y":-1.02856, "z":0.864739}, "rot":{"x":44.9694, "y":-1.49924, "z":-179.999}, "scale":{"x":1.70294, "y":3.28, "z":3.28}}],
+	        ["f42c6_brakecaliper_f27", ["hub_F"], [], {"pos":{"x":-0.66239, "y":-1.02856, "z":0.864739}, "rot":{"x":44.9694, "y":-1.49924, "z":-179.999}, "scale":{"x":1.70294, "y":3.28, "z":3.28}}],
+	        ["f42c6_brakedisc_f5", ["wheel_FL"], [], {"pos":{"x":0.670454, "y":-1.13218, "z":0.761398}, "rot":{"x":-0.0305992, "y":-1.5, "z":-179.999}, "scale":{"x":1.70294, "y":2.9, "z":2.9}}],
+	        ["f42c6_brakedisc_f5", ["wheel_FR"], [], {"pos":{"x":-0.670454, "y":-1.13218, "z":0.761398}, "rot":{"x":0.0305992, "y":1.5, "z":0.000762939}, "scale":{"x":1.70294, "y":2.9, "z":2.9}}],
+		]
+	}
+}

@@ -1,0 +1,37 @@
+{
+	"Camso_Intake_ca5b5": {
+		"information":{
+			"name":"Stock Intake",
+			"value":250
+		},
+		"slotType" : "Camso_Intake_ca5b5",
+	},
+
+	"Camso_Intake_race_ca5b5": {
+		"information":{
+			"name":"Race Intake",
+			"value":750
+		},
+		"slotType" : "Camso_Intake_ca5b5",
+		"mainEngine":{
+			"torqueModIntake":[
+			    ["rpm", "torque"],
+				[0, 0.00],
+				[850, -5.00],
+				[1700, -2.00],
+				[2550, 0.00],
+				[3400, 5.00],
+				[4250, 15.00],
+				[5100, 20.00],
+				[5950, 25.00],
+				[6800, 30.00],
+				[7650, 35.00],
+				[8500, 37.00],
+
+			],
+			"$*instantAfterFireCoef": 1.25,
+			"$*sustainedAfterFireCoef": 1.25,
+		}
+	},
+
+}

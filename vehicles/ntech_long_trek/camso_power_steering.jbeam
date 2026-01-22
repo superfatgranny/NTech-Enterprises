@@ -1,0 +1,14 @@
+{
+	"Camso_power_steering": {
+		"information":{
+		    "authors":"Camshaft Software",
+		    "name":"Power Steering",
+		    "value":150
+		},
+		"slotType" : "Camso_power_steering",
+		"controller": [
+		    ["fileName"],
+		    ["powerSteering", {"strengthFast":0.12, "strengthSlow": 0.12, "speedSlow": 2, "speedFast": 20/*, "constantOffset":-0.05*/}]
+		]
+	}
+}

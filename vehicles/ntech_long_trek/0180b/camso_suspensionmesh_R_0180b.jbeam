@@ -1,0 +1,30 @@
+{
+	"Camso_suspensionmesh_R_0180b":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Diesel Rear Suspension Meshes"
+	    },
+	    "slotType" : "Camso_suspensionmesh_R",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["0180b_suspension_r11", ["susp_R"], [], {"pos":{"x":0, "y":0.510152, "z":1.06006}, "rot":{"x":-0.00906372, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		]
+	},
+
+	"Camso_brakemeshes_rear_0180b":
+	{
+	    "information":{
+	        "authors":"Camshaft Software",
+	        "name":"Diesel Rear Brake Meshes"
+	    },
+	    "slotType" : "Camso_brakemeshes_rear",
+		"flexbodies": [
+	        ["mesh", "[group]:", "nonFlexMaterials"],
+	        ["0180b_brakecaliper_r13", ["hub_R"], [], {"pos":{"x":0.742586, "y":1.43516, "z":1.13491}, "rot":{"x":45.0091, "y":-180, "z":5.79652e-05}, "scale":{"x":1.87083, "y":4, "z":4}}],
+	        ["0180b_brakecaliper_r214", ["hub_R"], [], {"pos":{"x":-0.742586, "y":1.43516, "z":1.13491}, "rot":{"x":45.0091, "y":-180, "z":5.79652e-05}, "scale":{"x":1.87083, "y":4, "z":4}}],
+	        ["0180b_brakedisc_r12", ["wheel_RL"], [], {"pos":{"x":0.74794, "y":1.56014, "z":1.00989}, "rot":{"x":-0.00906372, "y":-2.27182e-16, "z":180}, "scale":{"x":1.87083, "y":3.5, "z":3.5}}],
+	        ["0180b_brakedisc_r12", ["wheel_RR"], [], {"pos":{"x":-0.74794, "y":1.56014, "z":1.00989}, "rot":{"x":0.00906372, "y":2.27182e-16, "z":360}, "scale":{"x":1.87083, "y":3.5, "z":3.5}}],
+		]
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"Camso_differential_rear_f42c6": {
+		"information":{
+			"name":"Tropical Race Clutch Rear Differential",
+			"value":500
+		},
+		"slotType" : "Camso_differential_rear",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_halfshafts_rear","Camso_halfshafts_rear","Rear Halfshafts"],
+			["Camso_finaldrive_rear","Camso_finaldrive_rear_4.84","Rear Final Drive", {"coreSlot":true}]
+		],
+		"controller": [
+			["fileName"],
+			
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+		//https://wiki.beamng.com/Differential
+		["differential", "rearDiff", "rearDriveShaft", 1, {"diffType": "lsd", "lsdLockCoef": 0.25, "lsdRevLockCoef": 0.20, "lsdPreload": 150.00, "uiName": "Rear Differential", "defaultVirtualInertia":0.25, "friction": 9.2777526414394}],
+
+
+		]
+	}
+}

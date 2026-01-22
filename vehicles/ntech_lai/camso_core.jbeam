@@ -1,0 +1,17 @@
+{
+	"Camso_lai_tropical_core":
+	{
+			"information":{
+	        "authors":"Camshaft Software",
+	        "name":"Automation Exported Car",
+	        "value":1
+			},
+			"slotType" : "main",
+	    "slots":[
+			   ["type", "default", "description"],
+			   ["Camso_Mod", "", "Additional Modification"],
+			   ["Camso_Trim", "Camso_Trim_f42c6", "Body", {"coreSlot":true}],
+			   ["paint_design", "", "Paint Design"]
+			]
+	}
+}

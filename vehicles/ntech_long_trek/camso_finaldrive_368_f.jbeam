@@ -1,0 +1,12 @@
+{
+	"Camso_finaldrive_front_3.69": {
+		"information":{
+			"name":"3.69 Front Final Drive",
+			"value":150
+		},
+		"slotType" : "Camso_finaldrive_front",
+		"frontDiff":{
+			"gearRatio": 3.69
+		}
+	}
+}

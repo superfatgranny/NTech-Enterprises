@@ -1,0 +1,58 @@
+{
+	"Camso_TransferCase_4x4_FF_0180b": {
+		"information":{
+			"name":"Diesel 4X4 Transfer Case",
+			"value":500
+		},
+		"slotType" : "Camso_TransferCase",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_driveshaft_front", "Camso_driveshaft_front", "Front Driveshaft"],
+			["Camso_4wd_FF_controller", "Camso_4wd_FF_controller_2hi4hi", "4WD Controller", {"coreSlot": true}]
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["differential", "transferCase", "gearbox", 1, {"diffType":"locked", "uiName":"Transfer Case","defaultVirtualInertia":0.1, "friction": 18.199570567149}],
+			["shaft", "rearDriveShaft", "transferCase", 2, {"canDisconnect":true,"uiName":"Rear Output Shaft", "friction": 1}]
+		],
+		"gearbox": {
+			"uiName":"Gearbox",
+			//added stabilization for one way clutch with ultra low range
+			"oneWayViscousSmoothing":100
+		},
+		"torqueConverter": {
+			"uiName":"Torque Converter",
+			//added stabilization for torque converter with ultra low range
+			"kFactorSmoothing":200
+		}
+	},
+
+	"Camso_TransferCase_4x4_FF_rangebox_0180b": {
+		"information":{
+			"name":"Diesel 4X4 Transfer Case w/ Rangebox",
+			"value":500
+		},
+		"slotType" : "Camso_TransferCase",
+		"slots": [
+			["type", "default", "description"],
+			["Camso_driveshaft_front", "Camso_driveshaft_front", "Front Driveshaft"],
+			["Camso_4wd_FF_rangebox_controller", "Camso_4wd_FF_rangebox_controller_2hi4hi4lo", "4WD Controller", {"coreSlot": true}]
+		],
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["rangeBox", "rangebox", "gearbox", 1, {"gearRatios":[1,2.5], "uiName":"Rangebox"}],
+			["differential", "transferCase", "rangebox", 1, {"diffType":"locked", "uiName":"Transfer Case","defaultVirtualInertia":0.1, "friction": 18.199570567149}],
+			["shaft", "rearDriveShaft", "transferCase", 2, {"canDisconnect":true,"uiName":"Rear Output Shaft", "friction": 1}]
+		],
+		"gearbox": {
+			"uiName":"Gearbox",
+			//added stabilization for one way clutch with ultra low range
+			"oneWayViscousSmoothing":100
+		},
+		"torqueConverter": {
+			"uiName":"Torque Converter",
+			//added stabilization for torque converter with ultra low range
+			"kFactorSmoothing":200
+		}
+	}
+}

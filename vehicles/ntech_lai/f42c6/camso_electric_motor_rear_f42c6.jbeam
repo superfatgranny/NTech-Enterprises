@@ -1,0 +1,52 @@
+{
+	"Camso_ElectricMotor_R_f42c6": {
+		"information":{
+			"authors":"Camshaft Software",
+			"name":"Tropical Rear Electric Motor",
+			"value": 4000
+		}
+		"slotType" : "Camso_ElectricMotor_R",
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["electricMotor", "rearMotor", "dummy", 0],
+			["shaft", "rearDriveShaft", "rearMotor", 1, {"gearRatio":0.75}]
+		],
+		"rearMotor": {
+			"torque":[
+				["rpm", "torque"],
+				[0, "$=493.35*$torquesplitE"],
+				[594, "$=493.35*$torquesplitE"],
+				[1040, "$=493.35*$torquesplitE"],
+				[2228, "$=493.35*$torquesplitE"],
+				[3417, "$=493.35*$torquesplitE"],
+				[4605, "$=493.35*$torquesplitE"],
+				[5645, "$=409.48*$torquesplitE"],
+				[6834, "$=340.41*$torquesplitE"],
+				[8022, "$=276.28*$torquesplitE"],
+				[9062, "$=217.07*$torquesplitE"],
+				[10251, "$=172.67*$torquesplitE"],
+				[11440, "$=143.07*$torquesplitE"],
+				[12628, "$=123.34*$torquesplitE"],
+				[13668, "$=93.74*$torquesplitE"],
+				[14857, "$=59.20*$torquesplitE"],
+
+			],
+			"maxRPM":14857.142857143,
+			"inertia":0.40,
+			"friction":4,
+			"dynamicFriction":0.0005,
+			"electricalEfficiency":0.55,
+			"electricsThrottleFactorName": "throttleFactorRear",
+			"breakTriggerBeam":"engine", //Engine breaks if beam with this name is broken
+			"soundConfig": "soundConfigRear",
+			"energyStorage": "mainBattery", //Name of the fuel tank
+			"torqueReactionNodes:":["engine1", "engine2", "engine3"],
+			"maximumWantedRegenTorque": "$=350*($torquesplitE or 1)*($regenTorqueModRear or 1)"
+		},
+
+		"soundConfigRear": {
+			"sampleName": "ElectricMotor_02",
+			"mainGain": -10
+		}
+	}
+}
